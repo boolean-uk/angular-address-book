@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Contact } from './layout/contact/model/contact.model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-address-book';
+
+  contactList: Contact[] = [];
+
+  addContact(contact: Contact) {
+    this.contactList.push(contact);
+  }
 }
