@@ -39,8 +39,6 @@ export class CreateContactComponent implements OnInit {
       };
       this._contactService.addContact(newContact);
       this._router.navigate(['/contacts']);
-    } else {
-      alert('All fields are required.');
     }
   }
 }
