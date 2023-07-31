@@ -6,7 +6,7 @@
     <label for="firstName">First Name:</label>
     <input type="text" id="firstName" formControlName="firstName">
     <div *ngIf="contactForm.controls['firstName'].invalid && contactForm.controls['firstName'].touched">
-      <small>Please enter a valid first name.</small>
+      <small>Please enter a valid first name. With min 3 letters and no spaces!</small>
     </div>
   </div>
 
@@ -14,8 +14,15 @@
     <label for="lastName">Last Name:</label>
     <input type="text" id="lastName" formControlName="lastName">
     <div *ngIf="contactForm.controls['lastName'].invalid && contactForm.controls['lastName'].touched">
-      <small>Please enter a valid last name.</small>
+      <small>Please enter a valid last name. With min 3 letters and no spaces!</small>
     </div>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email">
+    <div *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched">
+      <small>Please enter a valid email address.Email must end with 'boolean.co.uk'</small>
+   </div>
   </div>
 
   <div>

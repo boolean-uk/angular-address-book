@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Contact } from '../contact.model';
 import { ContactsListComponent } from '../contacts-list/contacts-list.component';
@@ -16,10 +16,12 @@ export class NewContactComponent  {
 
   constructor(private formBuilder: FormBuilder, private router: Router,  private contactListService: ContactListService) {
     this.contactForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      firstName: ['', [Validators.required,Validators.minLength(3),this.noSpacesValidator]],
+      lastName: ['', [Validators.required,Validators.minLength(3),this.noSpacesValidator]],
+      email: ['', [Validators.required, Validators.email,this.validateEmailDomain]],
       street: ['', [Validators.required]],
       city: ['', Validators.required]
+      
     });
   }
   onSubmit() {
@@ -32,6 +34,17 @@ export class NewContactComponent  {
       this.contactListService.addContact(newContact);
 
       this.router.navigate(['/contacts']);
+    }
+  }
+   noSpacesValidator(control: FormControl) {
+    const hasSpaces = /\s/.test(control.value);
+    return hasSpaces ? { hasSpaces: true } : null;
+  }
+  validateEmailDomain(control: any) {
+    if (control.value.endsWith('boolean.co.uk')) {
+      return null; // Valid email
+    } else {
+      return { invalidEmail: true }; // Invalid email
     }
   }
 }
