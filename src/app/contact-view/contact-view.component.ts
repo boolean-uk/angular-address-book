@@ -16,16 +16,12 @@ export class ContactViewComponent implements OnInit, OnDestroy {
   id$ = this.route.params.pipe(switchMap((params) => params['id']));
 
   async ngOnInit() {
-    this.route.params.subscribe(params => {
+    await this.route.params.forEach(params => {
       const id = Number(params['id']);
       this.contact = this.contactService.findById(id);
     });
   }
 
   ngOnDestroy(): void {
-    console.log('on destroy');
-    // if (this.paramsSub) {
-    //   this.paramsSub.unsubscribe();
-    // }
   }
 }
