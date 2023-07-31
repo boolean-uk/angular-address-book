@@ -1,1 +1,15 @@
-<div>new contact</div>
+<form [formGroup]="contactForm" (ngSubmit)="submit($event)">
+    <label for="firstName">First Name</label>
+    <input type="text" name="firstName" formControlName="firstName"/>
+
+    <label for="lastName">Last Name</label>
+    <input type="text" name="lastName" formControlName="lastName"/>
+
+    <label for="phone">Phone Number</label>
+    <input type="text" name="phone" formControlName="phoneNumber"/>
+
+    <label for="address">Address</label>
+    <input type="text" name="address" formControlName="address"/>
+
+    <button type="submit" [disabled]="!contactForm.valid">Add contact</button>
+</form>
