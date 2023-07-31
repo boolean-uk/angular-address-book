@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ContactsComponent} from "./contacts/all-contacts/contacts/contacts.component";
-import {ContactDetailsComponent} from "./contacts/contact-details/contact-details/contact-details.component";
-import {NewContactComponent} from "./contacts/new-contact/new-contact/new-contact.component";
+import {ContactsComponent} from "./contacts/contacts/contacts.component";
+import {ContactDetailsComponent} from "./contacts/contact-details/contact-details.component";
+import {NewContactComponent} from "./contacts/new-contact/new-contact.component";
 
 const routes: Routes = [
   {
