@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ContactsService } from '../contacts.service';
 
 @Component({
   selector: 'app-new-contact',
@@ -14,7 +15,9 @@ export class NewContactComponent implements OnInit {
     city: new FormControl(''),
   })
 
-  @Output() contactAdded = new EventEmitter<any>()
+  constructor(private contactsService: ContactsService){
+
+  }
 
   ngOnInit(): void {
     this.contactForm.controls.firstName.addValidators(Validators.required)
@@ -25,11 +28,6 @@ export class NewContactComponent implements OnInit {
 
   submit(event: Event){
     event.preventDefault()
-    console.log(this.contactForm);
-
-    this.contactAdded.emit(this.contactForm.value)
+    this.contactsService.addContact(this.contactForm.value)
   }
-
-
-
 }
