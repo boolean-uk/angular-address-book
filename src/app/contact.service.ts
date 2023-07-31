@@ -16,7 +16,9 @@ export class ContactService {
   getContacts() {
     return this._contactSubject.asObservable();
   }
-
+  getContactsLength() {
+    return this._contacts.length;
+  }
   getContactById(id: string) {
     return this._contacts.find((contact) => contact.id === id);
   }

@@ -27,7 +27,7 @@ export class CreateContactComponent {
   onSubmit() {
     if (this.contactForm.valid) {
       const newContact: Contact = {
-        id: uuid.v4(),
+        id: this._contactService.getContactsLength().toString(),
         firstName: this.contactForm.value.firstName,
         lastName: this.contactForm.value.lastName,
         street: this.contactForm.value.street,

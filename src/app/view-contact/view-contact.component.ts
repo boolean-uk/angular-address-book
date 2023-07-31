@@ -16,11 +16,7 @@ export class ViewContactComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
-      let x = this._contactService.getContactById(params['id']);
-      console.log(x);
-      if (x !== undefined) {
-        this.contact = x;
-      }
+      this.contact = this._contactService.getContactById(params['id']);
     });
   }
 }
