@@ -1,16 +1,19 @@
 <h1>Create Contact</h1>
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   <label for="first-name">First name:</label>
-  <input id="first-name" type="text" formControlName="firstName" />
+  <input id="first-name" type="text" formControlName="firstName" name="firstName"/>
 
   <label for="last-name">Last name:</label>
-  <input id="last-name" type="text" formControlName="lastName" />
+  <input id="last-name" type="text" formControlName="lastName" name="lastName"/>
 
   <label for="street">Street:</label>
-  <input id="street" type="text" formControlName="street" />
+  <input id="street" type="text" formControlName="street" name="street"/>
 
   <label for="city">City:</label>
-  <input id="city" type="text" formControlName="city" />
+  <input id="city" type="text" formControlName="city" name="city"/>
+
+  <label for="email">Email:</label>
+  <input id="email" type="text" formControlName="email" name="email"/>
 
   <div class="actions">
     <div class="spacer"></div>

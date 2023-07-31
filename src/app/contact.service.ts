@@ -11,21 +11,24 @@ export class ContactService {
       firstName: 'Adam',
       lastName: 'Kowalski',
       street: 'Dluga',
-      city: 'Warszawa'
+      city: 'Warszawa',
+      email: 'adam.kowalski@boolean.uk.com'
     },
     {
       id: '1',
       firstName: 'Jan',
       lastName: 'Kowalski',
       street: 'Chmielna',
-      city: 'Warszawa'
+      city: 'Warszawa',
+      email: 'jan.kowalski@boolean.uk.com'
     },
     {
       id: '2',
       firstName: 'Anna',
       lastName: 'Nowak',
       street: 'Polska',
-      city: 'Krakow'
+      city: 'Krakow',
+      email: 'anna.nowak@boolean.uk.com'
     },
   ];
 
