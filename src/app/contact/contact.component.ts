@@ -1,15 +1,17 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ContactService } from '../contact.service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css'],
 })
-export class ContactComponent {
-  @Input('Contact') contact: { firstName: string; lastName: string; street: string; city: string; } | undefined
+export class ContactComponent implements OnInit {
+  contacts: any[] = [];
 
-  @Output('addNewContact') addNewContact = new EventEmitter();
-  clicked() {
-    this.addNewContact.emit(this.contact);
+  constructor(private contactService: ContactService) {}
+
+  ngOnInit(): void {
+    this.contacts = this.contactService.getContacts();
   }
 }
