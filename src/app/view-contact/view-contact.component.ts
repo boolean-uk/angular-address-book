@@ -28,9 +28,6 @@ export class ViewContactComponent implements OnInit, OnDestroy {
       .subscribe((contact) => {
         this.contact = contact;
       });
-    if (this.contact) {
-      this.contact.lastName = 'changed name';
-    }
   }
   ngOnDestroy(): void {
     if (this.paramsSub) {
