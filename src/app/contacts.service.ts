@@ -39,4 +39,8 @@ export class ContactsService {
   getData() {
     return this.contactsList;
   }
+
+  getContactById(id: string): Contact {
+    return this.contactsList.find((contact) => contact.id === id)!;
+  }
 }
