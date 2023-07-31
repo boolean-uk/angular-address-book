@@ -9,6 +9,7 @@ import { switchMap } from 'rxjs';
   templateUrl: './contact-view.component.html',
   styleUrls: ['./contact-view.component.css']
 })
+
 export class ContactViewComponent implements OnInit, OnDestroy {
   contact: Contact | undefined;
 
@@ -17,7 +18,5 @@ export class ContactViewComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.contact = this.contactService.getContactById(this.route.snapshot.paramMap.get('id')!);
   }
-  ngOnDestroy(): void {
-    
-  }
+  ngOnDestroy(): void {}
 }
