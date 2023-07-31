@@ -1,17 +1,17 @@
 import {Injectable} from '@angular/core';
 
 export interface Contact {
-  firstName: string,
-  lastName: string,
-  address: string,
-  phoneNumber: string,
-  email: string
+  firstName: string | null,
+  lastName: string | null,
+  address: string | null,
+  phoneNumber: string | null,
+  email: string | null
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class ContactServiceService {
+export class ContactService {
   private contacts: Contact[] = []
 
   constructor() {
@@ -24,5 +24,4 @@ export class ContactServiceService {
   addContact(newContact: Contact): void {
     this.contacts.push(newContact)
   }
-
 }
