@@ -1,0 +1,3 @@
+<div *ngFor="let contact of contacts" class="contact" >
+  <p [routerLink]="'/contact/'+ contacts.indexOf(contact)">{{contact.firstName }} {{contact.lastName}}</p>
+</div>
