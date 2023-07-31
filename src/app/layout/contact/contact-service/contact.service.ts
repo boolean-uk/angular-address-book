@@ -11,6 +11,9 @@ export class ContactService {
 
     addContact(contact: Contact) {
       this.contactList.push(contact);
-      console.log(this.contactList);
+    }
+
+    getContactList() {
+        return this.contactList;
     }
 }
