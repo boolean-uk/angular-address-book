@@ -6,10 +6,12 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { NewContactComponent } from './new-contact/new-contact.component';
 import { ViewContactComponent } from './view-contact/view-contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ContactService } from './contact.service';
 
 @NgModule({
   declarations: [MenuComponent, ContactListComponent, NewContactComponent, ViewContactComponent],
   imports: [CommonModule, RouterModule, ReactiveFormsModule],
   exports: [MenuComponent, ContactListComponent, NewContactComponent, ViewContactComponent],
 })
+
 export class LayoutModule {}
