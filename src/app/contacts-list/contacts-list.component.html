@@ -1,0 +1,9 @@
+<h1>Contacts</h1>
+
+<div *ngFor="let contact of contactsList" class="list">
+  <div class="contact-row">
+    <p>{{ contact.firstName }} {{ contact.lastName }}</p>
+    <a routerLink="/view-contact/{{ contact.id }}">View</a>
+  </div>
+  <hr />
+</div>

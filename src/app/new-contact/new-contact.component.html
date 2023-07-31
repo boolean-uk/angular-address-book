@@ -1,0 +1,161 @@
+<h1>Create contact</h1>
+<form [formGroup]="contactForm" (ngSubmit)="addContact()">
+  <div class="form-group">
+    <label for="firstName">First name</label>
+    <input
+      class="form-control"
+      type="text"
+      name="firstName"
+      formControlName="firstName"
+    />
+    <!-- invalid data messages -->
+    <div
+      *ngIf="
+        contactForm.get('firstName')?.touched &&
+        contactForm.get('firstName')?.invalid
+      "
+    >
+      <div
+        *ngIf="contactForm.get('firstName')?.errors?.['required']"
+        class="text-danger"
+      >
+        Name is required.
+      </div>
+      <div
+        *ngIf="contactForm.get('firstName')?.errors?.['minlength'] "
+        class="text-danger"
+      >
+        Name is too short.
+      </div>
+      <div
+        *ngIf="contactForm.get('firstName')?.errors?.['noSpaces']"
+        class="text-danger"
+      >
+        Name should not contain spaces.
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last name</label>
+    <input
+      class="form-control"
+      type="text"
+      name="lastName"
+      formControlName="lastName"
+    />
+    <!-- invalid data messages -->
+    <div
+      *ngIf="
+        contactForm.get('lastName')?.touched &&
+        contactForm.get('lastName')?.invalid
+      "
+    >
+      <div
+        *ngIf="contactForm.get('lastName')?.errors?.['required']"
+        class="text-danger"
+      >
+        Last name is required.
+      </div>
+      <div
+        *ngIf="contactForm.get('lastName')?.errors?.['minlength'] "
+        class="text-danger"
+      >
+        Last name is too short.
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="street">Street</label>
+    <input
+      class="form-control"
+      type="text"
+      name="street"
+      formControlName="street"
+    />
+    <!-- invalid data messages -->
+    <div
+      *ngIf="
+        contactForm.get('street')?.touched && contactForm.get('street')?.invalid
+      "
+    >
+      <div
+        *ngIf="contactForm.get('street')?.errors?.['required']"
+        class="text-danger"
+      >
+        Street is required.
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="city">City</label>
+    <input
+      class="form-control"
+      type="text"
+      name="city"
+      formControlName="city"
+    />
+
+    <!-- invalid data messages -->
+    <div
+      *ngIf="
+        contactForm.get('city')?.touched && contactForm.get('city')?.invalid
+      "
+    >
+      <div
+        *ngIf="contactForm.get('city')?.errors?.['required']"
+        class="text-danger"
+      >
+        City is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        class="form-control"
+        type="email"
+        name="email"
+        formControlName="email"
+      />
+
+      <!-- invalid data messages -->
+      <div
+        *ngIf="
+          contactForm.get('email')?.touched && contactForm.get('email')?.invalid
+        "
+      >
+        <div
+          *ngIf="contactForm.get('email')?.errors?.['required']"
+          class="text-danger"
+        >
+          Email is required.
+        </div>
+        <div
+          *ngIf="contactForm.get('email')?.errors?.['email'] "
+          class="text-danger"
+        >
+          Email format is invalid.
+        </div>
+        <div
+          *ngIf="contactForm.get('email')?.errors?.['isEmailValid'] "
+          class="text-danger"
+        >
+          Email should end with @boolean.co.uk.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end">
+    <button
+      class="btn btn-primary submit-button"
+      type="submit"
+      [disabled]="contactForm.invalid"
+    >
+      Create
+    </button>
+  </div>
+</form>
