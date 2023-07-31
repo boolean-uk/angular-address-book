@@ -25,11 +25,11 @@ Implement the following requirements:
 
 ## Extensions
 
-Make sure first name and last name are at least 3 characters long
-Make sure that there are no spaces in either first name or the last name
-Add an email input and make sure that it is a valid email, and the email ends with @boolean.co.uk
+- Make sure first name and last name are at least 3 characters long
+- Make sure that there are no spaces in either first name or the last name
+- Add an email input and make sure that it is a valid email, and the email ends with @boolean.co.uk
 
 ## Images
 
 ![Form Page](./images/form-page.png)
-![Contacts Page](./images/contacts-page.png)
+![Contacts Page](./images/contacts.jpg)
