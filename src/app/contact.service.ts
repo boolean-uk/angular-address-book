@@ -14,6 +14,7 @@ export class ContactService {
         lastName: 'Doe',
         street: '123 Main St',
         city: 'New York',
+        email: '123@boolean.co.uk'
       },
     ];
   }

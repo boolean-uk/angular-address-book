@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, ValidationErrors, Validators } from '@ang
 import { ContactService } from '../contact.service';
 import { Contact } from 'src/contact.model';
 import { NoSpaceValidator } from '../whitespaces.validator';
+import { EmailValidator } from '../email.validator';
 
 @Component({
   selector: 'app-add-contact',
@@ -20,6 +21,7 @@ export class AddContactComponent implements OnInit {
     lastName: ['', [Validators.required,Validators.minLength(3), NoSpaceValidator.cannotContainSpace]],
     street: ['', Validators.required],
     city: ['', Validators.required],
+    email:  ['', [Validators.required, EmailValidator.containsBooleanCoUk]],
   });
 
   ngOnInit(): void {}
