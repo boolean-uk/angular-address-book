@@ -1,0 +1,5 @@
+<mat-list-item *ngIf="contact">
+  {{ contact.firstName }} {{ contact.lastName }}
+  <a routerLink="/contactsList/viewContact/{{ contact.id }}">View</a>
+</mat-list-item>
+<mat-divider></mat-divider>
