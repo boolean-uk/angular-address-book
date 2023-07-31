@@ -1,4 +1,8 @@
-<app-menu></app-menu>
-<div class="page">
-  <router-outlet></router-outlet>
+<div>
+  <h1>Menu</h1>
+  <nav>
+    <li><a [routerLink]="['/contact']">Contacts List</a></li>
+    <li><a [routerLink]="['/add-new-contact']">Add New Contact</a></li>
+  </nav>
 </div>
+<router-outlet></router-outlet>
