@@ -20,7 +20,6 @@ export class ViewContactComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('hello from ngOnInit');
     this.paramsSub = this.route.params.subscribe((params) => {
       this.id = params['id'];
       this.contact = this.contactService.getContactById(params['id'])

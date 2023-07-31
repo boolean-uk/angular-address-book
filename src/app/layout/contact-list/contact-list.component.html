@@ -3,9 +3,9 @@
 <div *ngIf="contacts.length > 0">
   <p>My contacts:</p>
   <div *ngFor="let contact of contacts">
-    <span>{{ contact.firstname }} {{ contact.lastname }}</span>
+    <span>{{ contact.firstname }} {{ contact.lastname }}&nbsp;</span>
     <a [routerLink]="['/view-contact', contact.id]">View</a>
   </div>
 </div>
-<div *ngIf="contacts.length === 0">No contacts yet</div>
+<div *ngIf="contacts.length === 0">No contacts</div>
 

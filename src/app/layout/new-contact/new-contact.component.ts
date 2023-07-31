@@ -1,6 +1,7 @@
 import { Contact, ContactService } from './../contact.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { cityValidator } from 'src/app/validators/cityValidator';
 
 @Component({
   selector: 'app-new-contact',
@@ -17,13 +18,14 @@ export class NewContactComponent implements OnInit {
   contact: Contact | null | undefined = null;
 
   formContact = this.fb.group({
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
+    firstName: ['', [Validators.required, Validators.minLength(3)]],
+    lastName: ['', [Validators.required, Validators.minLength(3)]],
     street: ['', Validators.required],
     city: ['', Validators.required],
   });
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   submit(event: Event) {
     event.preventDefault();
