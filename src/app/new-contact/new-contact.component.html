@@ -1,0 +1,38 @@
+<!-- <p>new-contact works!</p> -->
+<h1>New Contact</h1>
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" formControlName="firstName">
+    <div *ngIf="contactForm.controls['firstName'].invalid && contactForm.controls['firstName'].touched">
+      <small>Please enter a valid first name.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" formControlName="lastName">
+    <div *ngIf="contactForm.controls['lastName'].invalid && contactForm.controls['lastName'].touched">
+      <small>Please enter a valid last name.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="street">Street::</label>
+    <input type="text" id="street" formControlName="street">
+    <div *ngIf="contactForm.controls['street'].invalid && contactForm.controls['street'].touched">
+      <small>Please enter a valid street address.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="city">City:</label>
+    <input type="text" id="city" formControlName="city">
+    <div *ngIf="contactForm.controls['city'].invalid && contactForm.controls['ity'].touched">
+      <small>Please enter a valid city name.</small>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!contactForm.valid">Add Contact</button>
+</form>
