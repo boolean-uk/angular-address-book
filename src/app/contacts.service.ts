@@ -13,6 +13,7 @@ export class ContactsService {
       street: 'Lincoln 2',
       city: 'San Francisco',
       id: 'da12384e5sda434x',
+      email: 'john@boolean.co.uk',
     },
     {
       firstName: 'Jane',
@@ -20,6 +21,7 @@ export class ContactsService {
       street: 'Main Street',
       city: 'New York',
       id: 'sadz49edxcv2432',
+      email: 'jane@boolean.co.uk',
     },
     {
       firstName: 'Bob',
@@ -27,6 +29,7 @@ export class ContactsService {
       street: 'Oak Avenue',
       city: 'Los Angeles',
       id: 'asde34dcxvzsc23r',
+      email: 'bob@boolean.co.uk',
     },
   ];
   constructor() {}

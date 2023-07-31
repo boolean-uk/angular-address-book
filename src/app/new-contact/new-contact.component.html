@@ -27,6 +27,12 @@
       >
         Name is too short.
       </div>
+      <div
+        *ngIf="contactForm.get('firstName')?.errors?.['noSpaces']"
+        class="text-danger"
+      >
+        Name should not contain spaces.
+      </div>
     </div>
   </div>
 
@@ -82,8 +88,9 @@
       </div>
     </div>
   </div>
+
   <div class="form-group">
-    <label for="firstName">City</label>
+    <label for="city">City</label>
     <input
       class="form-control"
       type="text"
@@ -102,6 +109,42 @@
         class="text-danger"
       >
         City is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        class="form-control"
+        type="email"
+        name="email"
+        formControlName="email"
+      />
+
+      <!-- invalid data messages -->
+      <div
+        *ngIf="
+          contactForm.get('email')?.touched && contactForm.get('email')?.invalid
+        "
+      >
+        <div
+          *ngIf="contactForm.get('email')?.errors?.['required']"
+          class="text-danger"
+        >
+          Email is required.
+        </div>
+        <div
+          *ngIf="contactForm.get('email')?.errors?.['email'] "
+          class="text-danger"
+        >
+          Email format is invalid.
+        </div>
+        <div
+          *ngIf="contactForm.get('email')?.errors?.['isEmailValid'] "
+          class="text-danger"
+        >
+          Email should end with @boolean.co.uk.
+        </div>
       </div>
     </div>
   </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactsService } from '../contacts.service';
+import { emailValidator, noSpacesValidator } from './formValidators';
 
 @Component({
   selector: 'app-new-contact',
@@ -17,10 +18,17 @@ export class NewContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.contactForm = this.formBuilder.group({
-      firstName: ['', [Validators.required, Validators.minLength(2)]],
-      lastName: ['', [Validators.required, Validators.minLength(2)]],
+      firstName: [
+        '',
+        [Validators.required, Validators.minLength(3), noSpacesValidator],
+      ],
+      lastName: [
+        '',
+        [Validators.required, Validators.minLength(3), noSpacesValidator],
+      ],
       street: ['', [Validators.required]],
       city: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email, emailValidator]],
     });
   }
   addContact() {

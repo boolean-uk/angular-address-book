@@ -4,4 +4,5 @@ export interface Contact {
   street: string;
   city: string;
   id: string;
+  email: string;
 }
