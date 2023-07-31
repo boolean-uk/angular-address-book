@@ -1,1 +1,14 @@
-<p>add-contact works!</p>
+<h1>hello, world</h1>
+<form [formGroup]="userForm" (ngSubmit)="submit($event)">
+  <label for="firstName"> First Name: </label>
+  <input type="text" name="firstName" formControlName="firstName" /> <br>
+  <label for="surname"> Last Name: </label>
+  <input type="text" name="surname" formControlName="surname" /> <br>
+  <label for="street"> Street: </label>
+  <input type="text" name="street" formControlName="street" /> <br>
+  <label for="city"> City: </label>
+  <input type="text" name="city" formControlName="city" /> <br>
+  <label for="email"> Email: </label>
+  <input type="text" name="email" formControlName="email" /> <br>
+  <button [disabled]="!userForm.valid" type="submit">submit</button>
+</form>
