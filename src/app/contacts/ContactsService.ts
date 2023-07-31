@@ -13,5 +13,9 @@ export class ContactService {
 
   addContact(contact: ContactType): void {
     this.contacts.push(contact);
-  }
+    }
+    
+    getContactById(id: number): ContactType {
+        return this.contacts[id]
+    }
 }
