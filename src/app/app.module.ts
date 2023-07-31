@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { NewContactComponent } from './new-contact/new-contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ContactsListComponent } from './contacts-list/contacts-list.component';
 
 @NgModule({
-  declarations: [AppComponent, NewContactComponent],
+  declarations: [AppComponent, NewContactComponent, ContactsListComponent],
   imports: [BrowserModule, AppRoutingModule, LayoutModule, ReactiveFormsModule],
   bootstrap: [AppComponent],
 })

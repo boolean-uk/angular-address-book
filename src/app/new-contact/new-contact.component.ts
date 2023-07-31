@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -14,6 +14,8 @@ export class NewContactComponent implements OnInit {
     city: new FormControl(''),
   })
 
+  @Output() contactAdded = new EventEmitter<any>()
+
   ngOnInit(): void {
     this.contactForm.controls.firstName.addValidators(Validators.required)
     this.contactForm.controls.lastName.addValidators(Validators.required)
@@ -24,6 +26,10 @@ export class NewContactComponent implements OnInit {
   submit(event: Event){
     event.preventDefault()
     console.log(this.contactForm);
+
+    this.contactAdded.emit(this.contactForm.value)
   }
+
+
 
 }
