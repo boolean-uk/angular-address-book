@@ -6,8 +6,8 @@ import { Contact } from './contact.model';
 })
 export class ContactService {
   private contacts: Contact[] = [
-    new Contact('Ken', 'Pawlowski', 'Bohaterow 12', 'Warsaw'),
-    new Contact('Barbie', 'Sperkach', 'Warszawska 45', 'Warsaw'),
+    new Contact('Ken', 'Pawlowski', 'Bohaterow 12', 'Warsaw', 'ken@boolean.co.uk'),
+    new Contact('Barbie', 'Sperkach', 'Warszawska 45', 'Warsaw', 'barbie@boolean.co.uk'),
   ];
 
   getContacts(): Contact[] {

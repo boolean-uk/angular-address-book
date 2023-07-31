@@ -12,6 +12,7 @@ export class ContactNewComponent {
   lastName: string = '';
   street: string = '';
   city: string = '';
+  email: string = '';
 
   constructor(private contactService: ContactService) {}
 
@@ -20,7 +21,8 @@ export class ContactNewComponent {
       this.firstName, // Use component properties directly
       this.lastName,
       this.street,
-      this.city
+      this.city,
+      this.email
     );
 
     this.contactService.addContact(newContact);
@@ -28,5 +30,6 @@ export class ContactNewComponent {
     this.lastName = '';
     this.street = '';
     this.city = '';
+    this.email = '';
   }
 }

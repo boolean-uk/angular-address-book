@@ -1,4 +1,3 @@
-<!-- contact-new.component.html -->
 <h2>Add New Contact</h2>
 <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
   <div>
@@ -50,6 +49,20 @@
       [(ngModel)]="city"
       required
     >
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      [(ngModel)]="email"
+      required
+      pattern=".+@boolean\.co\.uk$" 
+    >
+    <div *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].dirty || contactForm.controls['email'].touched)">
+      <div class="error-message">Please enter a valid email ending with @boolean.co.uk.</div>
+    </div>
   </div>
   <button type="submit" [disabled]="!contactForm.valid">Add Contact</button>
 </form>

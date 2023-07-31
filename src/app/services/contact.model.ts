@@ -3,6 +3,7 @@ export class Contact {
     public firstName: string,
     public lastName: string,
     public street: string,
-    public city: string
+    public city: string,
+    public email: string
   ) {}
 }
