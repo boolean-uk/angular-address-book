@@ -14,10 +14,7 @@ export class ContactService {
   }
 
   getContact(id: number): Contact | null {
-    console.log(id);
-    console.log(this.contacts);
     const foundContact = this.contacts?.find((contact) => contact.id == id);
-    console.log(foundContact);
     return foundContact !== undefined ? foundContact : null;
   }
 

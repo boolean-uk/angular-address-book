@@ -22,16 +22,13 @@ export class ContactComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.route.params.subscribe((params) => {
       this.id = params['id'];
-      console.log(this.id);
       if (this.id) {
         this.contact = this.contactService.getContact(this.id);
-        console.log(this.contact);
       }
     });
   }
 
   ngOnDestroy(): void {
-    console.log('Welcome from onDestroy');
     if (this.subscription) this.subscription.unsubscribe();
   }
 }

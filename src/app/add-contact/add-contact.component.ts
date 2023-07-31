@@ -1,7 +1,9 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Contact } from '../interfaces/contact';
 import { ContactService } from '../contact.service';
+import { namesValidator } from '../validators/namesValidator';
+import { emailValidator } from '../validators/emailValidator';
 
 @Component({
   selector: 'app-add-contact',
@@ -15,8 +17,9 @@ export class AddContactComponent {
   ) {}
 
   contactForm = this.fb.group({
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
+    firstName: ['', [Validators.required, Validators.min(3), namesValidator]],
+    lastName: ['', [Validators.required, Validators.min(3), namesValidator]],
+    email: ['', [Validators.required, Validators.email, emailValidator]],
     street: ['', Validators.required],
     city: ['', Validators.required],
   });
@@ -29,10 +32,10 @@ export class AddContactComponent {
         id: this.contactService.getId(),
         firstName: this.contactForm.value.firstName!,
         lastName: this.contactForm.value.lastName!,
+        email: this.contactForm.value.email!,
         street: this.contactForm.value.street!,
         city: this.contactForm.value.city!,
       };
-      console.log(this.contact);
       this.contactService.addContact(this.contact);
     }
 
