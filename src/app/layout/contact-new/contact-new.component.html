@@ -1,0 +1,55 @@
+<!-- contact-new.component.html -->
+<h2>Add New Contact</h2>
+<form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+  <div>
+    <label for="firstName">First Name</label>
+    <input
+      type="text"
+      id="firstName"
+      name="firstName"
+      [(ngModel)]="firstName"
+      required
+      minlength="3"
+      pattern="^[^\s]+$"
+    >
+    <div *ngIf="contactForm.controls['firstName'].invalid && (contactForm.controls['firstName'].dirty || contactForm.controls['firstName'].touched)">
+      <div class="error-message">First name must be at least 3 characters long and should not contain spaces.</div>
+    </div>
+  </div>
+  <div>
+    <label for="lastName">Last Name</label>
+    <input
+      type="text"
+      id="lastName"
+      name="lastName"
+      [(ngModel)]="lastName"
+      required
+      minlength="3"
+      pattern="^[^\s]+$"
+    >
+    <div *ngIf="contactForm.controls['lastName'].invalid && (contactForm.controls['lastName'].dirty || contactForm.controls['lastName'].touched)">
+      <div class="error-message">Last name must be at least 3 characters long and should not contain spaces.</div>
+    </div>
+  </div>
+  <div>
+    <label for="street">Street</label>
+    <input
+      type="text"
+      id="street"
+      name="street"
+      [(ngModel)]="street"
+      required
+    >
+  </div>
+  <div>
+    <label for="city">City</label>
+    <input
+      type="text"
+      id="city"
+      name="city"
+      [(ngModel)]="city"
+      required
+    >
+  </div>
+  <button type="submit" [disabled]="!contactForm.valid">Add Contact</button>
+</form>

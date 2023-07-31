@@ -1,0 +1,7 @@
+<h2>Contacts List</h2>
+<ul>
+  <li *ngFor="let contact of contacts">
+    {{ contact.firstName }} {{ contact.lastName }}
+    <button (click)="viewContact(contact)">View</button>
+  </li>
+</ul>
