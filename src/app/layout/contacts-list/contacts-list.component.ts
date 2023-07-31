@@ -7,5 +7,14 @@ import { Contact } from '../contact.model';
   styleUrls: ['./contacts-list.component.css'],
 })
 export class ContactsListComponent {
+  newContact: Contact | null = null
+  addToContacts() {
+    if (!this.newContact) {
+      return;
+    }
+
+    this.contactsList.push(this.newContact);
+    this.newContact = null;
+  }
   contactsList: Contact[] = [];
 }
