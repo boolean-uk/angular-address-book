@@ -11,6 +11,6 @@ export class ContactComponent implements OnInit{
   contact: ContactType | null = null
   constructor(private route: ActivatedRoute) { }
   ngOnInit(): void {
-    this.contact = this.route.snapshot.data['contact'];
+    this.contact = history.state
   }
 }

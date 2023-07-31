@@ -17,30 +17,11 @@ export class ContactListComponent {
 
   constructor(private router: Router) { }
 
-  contacts: ContactType[] = [
-    {
-      firstName:"Wojtek",
-      lastName:"Zolkowski",
-      address:"Warszawa",
-      phoneNumber:"728"
-    },
-    {
-      firstName:"Milena",
-      lastName:"Kowalczyk",
-      address:"Warszawa",
-      phoneNumber:"728"
-    },
-    {
-      firstName:"Kuba",
-      lastName:"Lubaszka",
-      address:"Warszawa",
-      phoneNumber:"728"
-    },
-  ]
+  contacts: ContactType[] = [{
+    firstName: "Wojtek",
+    lastName: "Zolkowski",
+    phoneNumber: "728",
+    address: "Warsaw"
+  }]
 
-  navigateToContact(contact: ContactType) {
-    this.router.navigate(['/contact', this.contacts.indexOf(contact)], {
-      state: { contact: contact },
-    });
-    }
 }
