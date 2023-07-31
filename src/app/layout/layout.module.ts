@@ -9,6 +9,6 @@ import { ViewContactComponent } from './view-contact/view-contact.component';
 @NgModule({
   declarations: [MenuComponent, ContactsListComponent, AddContactComponent, ViewContactComponent],
   imports: [CommonModule, RouterModule],
-  exports: [MenuComponent],
+  exports: [MenuComponent, ContactsListComponent, AddContactComponent, ViewContactComponent],
 })
 export class LayoutModule {}
