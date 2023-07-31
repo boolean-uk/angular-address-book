@@ -6,7 +6,7 @@ import {Injectable} from "@angular/core";
 })
 
 export class ContactService{
-  contacts: { firstName: string; lastName: string; street: string; city: string;}[] = []
+  contacts: { firstName: string; lastName: string; street: string; city: string; email: string;}[] = []
 
   constructor() {
   }

@@ -11,7 +11,7 @@ import {Subscription} from "rxjs";
 export class ViewContactComponent implements OnInit, OnDestroy{
   constructor(private contactService: ContactService, private route: ActivatedRoute) {}
 
-  contact: {firstName: string; lastName: string; street: string; city: string;} | null=null
+  contact: {firstName: string; lastName: string; street: string; city: string; email: string;} | null=null
 
   paramsSub: Subscription | null = null;
   ngOnInit(): void {

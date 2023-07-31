@@ -7,7 +7,7 @@ import {ContactService} from "../contact.service";
   styleUrls: ['./contact-list.component.css']
 })
 export class ContactListComponent implements OnInit {
-  cont: { firstName: string; lastName: string; street: string; city: string;}[] = []
+  cont: { firstName: string; lastName: string; street: string; city: string; email: string;}[] = []
   constructor(private contactService: ContactService) { }
   ngOnInit(): void {
     this.cont = this.contactService.contacts
