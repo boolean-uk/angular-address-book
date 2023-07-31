@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Contact } from '../model/contact.model';
+import { ContactService } from '../contact-service/contact.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -7,7 +9,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./contact-form.component.css']
 })
 export class ContactFormComponent implements OnInit{
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private contactService: ContactService) { }
 
   ngOnInit(): void {
     ""
@@ -22,6 +24,16 @@ export class ContactFormComponent implements OnInit{
 
   submit(event: Event) {
     event.preventDefault();
-    console.log("---");
+    if (this.contactForm.valid) {
+      const newContact: Contact = {
+        firstName: this.contactForm.value.firstName as string,
+        lastName: this.contactForm.value.lastName as string,
+        street: this.contactForm.value.street as string,
+        city: this.contactForm.value.city as string
+      };
+
+      this.contactService.addContact(newContact);
+      this.contactForm.reset(); 
+    }
   }
 }

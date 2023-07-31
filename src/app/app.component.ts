@@ -8,10 +8,4 @@ import { Contact } from './layout/contact/model/contact.model';
 })
 export class AppComponent {
   title = 'angular-address-book';
-
-  contactList: Contact[] = [];
-
-  addContact(contact: Contact) {
-    this.contactList.push(contact);
-  }
 }
