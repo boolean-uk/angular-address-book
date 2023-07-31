@@ -1,5 +1,14 @@
-<h2>Menu</h2>
-<ul>
-  <li><a>Contacts list</a></li>
-  <li><a>Add new contact</a></li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink = "/">Contacts</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" routerLink = "/">Contact List</a>
+        <a class="nav-link" routerLink = "/new-contact">New Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
