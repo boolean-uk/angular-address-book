@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { Contact, ContactsService } from 'src/app/services/contacts.service';
+import { NameValidator } from './name-validator';
 
 @Component({
   selector: 'app-add-contact',
@@ -10,19 +11,20 @@ import { Contact, ContactsService } from 'src/app/services/contacts.service';
 export class AddContactComponent {
 
   form = this.fb.group({
-    firstName: ['', [Validators.required]],
-    lastName: ['', [Validators.required]],
+    firstName: ['', [Validators.required, Validators.minLength(3), NameValidator.cannotContainSpace]],
+    lastName: ['', [Validators.required, Validators.minLength(3), NameValidator.cannotContainSpace]],
     street: ['', [Validators.required]],
     city: ['', [Validators.required]]
   })
 
   constructor(
-    private fb: FormBuilder,
+    private fb: NonNullableFormBuilder,
     private contactsService: ContactsService
   ) {}
 
   submit() {
     this.contactsService.contacts.push(this.form.value as Contact)
     this.form.reset()
+    console.log(this.form.value)
   }
 }
