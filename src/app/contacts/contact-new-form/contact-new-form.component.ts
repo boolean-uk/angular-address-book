@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Contact } from '../contact';
+import { ContactFormService } from '../contact-form.service';
 import { ContactService } from '../contact.service';
 
 @Component({
@@ -11,28 +12,11 @@ import { ContactService } from '../contact.service';
 export class ContactNewFormComponent {
   constructor(
     private contactService: ContactService,
+    private contactFormService: ContactFormService,
     private fb: FormBuilder
   ) {}
 
-  newContactForm = this.fb.group({
-    firstName: [
-      '',
-      [Validators.required, Validators.min(3), Validators.pattern(/^[^\s]*$/)],
-    ],
-    lastName: [
-      '',
-      [Validators.required, Validators.min(3), Validators.pattern(/^[^\s]*$/)],
-    ],
-    email: [
-      '',
-      [
-        Validators.required,
-        Validators.pattern(/^([A-Za-z]|[0-9])+@boolean.co.uk$/),
-      ],
-    ],
-    street: ['', Validators.required],
-    city: ['', Validators.required],
-  });
+  newContactForm = this.contactFormService.createContactForm();
 
   addNewContact() {
     this.contactService

@@ -12,8 +12,16 @@ export class ContactListComponent {
   contactService: ContactService = inject(ContactService);
 
   constructor() {
+    this.getAllContacts();
+  }
+
+  getAllContacts() {
     this.contactService.getAllContacts().subscribe((contactList: Contact[]) => {
       this.contactList = contactList;
     });
+  }
+
+  handleContactDeleted() {
+    this.getAllContacts();
   }
 }

@@ -11,6 +11,7 @@ import { ContactListItemComponent } from './contact-list-item/contact-list-item.
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactNewFormComponent } from './contact-new-form/contact-new-form.component';
 import { ContactViewComponent } from './contact-view/contact-view.component';
+import { ContactEditFormComponent } from './contact-edit-form/contact-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ContactViewComponent } from './contact-view/contact-view.component';
     ContactListComponent,
     ContactListItemComponent,
     ContactNewFormComponent,
+    ContactEditFormComponent,
   ],
   imports: [
     CommonModule,

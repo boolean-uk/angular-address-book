@@ -22,4 +22,12 @@ export class ContactService {
   getContactById(id: number): Observable<Contact | undefined> {
     return this.http.get<Contact>(`${this.dbUrl}/${id}`);
   }
+
+  saveContact(contact: Contact): Observable<Contact> {
+    return this.http.put<Contact>(`${this.dbUrl}/${contact.id}`, contact);
+  }
+
+  deleteContact(contact: Contact): Observable<Contact> {
+    return this.http.delete<Contact>(`${this.dbUrl}/${contact.id}`);
+  }
 }
