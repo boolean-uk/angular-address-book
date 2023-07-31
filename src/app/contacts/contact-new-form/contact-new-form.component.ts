@@ -15,8 +15,18 @@ export class ContactNewFormComponent {
   ) {}
 
   newContactForm = this.fb.group({
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
+    firstName: [
+      '',
+      [Validators.required, Validators.min(3), Validators.pattern(/^[^\s]*$/)],
+    ],
+    lastName: [
+      '',
+      [Validators.required, Validators.min(3), Validators.pattern(/^[^\s]*$/)],
+    ],
+    email: [
+      '',
+      [Validators.required, Validators.pattern(/^[^\s]*@boolean.co.uk$/)],
+    ],
     street: ['', Validators.required],
     city: ['', Validators.required],
   });
