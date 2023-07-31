@@ -16,6 +16,10 @@
         <label for="city">City:</label>
         <input formControlName="city" type="text" id="city">
     </div>
+    <div>
+        <label for="email">E-mail:</label>
+        <input formControlName="email" type="email" id="email">
+    </div>
 
     <button [disabled]="!contactForm.valid" type="submit">Create</button>
 </form>
