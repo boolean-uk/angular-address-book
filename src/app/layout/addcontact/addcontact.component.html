@@ -14,6 +14,6 @@
 
   <div class="actions">
     <div class="spacer"></div>
-    <button type="submit">Create</button>
+    <button [disabled]="!userForm.valid" type="submit">Create</button>
   </div>
 </form>

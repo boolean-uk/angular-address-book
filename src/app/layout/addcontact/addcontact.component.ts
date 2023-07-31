@@ -16,15 +16,15 @@ export class AddcontactComponent implements OnInit{
   }
 
   userForm = this.fb.group({
-    firstname: ['', Validators.required],
-    lastname: ['', Validators.required],
+    firstname: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]+$')]],
+    lastname: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]+$')]],
     street: ['', Validators.required],
     city: ['', Validators.required],
 
   });
 
   submit(event: Event) {
-    //if (this.userForm.valid) {
+    if (this.userForm.valid) {
       const newContact: Contact = {
         firstname: this.userForm.value.firstname as string,
         lastname: this.userForm.value.lastname as string,
@@ -36,6 +36,6 @@ export class AddcontactComponent implements OnInit{
 
     //   this.userForm.reset()
     // console.log(this.userForm);
- // }
+    }
     }
 }
