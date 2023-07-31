@@ -1,4 +1,18 @@
 <form class="w-fit mx-auto grid grid-cols-2 gap-2">
+  <div class="text-xs text-red-500 col-span-2">
+    <p *ngIf="firstNameInvalid">
+      First name must be at least 3 characters long and cannot contain spaces.
+    </p>
+
+    <p *ngIf="lastNameInvalid">
+      Last name must be at least 3 characters long and cannot contain spaces.
+    </p>
+
+    <p *ngIf="emailInvalid">
+      Please enter a valid email ending with @boolean.co.uk.
+    </p>
+  </div>
+
   <label
     for="firstName"
     class="block overflow-hidden rounded-md border border-gray-200 px-3 py-2 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
@@ -12,6 +26,9 @@
       name="firstName"
       placeholder="John"
       class="mt-1 w-full border-none p-0 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+      required
+      minlength="3"
+      pattern="^\S+$"
     />
   </label>
 
@@ -28,6 +45,27 @@
       name="lastName"
       placeholder="Doe"
       class="mt-1 w-full border-none p-0 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+      required
+      minlength="3"
+      pattern="^\S+$"
+    />
+  </label>
+
+  <label
+    for="email"
+    class="block col-span-2 overflow-hidden rounded-md border border-gray-200 px-3 py-2 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+  >
+    <span class="text-xs font-medium text-gray-700"> Email </span>
+
+    <input
+      type="email"
+      [(ngModel)]="newContact.email"
+      id="email"
+      name="email"
+      placeholder="john.doe@boolean.co.uk"
+      class="mt-1 w-full border-none p-0 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+      required
+      pattern="^[a-zA-Z0-9._%+-]+@boolean\.co\.uk$"
     />
   </label>
 
@@ -61,6 +99,7 @@
       class="mt-1 w-full border-none p-0 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
     />
   </label>
+
   <button
     class="inline-block col-span-2 rounded border border-red-300 px-12 py-3 text-sm font-medium text-red-300 hover:bg-red-300 hover:text-white focus:outline-none focus:ring active:bg-indigo-500"
     type="button"

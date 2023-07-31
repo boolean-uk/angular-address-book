@@ -15,9 +15,23 @@ export class ContactFormComponent {
     id: CONTACTS.length + 1,
     firstName: '',
     lastName: '',
+    email: '',
     street: '',
     city: '',
   };
+
+  // Getters to check if fields are invalid
+  get firstNameInvalid(): boolean {
+    return this.isFirstNameInvalid();
+  }
+
+  get lastNameInvalid(): boolean {
+    return this.isLastNameInvalid();
+  }
+
+  get emailInvalid(): boolean {
+    return this.isEmailInvalid();
+  }
 
   // Determine whether the form is used for editing or adding a new contact
   get isEditMode(): boolean {
@@ -39,8 +53,45 @@ export class ContactFormComponent {
     return CONTACTS.find((contact) => contact.id === id);
   }
 
+  // Check if the first name is invalid
+  private isFirstNameInvalid(): boolean {
+    return (
+      this.newContact.firstName.length < 3 ||
+      /\s/.test(this.newContact.firstName)
+    );
+  }
+
+  // Check if the last name is invalid
+  private isLastNameInvalid(): boolean {
+    return (
+      this.newContact.lastName.length < 3 || /\s/.test(this.newContact.lastName)
+    );
+  }
+
+  // Check if the email is invalid
+  private isEmailInvalid(): boolean {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@boolean\.co\.uk$/;
+    return !emailRegex.test(this.newContact.email);
+  }
+
+  // Check if the entire form is invalid
+  get formInvalid(): boolean {
+    return (
+      this.isFirstNameInvalid() ||
+      this.isLastNameInvalid() ||
+      this.isEmailInvalid()
+    );
+  }
+
   // Handler for the save button
   onSave(): void {
+    // If the form is invalid, prevent saving
+
+    if (this.formInvalid) {
+      alert('Please fill in all fields correctly!');
+      return;
+    }
+
     // Emit the contact to the parent component to save
     this.saveContact.emit(this.newContact);
 
@@ -50,6 +101,7 @@ export class ContactFormComponent {
         id: 0,
         firstName: '',
         lastName: '',
+        email: '',
         street: '',
         city: '',
       };
