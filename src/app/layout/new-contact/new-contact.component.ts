@@ -18,8 +18,8 @@ export class NewContactComponent implements OnInit {
   contact: Contact | null | undefined = null;
 
   formContact = this.fb.group({
-    firstName: ['', [Validators.required, Validators.minLength(3)]],
-    lastName: ['', [Validators.required, Validators.minLength(3)]],
+    firstName: ['', [Validators.required, Validators.minLength(3), cityValidator]],
+    lastName: ['', [Validators.required, Validators.minLength(3), cityValidator]],
     street: ['', Validators.required],
     city: ['', Validators.required],
   });

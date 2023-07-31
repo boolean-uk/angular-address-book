@@ -7,10 +7,10 @@ export const cityValidator = (
   if (!value) {
     return { cityValidator: true };
   }
-  if (!value.endsWith(' ')) {
+  if (value.endsWith(' ')) {
     return { cityValidator: true };
   }
-  if (!value.startsWith(' ')) {
+  if (value.startsWith(' ')) {
     return { cityValidator: true };
   }
 
