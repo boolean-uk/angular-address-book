@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
-  declarations: [AppComponent, ContactsComponent, ContactListComponent],
+  declarations: [AppComponent, ContactsComponent, ContactListComponent, ContactComponent],
   imports: [BrowserModule, AppRoutingModule, LayoutModule, ReactiveFormsModule],
   bootstrap: [AppComponent],
 })
