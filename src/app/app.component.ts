@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-address-book';
+  contacts: any[] = [];
+
+  onContactAdded(newContact: any) {
+    this.contacts.push(newContact);
+  }
 }

@@ -1,0 +1,27 @@
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .contact-details {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px;
+  }
+  
+  .contact-details div {
+    margin-bottom: 10px;
+  }
+
+  .contact-details strong {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .contact-details span {
+    color: #888;
+  }
