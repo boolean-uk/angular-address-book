@@ -10,7 +10,7 @@ export class ContactService {
   constructor() { }
 
   addContact(contact: Contact): void {
-    this._contacts.push()
+    this._contacts.push(contact)
   }
 
   getContacts(): Contact[] {
