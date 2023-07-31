@@ -1,1 +1,118 @@
-<p>new-contact works!</p>
+<h1>Create contact</h1>
+<form [formGroup]="contactForm" (ngSubmit)="addContact()">
+  <div class="form-group">
+    <label for="firstName">First name</label>
+    <input
+      class="form-control"
+      type="text"
+      name="firstName"
+      formControlName="firstName"
+    />
+    <!-- invalid data messages -->
+    <div
+      *ngIf="
+        contactForm.get('firstName')?.touched &&
+        contactForm.get('firstName')?.invalid
+      "
+    >
+      <div
+        *ngIf="contactForm.get('firstName')?.errors?.['required']"
+        class="text-danger"
+      >
+        Name is required.
+      </div>
+      <div
+        *ngIf="contactForm.get('firstName')?.errors?.['minlength'] "
+        class="text-danger"
+      >
+        Name is too short.
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last name</label>
+    <input
+      class="form-control"
+      type="text"
+      name="lastName"
+      formControlName="lastName"
+    />
+    <!-- invalid data messages -->
+    <div
+      *ngIf="
+        contactForm.get('lastName')?.touched &&
+        contactForm.get('lastName')?.invalid
+      "
+    >
+      <div
+        *ngIf="contactForm.get('lastName')?.errors?.['required']"
+        class="text-danger"
+      >
+        Last name is required.
+      </div>
+      <div
+        *ngIf="contactForm.get('lastName')?.errors?.['minlength'] "
+        class="text-danger"
+      >
+        Last name is too short.
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="street">Street</label>
+    <input
+      class="form-control"
+      type="text"
+      name="street"
+      formControlName="street"
+    />
+    <!-- invalid data messages -->
+    <div
+      *ngIf="
+        contactForm.get('street')?.touched && contactForm.get('street')?.invalid
+      "
+    >
+      <div
+        *ngIf="contactForm.get('street')?.errors?.['required']"
+        class="text-danger"
+      >
+        Street is required.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="firstName">City</label>
+    <input
+      class="form-control"
+      type="text"
+      name="city"
+      formControlName="city"
+    />
+
+    <!-- invalid data messages -->
+    <div
+      *ngIf="
+        contactForm.get('city')?.touched && contactForm.get('city')?.invalid
+      "
+    >
+      <div
+        *ngIf="contactForm.get('city')?.errors?.['required']"
+        class="text-danger"
+      >
+        City is required.
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end">
+    <button
+      class="btn btn-primary submit-button"
+      type="submit"
+      [disabled]="contactForm.invalid"
+    >
+      Create
+    </button>
+  </div>
+</form>
