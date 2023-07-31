@@ -31,5 +31,5 @@ Add an email input and make sure that it is a valid email, and the email ends wi
 
 ## Images
 
-![Contacts Page](./images/contacts-page.png)
 ![Form Page](./images/form-page.png)
+![Contacts Page](./images/contacts-page.png)
