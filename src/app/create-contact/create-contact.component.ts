@@ -33,9 +33,10 @@ export class CreateContactComponent {
         street: this.contactForm.value.street,
         city: this.contactForm.value.city,
       };
-      this.contactForm.reset();
       this._contactService.addContact(newContact);
       this._router.navigate(['/contacts']);
+    } else {
+      alert('All fields are required.');
     }
   }
 }
