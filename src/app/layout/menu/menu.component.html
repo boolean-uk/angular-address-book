@@ -1,7 +1,15 @@
-<h2>Menu</h2>
-<nav>
-  <ul>
-    <li><a routerLink="/list">Contacts list</a></li>
-    <li><a routerLink="/new">Add new contact</a></li>
-  </ul>
-</nav>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h2 style="font-size: 2em">Menu</h2>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <button mat-raised-button color="primary" routerLink="/list">
+      Contacts list
+    </button>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <button mat-raised-button color="primary" routerLink="/new">
+      Add new contact
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
