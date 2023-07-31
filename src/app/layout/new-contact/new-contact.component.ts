@@ -31,6 +31,7 @@ export class NewContactComponent implements OnInit {
     if(this.formContact.valid){
 
       const newContact: Contact = {
+        id: this.contactService.contactList.length,
         firstname: this.formContact.value.firstName || '',
         lastname: this.formContact.value.lastName || '',
         street: this.formContact.value.street || '',

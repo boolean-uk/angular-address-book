@@ -18,9 +18,17 @@ export class ContactService {
     return this.contactsList;
   }
 
+  getContactById(idStr: string) {
+    const id = Number(idStr);
+    const contact = this.contactsList.find((contact) => contact.id === id);
+    console.log('found  contact', contact);
+    return contact;
+  }
+
 }
 
 export interface Contact {
+  id: number
   firstname: string
   lastname: string
   street: string
