@@ -6,6 +6,7 @@ import { Contact, ContactsService } from 'src/app/services/contacts.service';
   templateUrl: './contact-list.component.html',
   styleUrls: ['./contact-list.component.css']
 })
+
 export class ContactListComponent implements OnInit {
   
   contacts: Contact[] = []
