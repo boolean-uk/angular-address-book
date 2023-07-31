@@ -8,16 +8,6 @@ import { ContactsServiceService } from 'src/app/contacts-service.service';
   styleUrls: ['./contacts-list.component.css'],
 })
 export class ContactsListComponent {
-  // newContact: Contact | null = null
-  // addToContacts() {
-  //   if (!this.newContact) {
-  //     return;
-  //   }
-
-  //   this.contactsList.push(this.newContact);
-  //   this.newContact = null;
-  // }
-  // contactsList: Contact[] = [];
   contacts: Contact[];
 
   constructor(private contactsService: ContactsServiceService) {

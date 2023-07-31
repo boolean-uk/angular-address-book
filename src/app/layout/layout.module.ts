@@ -6,8 +6,10 @@ import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
 import { ViewContactComponent } from './view-contact/view-contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { Contact } from './contact.model';
 import { ContactComponent } from './contact/contact.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,7 @@ import { ContactComponent } from './contact/contact.component';
     AddContactComponent,
     ViewContactComponent,
   ],
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule, MatDividerModule, MatListModule],
   exports: [
     ContactComponent,
     MenuComponent,

@@ -1,1 +1,5 @@
-<p>view-contact works!</p>
+<div *ngIf="contact">
+  <h1>{{ contact.firstName }} {{ contact.lastName }}</h1>
+  <p>{{ contact.street }} {{ contact.city }}</p>
+  <p>{{ contact.email }}</p>
+</div>

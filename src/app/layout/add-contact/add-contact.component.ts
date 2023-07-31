@@ -13,10 +13,11 @@ export class AddContactComponent implements OnInit {
   constructor(private fb: FormBuilder, private contactsService: ContactsServiceService, private router: Router) {}
 
   contactForm = this.fb.group({
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
+    firstName: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]+$')]],
+    lastName: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]+$')]],
     street: ['', Validators.required],
     city: ['', Validators.required],
+    email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9+_.-]+@boolean.co.uk$')]],
   });
 
   ngOnInit(): void {}
@@ -29,11 +30,11 @@ export class AddContactComponent implements OnInit {
         lastName: this.contactForm.value.lastName as string,
         street: this.contactForm.value.street as string,
         city: this.contactForm.value.city as string,
+        email: this.contactForm.value.email as string,
       };
       this.contactsService.addContact(newContact);
       this.router.navigate(['/contactsList']);      
-}
-    
+    }
 
     console.log('form submitted', this.contactForm);
   }

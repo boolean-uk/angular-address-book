@@ -1,0 +1,9 @@
+.mat-list-item {
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  
