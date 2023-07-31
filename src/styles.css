@@ -1,1 +1,145 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background: linear-gradient(45deg, #f8e0af, #f4d69f);
+  min-height: 100vh;
+  /*display: flex;*/
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #d9873e;
+  border-radius: 8px;
+  background-color: #f8e0af;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #c65e20;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #c65e20;
+  border-radius: 8px;
+  background-color: #fde8d7;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #d9873e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover {
+  background-color: #b64b10;
+}
+
+ul.contact-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-item {
+  margin-bottom: 10px;
+  color: #d9873e;
+  font-size: 18px;
+}
+
+.contact-details {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #c65e20;
+  border-radius: 8px;
+  background-color: #fde8d7;
+}
+
+.contact-title {
+  margin: 0;
+  color: #c65e20;
+  font-size: 28px;
+}
+
+.contact-content {
+  margin-top: 15px;
+  color: #8c440e;
+}
+
+h2 {
+  color: #b64b10;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+a {
+  color: #8c440e;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease;
+  line-height: 2;
+  font-size: 20px;
+}
+
+a:hover {
+  border-bottom: 2px solid #c65e20;
+}
+
+a:visited {
+  color: #8c440e;
+}
+
+.contact-item {
+  margin-bottom: 10px;
+  color: #d9873e;
+  font-size: 18px;
+  padding-left: 20px;
+  position: relative;
+}
+.contact-item::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  color: #c65e20;
+}
+
+.contact-item a {
+  color: #c65e20;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease;
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+}
+
+.contact-item a:hover {
+  border-bottom: 2px solid #c65e20;
+}
+
+p, span, li{
+  color: #3d251e;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
