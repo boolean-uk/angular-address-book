@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 @Injectable({
   providedIn: 'root',
 })
-export class ContactServiceService {
+export class ContactService {
   private _contacts: Contact[] = [];
   private _contactSubject = new BehaviorSubject<Contact[]>([]);
   constructor() {}
