@@ -24,4 +24,9 @@ export class ContactService {
   addContact(newContact: Contact): void {
     this.contacts.push(newContact)
   }
+
+  getContact(id: number): Contact {
+    const contacts: Contact[] = this.getContacts()
+    return contacts[id]
+  }
 }

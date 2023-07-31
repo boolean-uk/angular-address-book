@@ -1,6 +1,6 @@
 import {Component, EventEmitter} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
-import {booleanDomain, emptySpaceFree} from "./contactValidator";
+import {booleanDomain, emptySpaceFree} from "./contact-validators";
 import {Contact, ContactService} from "../contact.service";
 
 @Component({
