@@ -11,16 +11,16 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   { 
-    path: 'contact-list',
+    path: 'contacts-list',
     component: ContactListComponent
+  },
+  {
+    path: 'contacts-list/new',
+    component: ContactFormComponent
   },
   {
     path: 'contacts-list/:id',
     component: ContactViewComponent
-  },
-  {
-    path: 'contact-list/new',
-    component: ContactFormComponent
   },
 ];
 

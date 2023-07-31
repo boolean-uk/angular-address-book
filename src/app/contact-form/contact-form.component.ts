@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TitleCasePipe } from '@angular/common';
 import { Contact } from 'src/Contact';
-
 import { ContactService } from '../contact.service';
+
+
 
 @Component({
   selector: 'app-contact-form',
@@ -29,16 +31,20 @@ export class ContactFormComponent implements OnInit {
     if (this.contactForm.valid) {
       const contact: Contact = {
         id: this.contactService.getContacts().length.toString(),
-        firstName: this.contactForm.value.firstName,
-        lastName: this.contactForm.value.lastName,
-        street: this.contactForm.value.street,
-        city: this.contactForm.value.city
+        firstName: this.transformText(this.contactForm.value.firstName),
+        lastName: this.transformText(this.contactForm.value.lastName),
+        street: this.transformText(this.contactForm.value.street),
+        city: this.transformText(this.contactForm.value.city)
       };
       this.contactService.addContact(contact);
       this.router.navigate(['']);
     }
     else {
-      alert('All fields required.');
+      alert('All required fields.');
     }
+  }
+
+  transformText(text: string): string {
+    return (new TitleCasePipe()).transform(text);
   }
 }
