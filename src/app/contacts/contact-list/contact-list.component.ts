@@ -20,8 +20,6 @@ export type ContactType = {
 export class ContactListComponent implements OnInit{
   contacts: ContactType[] = []
 
-  private subscription: Subscription | null = null
-
   constructor(private contactsService: ContactService) { 
 
   }

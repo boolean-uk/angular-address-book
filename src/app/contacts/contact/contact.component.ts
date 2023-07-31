@@ -9,7 +9,7 @@ import { ContactType } from '../contact-list/contact-list.component';
 })
 export class ContactComponent implements OnInit{
   contact: ContactType | null = null
-  constructor(private route: ActivatedRoute) { }
+
   ngOnInit(): void {
     this.contact = history.state
   }
