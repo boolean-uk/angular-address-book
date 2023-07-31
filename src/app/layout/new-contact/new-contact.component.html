@@ -1,0 +1,20 @@
+<h2>New contact</h2>
+<form [formGroup]="userForm" (ngSubmit)="create()">
+  <div>
+    <label for="firstName"> First Name: </label>
+    <input type="text" name="firstName" formControlName="firstName" />
+  </div>
+  <div>
+    <label for="lastName"> Last Name: </label>
+    <input type="text" name="lastName" formControlName="lastName" />
+  </div>
+  <div>
+    <label for="street"> Street: </label>
+    <input type="text" name="street" formControlName="street" />
+  </div>
+  <div>
+    <label for="city"> City: </label>
+    <input type="text" name="city" formControlName="city" />
+  </div>
+  <button [disabled]="!userForm.valid" type="submit">create</button>
+</form>
