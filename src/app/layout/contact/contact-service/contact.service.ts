@@ -17,4 +17,8 @@ export class ContactService {
         console.log(this.contactList)
         return this.contactList;   
     }
+
+    getContactById(id: number) {
+      return this.contactList.at(id)
+    }
 }
