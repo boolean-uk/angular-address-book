@@ -1,0 +1,7 @@
+<h2 style="font-size: 2em">Contacts</h2>
+
+<app-contact-list-item
+  *ngFor="let contact of contactList"
+  [contact]="contact"
+  (contactDeleted)="handleContactDeleted()">
+</app-contact-list-item>

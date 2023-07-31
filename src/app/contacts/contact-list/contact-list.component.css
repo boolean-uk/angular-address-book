@@ -1,0 +1,4 @@
+:host {
+  width: calc(100vw - 240px);
+  padding-top: 1em;
+}

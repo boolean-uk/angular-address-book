@@ -1,0 +1,20 @@
+<li>
+  {{ contact.firstName }} {{ contact.lastName }}
+  <div>
+    <button
+      mat-raised-button
+      color="primary"
+      [routerLink]="['/view', contact.id]">
+      View
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      [routerLink]="['/edit', contact.id]">
+      Edit
+    </button>
+    <button mat-raised-button color="warn" (click)="deleteContact()">
+      Delete
+    </button>
+  </div>
+</li>
