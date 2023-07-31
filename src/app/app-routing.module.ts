@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'new-contact',
     component: NewContactComponent
   },
-  { path: 'view-contact',
+  { path: 'view-contact/:id',
     component: ViewContactComponent
   }
 ]
