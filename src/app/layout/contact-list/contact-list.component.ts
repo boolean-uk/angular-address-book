@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-contact-list',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact-list.component.css'],
 })
 export class ContactListComponent {
+  contacts: Contact[] = [];
 
 }
