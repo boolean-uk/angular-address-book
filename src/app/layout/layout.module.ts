@@ -4,9 +4,10 @@ import { RouterModule } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
 import { ContactFormComponent } from './contact/contact-form/contact-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ContactListComponent } from './contact/contact-list/contact-list/contact-list.component';
 
 @NgModule({
-  declarations: [MenuComponent, ContactFormComponent],
+  declarations: [MenuComponent, ContactFormComponent, ContactListComponent],
   imports: [CommonModule, RouterModule, ReactiveFormsModule],
   exports: [MenuComponent],
 })

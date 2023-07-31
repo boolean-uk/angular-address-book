@@ -10,7 +10,6 @@ import { ContactService } from '../../contact-service/contact.service';
 export class ContactListComponent {
   constructor(private contactService: ContactService) { }
 
-  contactList = this.contactService.getContactList();
-  
+  contactList = this.contactService.getContactList(); 
 }
 
