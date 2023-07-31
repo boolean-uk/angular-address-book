@@ -14,7 +14,8 @@ export class AddContactComponent {
     firstName: ['', [Validators.required, Validators.minLength(3), NameValidator.cannotContainSpace]],
     lastName: ['', [Validators.required, Validators.minLength(3), NameValidator.cannotContainSpace]],
     street: ['', [Validators.required]],
-    city: ['', [Validators.required]]
+    city: ['', [Validators.required]],
+    email :['', [Validators.required,Validators.pattern(/@boolean.co.uk$/),Validators.email]]
   })
 
   constructor(
