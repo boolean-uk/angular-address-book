@@ -8,7 +8,8 @@ export type ContactType = {
   firstName: string | null,
   lastName: string | null,
   address: string | null,
-  phoneNumber: string | null
+  phoneNumber: string | null,
+  email: string|null
 }
 @Component({
   selector: 'app-contact-list',
