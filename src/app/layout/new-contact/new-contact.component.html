@@ -23,6 +23,11 @@
     </div>
 
     <div>
+      <label for="email">Email:</label>
+      <input id="email" type="text" formControlName="email" />
+    </div>
+
+    <div>
       <button [disabled]="!formContact.valid" type="submit">Create</button>
     </div>
   </div>

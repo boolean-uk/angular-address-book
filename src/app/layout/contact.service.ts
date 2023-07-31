@@ -33,4 +33,5 @@ export interface Contact {
   lastname: string
   street: string
   city: string
+  email: string
 }

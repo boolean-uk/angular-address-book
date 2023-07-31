@@ -1,7 +1,7 @@
 import { Contact, ContactService } from './../contact.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { cityValidator } from 'src/app/validators/cityValidator';
+import { cityValidator, cityValidatorEmail } from 'src/app/validators/cityValidator';
 
 @Component({
   selector: 'app-new-contact',
@@ -22,10 +22,10 @@ export class NewContactComponent implements OnInit {
     lastName: ['', [Validators.required, Validators.minLength(3), cityValidator]],
     street: ['', Validators.required],
     city: ['', Validators.required],
+    email: ['', [Validators.required, cityValidatorEmail]]
   });
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   submit(event: Event) {
     event.preventDefault();
@@ -37,7 +37,8 @@ export class NewContactComponent implements OnInit {
         firstname: this.formContact.value.firstName || '',
         lastname: this.formContact.value.lastName || '',
         street: this.formContact.value.street || '',
-        city: this.formContact.value.city || ''
+        city: this.formContact.value.city || '',
+        email: this.formContact.value.email || '',
       }
 
       this.contactService.addToList(newContact)
