@@ -10,8 +10,7 @@
   <div *ngFor="let contact of contacts" class="contact-card">
     <div class="contact-name">{{ contact.firstName }} {{ contact.lastName }}</div>
     <div class="contact-details">
-      <span>Email: {{ contact.email }}</span>
-      <span>Phone: {{ contact.phone }}</span>
+      <button class="view-button" (click)="viewContact(contact.id)">View</button>
     </div>
   </div>
 </div>

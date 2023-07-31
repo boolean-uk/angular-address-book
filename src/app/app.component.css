@@ -10,11 +10,11 @@
 
 .app-container {
   display: flex;
-  height: 100vh; /* Adjust the height as needed */
+  height: 100vh; 
 }
 
 .menu-container {
-  flex: 0 0 20%; /* Adjust the width as needed */
+  flex: 0 0 30%; 
   background-color: #f0f0f0;
   padding: 20px;
 }
