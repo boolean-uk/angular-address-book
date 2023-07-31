@@ -14,7 +14,7 @@ export const noSpaceValidator = (
 export const emailValidator =(
   control: AbstractControl
 ): ValidationErrors | null => {
-  const emailPattern = /^[A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z]{2,}$/
+  const emailPattern = /^[A-Za-z0-9._-]+@boolean\.co\.uk$/
   const value = '' + control.value;
   if (control.value && !emailPattern.test(control.value)) {
     return { invalidEmail: true };
