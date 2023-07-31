@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: black;
+  color: white;
+}
+
+button {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 5px 10px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+h2 {
+  color: black;
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 5px 0;
+}
+
+body {
+  background-color: white;
+}
+
+a:visited {
+  text-decoration: transparent;
+  color: white;
+}
