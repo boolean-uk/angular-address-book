@@ -15,8 +15,7 @@ import { ContactService } from './contact.service';
     AppComponent, 
     ContactFormComponent, 
     ContactListComponent, 
-    ContactViewComponent, 
-    ContactService
+    ContactViewComponent
   ],
   imports: [BrowserModule, AppRoutingModule, LayoutModule, ReactiveFormsModule],
   bootstrap: [AppComponent],

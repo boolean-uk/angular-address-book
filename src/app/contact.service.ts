@@ -5,7 +5,29 @@ import { Contact } from 'src/Contact';
   providedIn: 'root'
 })
 export class ContactService {
-  private contacts: Contact[] = [];
+  private contacts: Contact[] = [
+    {
+      id: '0',
+      firstName: 'Adam',
+      lastName: 'Kowalski',
+      street: 'Dluga',
+      city: 'Warszawa'
+    },
+    {
+      id: '1',
+      firstName: 'Jan',
+      lastName: 'Kowalski',
+      street: 'Chmielna',
+      city: 'Warszawa'
+    },
+    {
+      id: '2',
+      firstName: 'Anna',
+      lastName: 'Nowak',
+      street: 'Polska',
+      city: 'Krakow'
+    },
+  ];
 
   constructor() { }
 
