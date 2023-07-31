@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Contact } from '../model/contact.model';
 import { ContactService } from '../contact-service/contact.service';
-import { emailValidation } from '';
-
+import { emailValidation } from 'src/app/validation/emailValidation';
+import { whiteSpaceValidation } from 'src/app/validation/whiteSpaceValidation';
 
 @Component({
   selector: 'app-contact-form',
@@ -18,8 +18,8 @@ export class ContactFormComponent implements OnInit{
   }
 
   contactForm = this.fb.group({
-    firstName: ['', [Validators.required, Validators.minLength(3)]],
-    lastName: ['', [Validators.required, Validators.minLength(3)]],
+    firstName: ['', [Validators.required, Validators.minLength(3), whiteSpaceValidation]],
+    lastName: ['', [Validators.required, Validators.minLength(3), whiteSpaceValidation]],
     street: ['', Validators.required],
     city: ['', Validators.required],
     email: ['', [Validators.required, Validators.email, emailValidation]] 
