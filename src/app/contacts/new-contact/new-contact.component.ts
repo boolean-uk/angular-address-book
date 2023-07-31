@@ -15,9 +15,10 @@ export class NewContactComponent implements OnInit {
   isSaveButtonVisible: boolean = false;
 
   contactForm: FormGroup = this.fb.group({
-    firstName: ['', [Validators.required]],
-    email: ['', [Validators.required]],
-    phone: ['', [Validators.required]]
+    firstName: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^\S*$/)]],
+    lastName: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^\S*$/)]],
+    email: ['', [Validators.required, Validators.email, Validators.pattern(/@boolean.co.uk$/)]],
+    phone: ['', [Validators.required, Validators.minLength(9)]]
   });
 
   constructor(private fb: FormBuilder, private contactService: ContactsService) { }
@@ -28,9 +29,10 @@ export class NewContactComponent implements OnInit {
 
   initContactForm() {
     this.contactForm = this.fb.group({
-      lastName: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      phone: ['', [Validators.required]]
+      firstName: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^\S*$/)]],
+      lastName: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^\S*$/)]],
+      email: ['', [Validators.required, Validators.email, Validators.pattern(/@boolean.co.uk$/)]],
+      phone: ['', [Validators.required, Validators.minLength(9)]]
     });
 
     this.contactForm.valueChanges.subscribe(() => {
