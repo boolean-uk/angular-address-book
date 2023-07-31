@@ -14,6 +14,20 @@ export class ContactsService {
       city: 'San Francisco',
       id: 'da12384e5sda434x',
     },
+    {
+      firstName: 'Jane',
+      lastName: 'Smith',
+      street: 'Main Street',
+      city: 'New York',
+      id: 'sadz49edxcv2432',
+    },
+    {
+      firstName: 'Bob',
+      lastName: 'Johnson',
+      street: 'Oak Avenue',
+      city: 'Los Angeles',
+      id: 'asde34dcxvzsc23r',
+    },
   ];
   constructor() {}
 

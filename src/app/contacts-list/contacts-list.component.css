@@ -1,0 +1,12 @@
+:host {
+  width: 50%;
+}
+
+.list {
+  margin-top: 2rem;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+}
