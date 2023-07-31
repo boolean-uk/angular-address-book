@@ -12,7 +12,7 @@ export class ContactListComponent {
   contactService: ContactService = inject(ContactService);
 
   constructor() {
-    this.contactService.getAllContacts().then((contactList: Contact[]) => {
+    this.contactService.getAllContacts().subscribe((contactList: Contact[]) => {
       this.contactList = contactList;
     });
   }

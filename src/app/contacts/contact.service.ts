@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import axios from 'axios';
+import { Observable } from 'rxjs';
 import { Contact } from './contact';
 
 @Injectable({
@@ -8,18 +9,17 @@ import { Contact } from './contact';
 export class ContactService {
   dbUrl = 'http://localhost:3000/contacts';
 
-  async addNewContact(contact: Omit<Contact, 'id'>): Promise<Contact> {
-    const response = await axios.post(this.dbUrl, contact);
-    return response.data;
+  constructor(private http: HttpClient) {}
+
+  addNewContact(contact: Omit<Contact, 'id'>): Observable<Contact> {
+    return this.http.post<Contact>(this.dbUrl, contact);
   }
 
-  async getAllContacts(): Promise<Contact[]> {
-    const response = await axios.get(this.dbUrl);
-    return response.data ?? [];
+  getAllContacts(): Observable<Contact[]> {
+    return this.http.get<Contact[]>(this.dbUrl);
   }
 
-  async getContactById(id: number): Promise<Contact | undefined> {
-    const response = await axios.get(`${this.dbUrl}/${id}`);
-    return response.data ?? {};
+  getContactById(id: number): Observable<Contact | undefined> {
+    return this.http.get<Contact>(`${this.dbUrl}/${id}`);
   }
 }

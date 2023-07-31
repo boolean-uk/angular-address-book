@@ -25,15 +25,18 @@ export class ContactNewFormComponent {
     ],
     email: [
       '',
-      [Validators.required, Validators.pattern(/^[^\s]*@boolean.co.uk$/)],
+      [
+        Validators.required,
+        Validators.pattern(/^([A-Za-z]|[0-9])+@boolean.co.uk$/),
+      ],
     ],
     street: ['', Validators.required],
     city: ['', Validators.required],
   });
 
   addNewContact() {
-    this.contactService.addNewContact(
-      this.newContactForm.value as Omit<Contact, 'id'>
-    );
+    this.contactService
+      .addNewContact(this.newContactForm.value as Omit<Contact, 'id'>)
+      .subscribe();
   }
 }

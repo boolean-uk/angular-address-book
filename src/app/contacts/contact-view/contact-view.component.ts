@@ -15,7 +15,7 @@ export class ContactViewComponent {
 
   constructor() {
     const id = parseInt(this.route.snapshot.params['id']);
-    this.contactService.getContactById(id).then(contact => {
+    this.contactService.getContactById(id).subscribe(contact => {
       this.contact = contact;
     });
   }
