@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ContactService } from '../ContactsService';
 
 
 export type ContactType = {
@@ -16,25 +17,16 @@ export type ContactType = {
 })
 
 export class ContactListComponent implements OnInit{
-  contacts: ContactType[] = [{
-    firstName: "Wojtek",
-    lastName: "Zolkowski",
-    phoneNumber: "728",
-    address: "Warsaw"
-  }]
+  contacts: ContactType[] = []
 
   private subscription: Subscription | null = null
 
-  constructor(private router: Router) { 
+  constructor(private contactsService: ContactService) { 
 
   }
 
   ngOnInit(): void {
-    this.contacts.push(history.state)
-  }
-
-  ngOnDestroy(): void {
-    this.subscription?.unsubscribe();
+    this.contacts = this.contactsService.getContacts();
   }
 
 

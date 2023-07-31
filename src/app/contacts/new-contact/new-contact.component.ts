@@ -2,6 +2,7 @@ import { Component, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ContactType } from '../contact-list/contact-list.component';
 import { Router } from '@angular/router';
+import { ContactService } from '../ContactsService';
 
 @Component({
   selector: 'app-new-contact',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class NewContactComponent{
 
 
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private fb: FormBuilder, private router: Router, private contactsSerive: ContactService) { }
 
   contactForm = this.fb.group({
     firstName: ['', Validators.required],
@@ -36,7 +37,8 @@ export class NewContactComponent{
         address: this.contactForm.get('address')!.value,
       }
 
-      this.router.navigateByUrl("/",{state: newContact})
+      this.contactsSerive.addContact(newContact)
+      this.router.navigateByUrl("/")
       this.contactForm.reset()
     }
     }
