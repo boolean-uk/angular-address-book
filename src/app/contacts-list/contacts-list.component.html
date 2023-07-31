@@ -1,0 +1,7 @@
+<!-- <p>contacts-list works!</p> -->
+<h1>Contacts </h1>
+
+<div *ngFor="let contact of contacts">
+    <p>{{ contact.firstName }} {{ contact.lastName }}<a (click)="viewContact(contact.id)"routerLink="/view-contact">View</a></p>
+  <!-- <li><a routerLink="/view-contact">View</a></li> -->
+</div>
