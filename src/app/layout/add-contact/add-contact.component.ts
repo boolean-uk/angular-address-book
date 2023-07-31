@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Contact } from '../contact.model';
+import { ContactsServiceService } from 'src/app/contacts-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-contact',
@@ -8,8 +10,7 @@ import { Contact } from '../contact.model';
   styleUrls: ['./add-contact.component.css'],
 })
 export class AddContactComponent implements OnInit {
-  @Output() addToContacts = new EventEmitter();
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private contactsService: ContactsServiceService, private router: Router) {}
 
   contactForm = this.fb.group({
     firstName: ['', Validators.required],
@@ -23,12 +24,14 @@ export class AddContactComponent implements OnInit {
   submit(event: Event) {
     if (this.contactForm.valid) {
       const newContact: Contact = {
+        id: this.contactsService.nextId,
         firstName: this.contactForm.value.firstName as string,
         lastName: this.contactForm.value.lastName as string,
         street: this.contactForm.value.street as string,
         city: this.contactForm.value.city as string,
       };
-      this.addToContacts.emit(newContact)
+      this.contactsService.addContact(newContact);
+      this.router.navigate(['/contactsList']);      
 }
     
 
