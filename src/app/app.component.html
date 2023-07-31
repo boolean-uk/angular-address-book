@@ -1,4 +1,14 @@
-<app-menu></app-menu>
-<div class="page">
-  <router-outlet></router-outlet>
+<div class="app-container">
+  <!-- Left Section (Menu) -->
+  <div class="menu-container">
+    <h2>Menu</h2>
+    <ul>
+      <li><a routerLink="/contacts">Contacts List</a></li>
+      <li><a routerLink="/new-contact">Add New Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="content-container">
+    <router-outlet></router-outlet>
+  </div>
 </div>

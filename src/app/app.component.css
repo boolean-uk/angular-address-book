@@ -7,3 +7,45 @@
   display: flex;
   justify-content: center;
 }
+
+.app-container {
+  display: flex;
+  height: 100vh; /* Adjust the height as needed */
+}
+
+.menu-container {
+  flex: 0 0 20%; /* Adjust the width as needed */
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.menu-container h2 {
+  margin-bottom: 15px;
+}
+
+.menu-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-container li {
+  margin-bottom: 10px;
+}
+
+.menu-container li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.menu-container li a:hover {
+  color: #007bff;
+}
+
+.content-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.content-container h2 {
+  margin-bottom: 20px;
+}
