@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { Observable } from 'rxjs/internal/Observable';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -19,8 +21,10 @@ export class ContactService {
   getContactsLength() {
     return this._contacts.length;
   }
-  getContactById(id: string) {
-    return this._contacts.find((contact) => contact.id === id);
+  getContactById(id: string): Observable<Contact | undefined> {
+    return this._contactSubject
+      .asObservable()
+      .pipe(map((contacts) => contacts.find((contact) => contact.id === id)));
   }
 }
 

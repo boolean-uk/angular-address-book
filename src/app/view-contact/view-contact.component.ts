@@ -2,6 +2,8 @@ import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Contact, ContactService } from '../contact.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { Observable } from 'rxjs/internal/Observable';
+import { switchMap } from 'rxjs/internal/operators/switchMap';
 
 @Component({
   selector: 'app-view-contact',
@@ -17,9 +19,18 @@ export class ViewContactComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.paramsSub = this.route.params.subscribe((params: Params) => {
-      this.contact = this._contactService.getContactById(params['id']);
-    });
+    this.paramsSub = this.route.params
+      .pipe(
+        switchMap((params: Params) =>
+          this._contactService.getContactById(params['id'])
+        )
+      )
+      .subscribe((contact) => {
+        this.contact = contact;
+      });
+    if (this.contact) {
+      this.contact.lastName = 'changed name';
+    }
   }
   ngOnDestroy(): void {
     if (this.paramsSub) {
