@@ -5,7 +5,6 @@ import { ContactNewFormComponent } from './contacts/contact-new-form/contact-new
 import { ContactViewComponent } from './contacts/contact-view/contact-view.component';
 
 const routes: Routes = [
-  // { path: '', component: AppComponent },
   { path: 'new', component: ContactNewFormComponent },
   { path: 'list', component: ContactListComponent },
   { path: 'view/:id', component: ContactViewComponent },
