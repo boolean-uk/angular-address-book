@@ -7,7 +7,7 @@ import { Contact } from "../model/contact.model";
 export class ContactService {
     constructor () {}
 
-    contactList: Contact[] = [{firstName: "Joe", lastName: "Parker", street: "Hoxton 34", city: "London"}];
+    contactList: Contact[] = [{firstName: "Joe", lastName: "Parker", street: "Hoxton 34", city: "London", email: "joe@boolean.co.uk"}];
 
     addContact(contact: Contact) {
       this.contactList.push(contact);

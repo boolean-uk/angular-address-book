@@ -1,6 +1,7 @@
 <ng-container *ngIf="contact">
     <h1>{{ contact.firstName }} {{ contact.lastName }}</h1>
     <p>{{ contact.street }}, {{ contact.city }}</p>
+    <p>{{ contact.email }}</p>
 </ng-container>
 <!-- if we don't have a contact -->
 <ng-container *ngIf="!contact">

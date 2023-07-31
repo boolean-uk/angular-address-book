@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Contact } from '../model/contact.model';
 import { ContactService } from '../contact-service/contact.service';
+import { emailValidation } from '';
+
 
 @Component({
   selector: 'app-contact-form',
@@ -19,7 +21,8 @@ export class ContactFormComponent implements OnInit{
     firstName: ['', [Validators.required, Validators.minLength(3)]],
     lastName: ['', [Validators.required, Validators.minLength(3)]],
     street: ['', Validators.required],
-    city: ['', Validators.required]
+    city: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email, emailValidation]] 
   });
 
   submit(event: Event) {
@@ -29,7 +32,8 @@ export class ContactFormComponent implements OnInit{
         firstName: this.contactForm.value.firstName as string,
         lastName: this.contactForm.value.lastName as string,
         street: this.contactForm.value.street as string,
-        city: this.contactForm.value.city as string
+        city: this.contactForm.value.city as string,
+        email: this.contactForm.value.email as string
       };
 
       this.contactService.addContact(newContact);

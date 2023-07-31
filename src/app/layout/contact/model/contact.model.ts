@@ -3,4 +3,5 @@ export interface Contact {
     lastName: string;
     street: string;
     city: string;
+    email: string;
   }
