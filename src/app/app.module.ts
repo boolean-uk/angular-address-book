@@ -5,12 +5,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
-import { ContactsComponent } from './contacts/contacts.component';
-import { ContactListComponent } from './contact-list/contact-list.component';
-import { ContactComponent } from './contact/contact.component';
+import { FilmsComponent } from './films/films.component';
+import { FilmtListComponent } from './film-list/film-list.component';
+import { FilmComponent } from './film/film.component';
 
 @NgModule({
-  declarations: [AppComponent, ContactsComponent, ContactListComponent, ContactComponent],
+  declarations: [AppComponent, FilmsComponent, FilmtListComponent, FilmComponent],
   imports: [BrowserModule, AppRoutingModule, LayoutModule, ReactiveFormsModule],
   bootstrap: [AppComponent],
 })

@@ -1,0 +1,9 @@
+<h1>Films</h1>
+<div *ngFor="let film of films">
+  <div>{{ film.title }} &nbsp; {{ film.year }}</div>
+  <div>
+    <a routerLink="/films/{{film.id}}">View</a>
+  </div>
+</div>
+
+<div *ngIf="films.length === 0">empty</div>

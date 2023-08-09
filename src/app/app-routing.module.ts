@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactsComponent } from './contacts/contacts.component';
-import { ContactListComponent } from './contact-list/contact-list.component';
-import { ContactComponent } from './contact/contact.component';
+import { FilmsComponent } from './films/films.component';
+import { FilmtListComponent } from './film-list/film-list.component';
+import { FilmComponent } from './film/film.component';
 
 const routes: Routes = [
   {
-    path: 'contacts',
-    component: ContactListComponent,
+    path: 'films',
+    component: FilmtListComponent,
   },
   {
-    path: 'contacts/:id',
-    component: ContactComponent,
+    path: 'films/:id',
+    component: FilmComponent,
   },
   {
-    path: 'newContact',
-    component: ContactsComponent,
+    path: 'newFilm',
+    component: FilmsComponent,
   }
 ];
 

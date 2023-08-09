@@ -1,9 +1,0 @@
-<h1>Contacts</h1>
-<div *ngFor="let contact of contacts">
-  <div>{{ contact.firstName }} &nbsp; {{ contact.lastName }}</div>
-  <div>
-    <a routerLink="/contacts/{{contact.id}}">View</a>
-  </div>
-</div>
-
-<div *ngIf="contacts.length === 0">empty</div>
