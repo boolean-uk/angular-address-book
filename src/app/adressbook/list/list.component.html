@@ -1,10 +1,10 @@
 <h1>Contacts</h1>
 <!-- if we have contacts -->
-<div class="contact-container">
-  <div class="contact">
-    <span>Joe Blogs</span>
+<div class="contact-container" *ngIf="contacts !==null">
+  <div class="contact" *ngFor="let c of contacts">
+    <span>{{c.fullName}}</span>
     <a>View</a>
   </div>
-</div>
+</div >
 <!-- if we don't have contacts -->
-<div>No contacts yet</div>
+<div *ngIf="contacts === null">No contacts yet</div>
