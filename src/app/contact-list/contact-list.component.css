@@ -1,0 +1,42 @@
+.contact-list-container {
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+.list li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: #333;
+}
+.list li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.list li a:hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.list li a:nth-child(1) {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  width: fit-content;
+}
+.list li a:nth-child(2) {
+  margin-left: 20px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}

@@ -1,0 +1,14 @@
+.contact-specific {
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.contact-specific p {
+  margin: 0;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}

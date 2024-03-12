@@ -1,0 +1,35 @@
+.edit-form {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ccc;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+.edit-form input {
+  padding: 10px;
+  margin: 10px 0;
+  width: 97.5%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.edit-form button {
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+.edit-form button:hover {
+  background-color: #444;
+}
+.edit-form input:focus {
+  outline: none;
+  border-color: #333;
+}
