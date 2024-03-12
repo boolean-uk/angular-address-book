@@ -6,8 +6,8 @@ import { CreateComponent } from './adressbook/create/create.component';
 
 const routes: Routes = [
   {path: "contacts", component: ListComponent},
+  {path: "contacts/create", component: CreateComponent},
   {path: "contacts/:id", component: ViewComponent},
-  {path: "contacts/create", component: CreateComponent}
 ];
 
 @NgModule({
