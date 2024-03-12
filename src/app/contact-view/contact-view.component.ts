@@ -22,7 +22,7 @@ export class ContactViewComponent implements OnInit {
       const contactId = parseInt(id, 10);
       this.contact = this.contactService.getContactById(contactId);
     } else {
-      this.contact = null; // or handle it according to your application's logic
+      this.contact = null;
     }
   }
 }

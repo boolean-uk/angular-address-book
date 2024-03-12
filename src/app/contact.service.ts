@@ -13,7 +13,6 @@ export class ContactService {
       street: '123 Street',
       city: 'City',
     },
-    // Add more contacts here
   ];
 
   getContacts() {
@@ -25,5 +24,16 @@ export class ContactService {
   }
   getContactById(id: number) {
     return this.contacts.find((contact) => contact.id === id);
+  }
+
+  updateContact(updatedContact: any) {
+    const index = this.contacts.findIndex(
+      (contact) => contact.id === updatedContact.id
+    );
+    if (index !== -1) {
+      this.contacts[index] = updatedContact;
+    } else {
+      console.error('Contact not found:', updatedContact);
+    }
   }
 }
