@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ContactsService as ContactService } from '../contacts.service';
+import { ContactService as ContactService } from '../contacts.service';
 import { ActivatedRoute } from '@angular/router';
 import { Contact } from '../models/contact';
 

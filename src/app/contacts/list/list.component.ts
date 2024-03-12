@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ContactsService } from '../contacts.service';
+import { ContactService } from '../contacts.service';
 import { Contact } from '../models/contact';
 
 @Component({
@@ -9,6 +9,6 @@ import { Contact } from '../models/contact';
 })
 
 export class ListComponent {
-  constructor(private readonly contactService: ContactsService) {}
+  constructor(private readonly contactService: ContactService) {}
   contacts: Contact[] = this.contactService.contacts;
 }
