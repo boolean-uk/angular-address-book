@@ -41,6 +41,8 @@ export class EditContactComponent {
     this.form = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
+      street: ['', Validators.required],
+      city: ['', Validators.required],
     });
   }
   onSubmit() {
@@ -48,12 +50,16 @@ export class EditContactComponent {
     console.log('Valid?', this.form.valid);
     console.log('firstName', this.form.value.firstName);
     console.log('lastName', this.form.value.lastName);
+    console.log('street', this.form.value.street);
+    console.log('city', this.form.value.city);
 
     // call updateContact(from contacts.service) with form data
     this.contactsService.updateContact(
       this.contactId,
       this.form.value.firstName,
-      this.form.value.lastName
+      this.form.value.lastName,
+      this.form.value.street,
+      this.form.value.city
     );
     this.router.navigate(['/contacts']);
   }

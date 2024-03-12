@@ -23,6 +23,8 @@ export class AddContactComponent implements OnInit {
     this.form = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
+      street: ['', Validators.required],
+      city: ['', Validators.required],
     });
   }
   onSubmit() {
@@ -30,11 +32,15 @@ export class AddContactComponent implements OnInit {
     console.log('Valid?', this.form.valid);
     console.log('firstName', this.form.value.firstName);
     console.log('lastName', this.form.value.lastName);
+    console.log('street', this.form.value.street);
+    console.log('city', this.form.value.city);
 
     // call createContact(from contacts.service) with form data
     this.contactsService.createContact(
       this.form.value.firstName,
-      this.form.value.lastName
+      this.form.value.lastName,
+      this.form.value.street,
+      this.form.value.city
     );
     this.router.navigate(['/contacts']);
   }

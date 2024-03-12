@@ -19,7 +19,12 @@ export class ContactsService {
     // Return: Contact or undefined
     return this.contacts.find((contact) => contact.id === contactId);
   }
-  createContact(firstName: string, lastName: string) {
+  createContact(
+    firstName: string,
+    lastName: string,
+    street: string,
+    city: string
+  ) {
     // Create an object with provided data and push into contacts array
     // Input: firstName (string), phoneNumber (string)
     // Return: n/a
@@ -27,11 +32,19 @@ export class ContactsService {
       id: this.contacts.length + 1,
       firstName,
       lastName,
+      street,
+      city,
     };
     this.contacts.push(newContact);
     console.log(this.contacts);
   }
-  updateContact(id: number, firstName: string, lastName: string) {
+  updateContact(
+    id: number,
+    firstName: string,
+    lastName: string,
+    street: string,
+    city: string
+  ) {
     // Update an existing object with provided data and update contacts array
     // Input: id (number), firstName (string), phoneNumber (string)
     // Return: n/a
@@ -39,6 +52,8 @@ export class ContactsService {
     if (contact !== undefined) {
       contact.firstName = firstName;
       contact.lastName = lastName;
+      contact.street = street;
+      contact.city = city;
     } else {
       console.log('No contact with id: ', id, ' found');
     }

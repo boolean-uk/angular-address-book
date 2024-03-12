@@ -1,6 +1,6 @@
 <h2>Contacts</h2>
 <div *ngFor="let contact of contactsService.contacts" class="contact-list">
   {{ contact.id }}: {{ contact.firstName }} {{ contact.lastName }}
-  <p>:</p>
+  <p>{{ contact.street }} : {{ contact.city }}</p>
   <a routerLink="/contacts/{{ contact.id }}">View</a>
 </div>
