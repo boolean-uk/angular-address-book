@@ -26,7 +26,7 @@ route = inject(ActivatedRoute);
     });
   }
 
-  updateCar() {
+  updateBook() {
     this.bookService.updateBook({
       id: Number(this.id),
       firstName: this.bookForm.value.firstName,
