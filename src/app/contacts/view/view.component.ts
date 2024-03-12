@@ -12,7 +12,7 @@ export class ViewComponent {
   constructor(
     private readonly contactService: ContactService,
     private readonly route: ActivatedRoute
-  ){}
+  ) { }
   id = this.route.snapshot.paramMap.get('id')
   contact: Contact | null = this.contactService.getContactById(Number(this.id))
 }

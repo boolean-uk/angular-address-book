@@ -1,6 +1,6 @@
 <div>
-    <h2>Add contact</h2>
-    <form [formGroup]="contactForm" (ngSubmit)="addContact()">
+    <h2>Edit contact</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="editContact()">
         <div >
             <label for="firstname">First Name</label>
             <input type="text" id="firstname" formControlName="firstName" />
@@ -17,6 +17,6 @@
             <label for="city">City</label>
             <input type="text" id="city" formControlName="city" />
         </div>
-        <button type="submit" [disabled]="contactForm.invalid">Add contact</button>
+        <button type="submit" [disabled]="contactForm.invalid">Edit contact</button>
     </form>
 </div>

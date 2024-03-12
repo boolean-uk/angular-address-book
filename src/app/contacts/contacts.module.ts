@@ -6,6 +6,7 @@ import { ViewComponent } from './view/view.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -13,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     ListComponent,
     AddComponent,
-    ViewComponent
+    ViewComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,
