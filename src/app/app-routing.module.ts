@@ -5,9 +5,10 @@ import { ProfileComponent } from './contacts/profile/profile.component';
 import { CreateComponent } from './contacts/create/create.component';
 
 const routes: Routes = [
-  { path: '/', component: ListComponent },
-  { path: '/:id', component: ProfileComponent },
-  { path: '/create', component: CreateComponent }
+  { path: '', component: ListComponent },
+  { path: 'create', component: CreateComponent },
+  { path: ':id', component: ProfileComponent },
+  
 ];
 
 @NgModule({
