@@ -1,0 +1,25 @@
+<h2>Contact List</h2>
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>Link for View</th>
+        <th>Link for Edit</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of contacts">
+        <td>{{contact.id}}</td>
+        <td>{{contact.firstName}}</td>
+        <td>{{contact.lastName}}</td>
+        <td>{{contact.street}}</td>
+        <td>{{contact.city}}</td>
+        <td><a [routerLink]="['/contacts', contact.id]">View Contact</a></td>
+<td><a [routerLink]="['/contacts/edit', contact.id]">Edit Contact</a></td></tr>
+    </tbody>
+</table>
