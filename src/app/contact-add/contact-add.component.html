@@ -1,0 +1,19 @@
+<h1>Add new Contact</h1>
+
+<form [formGroup]="contactForm" (ngSubmit)="addNewContact()">
+    <label for="firstName">First name</label><br/>
+    <input id="firstName" type="text" formControlName="firstName"/>
+    <br/>
+    <label for="lastName">Last name</label><br/>
+    <input id="lastName" type="text" formControlName="lastName"/>
+    <br/>
+    <label for="street">Street</label><br/>
+    <input id="street" type="text" formControlName="street"/>
+    <br/>
+    <label for="city">City</label><br/>
+    <input id="city" type="text" formControlName="city"/>
+    <br/>
+    <br/>
+    <button type="submit">Add Contact</button>
+</form>
+
