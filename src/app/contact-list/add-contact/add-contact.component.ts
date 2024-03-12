@@ -25,7 +25,6 @@ export class AddContactComponent {
   }
 
   onSubmit() {
-    console.warn('Your order has been submitted', this.contactForm);
     this.contactService.addContact(
       this.contactForm.value.firstname,
       this.contactForm.value.lastname,
