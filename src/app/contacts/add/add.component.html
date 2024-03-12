@@ -1,0 +1,26 @@
+<div>
+  <h2>Add car</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="addContact()">
+    <div class="d">
+      <label for="firstName">First Name</label>
+      <div class="spacer"></div>
+      <input type="text" id="firstName" formControlName="firstName" />
+    </div>
+    <div class="d">
+      <label for="lastName">Last Name</label>
+      <div class="spacer"></div>
+      <input type="text" id="lastName" formControlName="lastName" />
+    </div>
+    <div class="d">
+      <label for="street">Street</label>
+      <div class="spacer"></div>
+      <input type="text" id="street" formControlName="street" />
+    </div>
+    <div class="d">
+      <label for="city">City</label>
+      <div class="spacer"></div>
+      <input type="text" id="city" formControlName="city" />
+    </div>
+    <button type="submit" [disabled]="contactForm.invalid">Add Car</button>
+  </form>
+</div>
