@@ -1,0 +1,76 @@
+<h2>Add New Contact</h2>
+<form [formGroup]="form" (submit)="onSubmit()">
+  <div>
+    <label>Firstname</label>
+    <input
+      formControlName="firstname"
+      type="text"
+      placeholder="Firstname"
+      autocomplete="false"
+    />
+    <div
+      class="error"
+      *ngIf="
+        form.get('firstname')?.invalid &&
+        (form.get('firstname')?.dirty || form.get('firstname')?.touched)
+      "
+    >
+      Please provide a name.
+    </div>
+  </div>
+  <div>
+    <label>Lastname</label>
+    <input
+      formControlName="lastname"
+      type="text"
+      placeholder="Lastname"
+      autocomplete="false"
+    />
+    <div
+      class="error"
+      *ngIf="
+        form.get('lastname')?.invalid &&
+        (form.get('lastname')?.dirty || form.get('lastname')?.touched)
+      "
+    >
+      Please provide a valid lastname address.
+    </div>
+  </div>
+  <div>
+    <label>Street</label>
+    <input
+      formControlName="street"
+      type="text"
+      placeholder="Street"
+      autocomplete="false"
+    />
+    <div
+      class="error"
+      *ngIf="
+        form.get('street')?.invalid &&
+        (form.get('street')?.dirty || form.get('street')?.touched)
+      "
+    >
+      Please provide a street
+    </div>
+  </div>
+  <div>
+    <label>City</label>
+    <input
+      formControlName="city"
+      type="text"
+      placeholder="City"
+      autocomplete="false"
+    />
+    <div
+      class="error"
+      *ngIf="
+        form.get('city')?.invalid &&
+        (form.get('city')?.dirty || form.get('city')?.touched)
+      "
+    >
+      Please provide a city
+    </div>
+  </div>
+  <button type="submit" [disabled]="!form.valid">Add new contact!</button>
+</form>
