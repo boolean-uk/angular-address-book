@@ -5,12 +5,14 @@ import { CreateComponent } from './create/create.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
     ListComponent,
     CreateComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,

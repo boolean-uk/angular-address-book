@@ -26,4 +26,19 @@ export class ContactService {
 
     this.contacts.push(newContact);
   }
+
+  public editContact(id:number, firstName:string, lastName:string, city:string, street:string) {
+    const updatedContact: Contact = {
+      id: id,
+      firstName: firstName,
+      lastName: lastName,
+      city: city,
+      street: street
+    }
+
+    const index = this.contacts.findIndex(contact => contact.id === id);
+    if (index !== -1) {
+      this.contacts[index] = updatedContact;
+    }
+  }
 }

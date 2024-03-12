@@ -1,10 +1,14 @@
+
 <h1>Contacts</h1>
 <div *ngIf="contacts && contacts.length > 0">
   <div class="contact-container">
     <div *ngFor="let contact of contacts" class="contact">
       <td>{{contact.firstName}} {{contact.lastName}}</td>
       <span></span>
-      <a routerLink="/{{contact.id}}">View</a>
+      <div>
+        <button routerLink="/{{contact.id}}">View</button>
+        <button routerLink="/edit/{{contact.id}}">Edit</button>
+      </div>
     </div>
   </div>
 </div>
