@@ -1,1 +1,8 @@
-<p>contact-view-page works!</p>
+<div class="contact-details" *ngIf="singleContact | async as contact">
+    <h2>Contact Details</h2>
+    <p>First Name: {{ contact.firstName }}</p>
+    <p>Last Name: {{ contact.lastName }}</p>
+    <p>Street: {{ contact.street }}</p>
+    <p>City: {{ contact.city }}</p>
+
+  </div>
