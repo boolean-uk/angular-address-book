@@ -5,7 +5,7 @@ import { ViewComponent } from './view/view.component';
 import { ListComponent } from './list/list.component';
 import { EditComponent } from './edit/edit.component';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule, 
     ReactiveFormsModule, 
+    FormsModule,
     RouterModule
   ]
 })

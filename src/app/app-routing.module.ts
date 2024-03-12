@@ -8,7 +8,10 @@ import { EditComponent } from './contacts/edit/edit.component';
 const routes: Routes = [ 
 { path: 'contacts', component: ListComponent },
 { path: 'contacts/add', component: AddComponent },
-{ path: 'contacts/:id', component: ViewComponent },];
+{ path: 'contacts/:id', component: ViewComponent },
+{ path: 'contacts/edit/:id', component: EditComponent }
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

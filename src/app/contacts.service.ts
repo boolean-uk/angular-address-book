@@ -15,16 +15,22 @@ export class ContactsService {
     this.contacts.push(newContact);
   }
 
-  /*
-  getContacts(): Contact[] {
-    return this.contacts;
-  }
-  */
-
   getContactById(id: number): Contact | null {
     const contact = this.contacts.find(contact => contact.id === id);
     return contact || null; // Return null if contact is not found
   }
+
+  updateContact(updatedContact: Contact) {
+    const index = this.contacts.findIndex(contact => contact.id === updatedContact.id);
+    if (index !== -1) {
+      this.contacts[index] = updatedContact;
+    } else {
+      console.error('Contact not found');
+    }
+  }
+  
+
+
  
  
 }

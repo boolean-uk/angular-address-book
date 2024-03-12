@@ -16,18 +16,5 @@ export class ViewComponent{
     const id = this.route.snapshot.paramMap.get('id');
     this.contact = this.contactsService.getContactById(Number(id));
   }
-  /*
-  constructor(
-    private route: ActivatedRoute,
-    private contactsService: ContactsService
-  ) {}
-
-  ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id !== null) {
-      const contactId = parseInt(id, 10); // Convert id to number
-      this.contact = this.contactsService.getContactById(contactId);
-    }
-  }*/
 
 }
