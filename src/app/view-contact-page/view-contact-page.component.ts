@@ -25,7 +25,7 @@ export class ViewContactPageComponent implements OnInit {
       if (contact) {
         this.contact = contact
       } else {
-        this.router.navigate(['/users']);
+        this.router.navigate(['/contacts']);
       }
     }
   }

@@ -1,5 +1,6 @@
-<h2>Add New Contact</h2>
-<form [formGroup]="form" (submit)="onSubmit()">
+<h2>{{ title }}</h2>
+<h1>{{ errorMsg }}</h1>
+<form *ngIf="!errorMsg"[formGroup]="form" (submit)="onSubmit()">
   <div>
     <label>Firstname</label>
     <input

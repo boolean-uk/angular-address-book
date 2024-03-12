@@ -22,10 +22,10 @@ export class ContactsService {
     this.contacts.push(newUser);
   }
 
-  editUser(contactId: number, newData: Partial<Contact>): boolean {
+  editUser(contactId: number, firstname: string, lastname: string, street: string, city: string) {
     const index = this.contacts.findIndex((contact) => contact.id === contactId);
     if (index !== -1) {
-      this.contacts[index] = { ...this.contacts[index], ...newData };
+      this.contacts[index] = {id: contactId, firstname: firstname, lastname: lastname, street: street, city: city};
       return true; 
     }
     return false;
