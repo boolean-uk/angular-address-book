@@ -1,0 +1,10 @@
+<!-- ng-container is a nice way to have if/else displays,
+     without having the "container" being rendered to the dom -->
+<ng-container *ngIf="contact !== null">
+
+    <h1>{{ contact.firstName }} {{ contact.lastName }}</h1>
+    <p>{{ contact.street }}, {{ contact.city }}</p>
+</ng-container>
+  <ng-container *ngIf="contact === null">
+    <h1>Contact not found</h1>
+  </ng-container>
