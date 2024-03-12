@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { ContactServiceService } from '../contact-service.service';
 
 @Component({
   selector: 'app-new-contact',
@@ -14,7 +15,7 @@ export class NewContactComponent {
     city: new FormControl(""),
   })
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private contactService: ContactServiceService) {}
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
@@ -27,6 +28,7 @@ export class NewContactComponent {
 
   onSubmit(): void {
     console.log(this.contactForm?.value)
+    this.contactService.setContact(this.contactForm?.value)
   }
 
 }
