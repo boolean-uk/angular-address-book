@@ -8,3 +8,9 @@ ul {
 li {
   list-style: none;
 }
+
+
+/* menu.component.css */
+nav ul li a {
+  text-decoration: none; /* Remove underline */
+}
