@@ -47,5 +47,4 @@ export class EditContactComponent {
     }
     this.router.navigate(["/"])
   }
-
 }
