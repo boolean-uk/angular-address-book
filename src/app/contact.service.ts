@@ -23,12 +23,14 @@ export class ContactService {
   }
 
   public addNewContact(contact: Contact): void {
-    this.contacts.push(contact)
+    this.contacts.push(contact);
   }
 
+  public editContact(editContact: Contact): void {
+    const index = this.contacts.findIndex((car) => car.id === editContact.id);
 
-
-
+    this.contacts[index] = editContact;
+  }
 
   constructor() {}
 }
