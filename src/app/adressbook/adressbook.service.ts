@@ -17,4 +17,10 @@ export class AdressbookService {
     }
     return contact;
   }
+  public AddContact(c: Contact) {
+    c.id = this.contacts.length + 1;
+    this.contacts.push(c);
+    console.log(c);
+    console.log(this.contacts);
+  }
 }
