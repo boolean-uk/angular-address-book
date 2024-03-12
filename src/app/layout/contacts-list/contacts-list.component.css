@@ -1,0 +1,9 @@
+a {
+  float: right;
+  text-indent: 15em;
+}
+
+div {
+  border-bottom: 1px solid gray;
+  margin: 20px;
+}
