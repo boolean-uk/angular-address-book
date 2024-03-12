@@ -9,4 +9,7 @@
     border-bottom: 1px solid #ddd;
     padding: 0.5em 0;
   }
-  
+
+  .navigation-button-container > a {
+    padding-left: 10px;
+  }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ContactServiceService } from '../contact-service.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Contact } from 'src/app/items/Contact';
 
 @Component({
   selector: 'app-edit-contact',
@@ -8,6 +10,7 @@ import { ContactServiceService } from '../contact-service.service';
   styleUrls: ['./edit-contact.component.css']
 })
 export class EditContactComponent {
+  contact: Contact | undefined;
   contactForm: FormGroup = new FormGroup({
     firstName: new FormControl(""),
     lastName: new FormControl(""),
@@ -15,19 +18,34 @@ export class EditContactComponent {
     city: new FormControl(""),
   })
 
-  constructor(private fb: FormBuilder, private contactService: ContactServiceService) {}
+  constructor(
+    private fb: FormBuilder, 
+    private contactService: ContactServiceService, 
+    private route: ActivatedRoute, 
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+    const id = Number(this.route.snapshot.paramMap.get("id"));
+    if (id !== null) {
+      this.contact = this.contactService.getContactById(id)
+    } else {
+      return;
+    }
+
     this.contactForm = this.fb.group({
-      firstName: ["", Validators.required],
-      lastName: ["", Validators.required],
-      street: ["", Validators.required],
-      city: ["", Validators.required],
+      firstName: [this.contact.firstName, Validators.required],
+      lastName: [this.contact.lastName, Validators.required],
+      street: [this.contact.street, Validators.required],
+      city: [this.contact.city, Validators.required],
     })
   }
 
   onSubmit(): void {
-    this.contactService.addContact({...this.contactForm?.value})
+    if (this.contact !== undefined) {
+      this.contactService.updateContact(this.contact.id, {...this.contactForm?.value, id: this.contact.id})
+    }
+    this.router.navigate(["/"])
   }
 
 }

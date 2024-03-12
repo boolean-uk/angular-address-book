@@ -26,6 +26,13 @@ export class ContactServiceService {
     return this.contactsSource.value.length;
   }
 
+  updateContact(id: number, updatedContact: Contact) {
+    const filteredContacts = this.contactsSource.value.filter((c) => c.id !== id)
+    const sortedContacts = [...filteredContacts, updatedContact].sort((a, b) => a.id - b.id)
+    console.log(sortedContacts)
+    this.contactsSource.next([...sortedContacts])
+  }
+
   addContact(contact: Contact) {
     this.contactsSource.next([...this.contactsSource.value, contact])
   }

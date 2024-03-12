@@ -3,7 +3,10 @@
     <div *ngSwitchCase="true">
         <div class="contact" *ngFor="let contact of contacts">
             <span>{{ contact.firstName + " " + contact.lastName}}</span>
-            <a routerLink='contact/{{contact.id}}'>View</a>
+            <div class="navigation-button-container">
+                <a routerLink='contact/{{contact.id}}'>View</a>
+                <a routerLink='contact/edit/{{contact.id}}'>Edit</a>
+            </div>
         </div>
     </div>
     <div *ngSwitchDefault>No contacts yet</div>
