@@ -1,15 +1,12 @@
 import { Injectable } from '@angular/core'
 import { CONTACTS, Contact } from './contacts/contacts'
+import { last } from 'rxjs'
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContactsService {
   public contacts: Contact[] = CONTACTS
-
-  // getContacts(): Contact[] {
-  //   return this.contacts
-  // }
 
   getContact(contactId: number): Contact | null {
     const foundContact = this.contacts.find((c) => c.id === contactId)
@@ -34,5 +31,28 @@ export class ContactsService {
     }
 
     this.contacts.push(newContact)
+  }
+
+  updateContact(
+    contactId: number,
+    firstName: string,
+    lastName: string,
+    street: string,
+    city: string
+  ): void {
+    const updatedContact: Contact = {
+      id: contactId,
+      firstName: firstName,
+      lastName: lastName,
+      street: street,
+      city: city,
+    }
+
+    const contactIndexToUpdate = CONTACTS.findIndex((c) => c.id === contactId)
+    if (contactIndexToUpdate === -1) {
+      return
+    }
+
+    CONTACTS[contactIndexToUpdate] = updatedContact
   }
 }

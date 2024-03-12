@@ -4,6 +4,7 @@
   <div class="contact" *ngFor="let contact of contactsService.contacts">
     <span>{{ contact.firstName }} {{ contact.lastName }}</span>
     <a routerLink="{{ '/contacts/' + contact.id }}">View</a>
+    <a routerLink="{{ '/contacts/' + contact.id + '/edit' }}">Edit</a>
   </div>
 </div>
 <!-- if we don't have contacts -->

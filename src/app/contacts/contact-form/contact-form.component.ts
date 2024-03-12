@@ -27,7 +27,7 @@ export class ContactFormComponent implements OnInit {
     })
   }
 
-  onSubmit() {
+  onSubmit(): void {
     console.log('Valid?', this.form?.valid)
     console.log(this.form)
 

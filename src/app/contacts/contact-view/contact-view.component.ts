@@ -28,8 +28,6 @@ export class ContactViewComponent implements OnInit {
     const contact = this.contactService.getContact(this.contactId)
     if (contact) {
       this.contact = contact
-    } else {
-      this.router.navigate(['/contacts'])
     }
   }
 }
