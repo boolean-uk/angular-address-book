@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ListComponent } from './list/list.component';
 import { ViewComponent } from './view/view.component';
 import { CreateComponent } from './create/create.component';
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +15,9 @@ import { CreateComponent } from './create/create.component';
     CreateComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class AdressbookModule { }

@@ -3,7 +3,7 @@
 <div class="contact-container" *ngIf="contacts !==null">
   <div class="contact" *ngFor="let c of contacts">
     <span>{{c.fullName}}</span>
-    <a>View</a>
+    <a routerLink="/contacts/{{ c.id }}">View</a>
   </div>
 </div >
 <!-- if we don't have contacts -->
