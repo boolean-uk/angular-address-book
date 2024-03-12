@@ -1,0 +1,7 @@
+<h1>Contacts</h1>
+<div class="contact-container">
+  <div *ngFor="let contact of contactService.contacts">
+    <span>{{ contact.name }}</span>
+    <a routerLink="{{ '/contacts/' + contact.id }}">View</a>
+  </div>
+</div>
