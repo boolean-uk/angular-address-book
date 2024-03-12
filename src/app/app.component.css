@@ -1,9 +1,18 @@
 :host {
   display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-left: 10%;
+  width: 80%;
 }
 
 .page {
-  flex: 1;
+  flex: 8;
   display: flex;
   justify-content: center;
+  background-color: aliceblue;
+  border-radius: 8px;
+}
+.menu{
+  flex: 1;
 }

@@ -1,0 +1,16 @@
+<div>
+    <h1>Contacts</h1>
+<!-- if we have contacts -->
+    <ng-container *ngIf="people.length > 0 else elseBlock"> 
+        <div class="contact-container">
+            <div class="contact" *ngFor="let person of people">
+                <span>{{person.firstName}} {{person.lastName}}</span>
+                <button routerLink="/contacts/{{person.id}}">View</button>
+            </div>
+        </div>
+    </ng-container>
+<!-- if we don't have contacts -->
+    <ng-template #elseBlock>
+        <div>No contacts yet</div>  
+    </ng-template>
+</div>
