@@ -8,9 +8,10 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactViewComponent } from './contact-view/contact-view.component';
 import { ContactAddComponent } from './contact-add/contact-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ContactEditComponent } from './contact-edit/contact-edit.component';
 
 @NgModule({
-  declarations: [AppComponent, ContactListComponent, ContactViewComponent, ContactAddComponent],
+  declarations: [AppComponent, ContactListComponent, ContactViewComponent, ContactAddComponent, ContactEditComponent],
   imports: [BrowserModule, AppRoutingModule, LayoutModule, ReactiveFormsModule],
   bootstrap: [AppComponent],
 })
