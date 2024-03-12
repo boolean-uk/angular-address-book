@@ -21,20 +21,20 @@ export class AddContactComponent implements OnInit {
   }
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      name: ['', Validators.required],
-      phoneNr: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
     });
   }
   onSubmit() {
     // log the newly added contact to console
     console.log('Valid?', this.form.valid);
-    console.log('Name', this.form.value.name);
-    console.log('phoneNr', this.form.value.phoneNr);
+    console.log('firstName', this.form.value.firstName);
+    console.log('lastName', this.form.value.lastName);
 
     // call createContact(from contacts.service) with form data
     this.contactsService.createContact(
-      this.form.value.name,
-      this.form.value.phoneNr
+      this.form.value.firstName,
+      this.form.value.lastName
     );
     this.router.navigate(['/contacts']);
   }

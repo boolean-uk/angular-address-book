@@ -39,21 +39,21 @@ export class EditContactComponent {
     }
     // assign the default form values based on user
     this.form = this.formBuilder.group({
-      name: ['', Validators.required],
-      phoneNr: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
     });
   }
   onSubmit() {
     // log the updated contact to console
     console.log('Valid?', this.form.valid);
-    console.log('Name', this.form.value.name);
-    console.log('phoneNr', this.form.value.phoneNr);
+    console.log('firstName', this.form.value.firstName);
+    console.log('lastName', this.form.value.lastName);
 
     // call updateContact(from contacts.service) with form data
     this.contactsService.updateContact(
       this.contactId,
-      this.form.value.name,
-      this.form.value.phoneNr
+      this.form.value.firstName,
+      this.form.value.lastName
     );
     this.router.navigate(['/contacts']);
   }

@@ -1,17 +1,17 @@
 <h2>Add contact</h2>
 <form [formGroup]="form" (submit)="onSubmit()">
   <div class="contact-list">
-    <label class="form">Name</label>
+    <label class="form">First Name</label>
     <input
-      formControlName="name"
+      formControlName="firstName"
       type="text"
-      placeholder="Name"
+      placeholder="firstName"
       autocomplete="false"
-    /><label class="form">PhoneNr</label>
+    /><label class="form">Last Name</label>
     <input
-      formControlName="phoneNr"
+      formControlName="lastName"
       type="text"
-      placeholder="PhoneNr"
+      placeholder="lastName"
       autocomplete="false"
     />
   </div>

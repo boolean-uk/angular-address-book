@@ -1,17 +1,17 @@
 export type Contact = {
   id: number;
-  name: string;
-  phoneNr: string;
+  firstName: string;
+  lastName: string;
 };
 export const CONTACTS: Contact[] = [
   {
     id: 1,
-    name: 'Bob',
-    phoneNr: '070-5810258',
+    firstName: 'Bob',
+    lastName: 'Johnsson',
   },
   {
     id: 2,
-    name: 'Bill',
-    phoneNr: '070-3123521',
+    firstName: 'Bill',
+    lastName: 'Kerman',
   },
 ];
