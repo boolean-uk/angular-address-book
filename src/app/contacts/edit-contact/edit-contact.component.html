@@ -1,0 +1,19 @@
+<h2>Edit contact</h2>
+<form [formGroup]="form" (submit)="onSubmit()">
+  <div class="contact-list">
+    <label class="form">Name</label>
+    <input
+      formControlName="name"
+      type="text"
+      placeholder="Name"
+      autocomplete="false"
+    /><label class="form">PhoneNr</label>
+    <input
+      formControlName="phoneNr"
+      type="text"
+      placeholder="PhoneNr"
+      autocomplete="false"
+    />
+  </div>
+  <button type="submit">Save</button>
+</form>

@@ -3,4 +3,7 @@
   {{ contact?.id }}: {{ contact?.name }}
   <p>Tel: {{ contact?.phoneNr }}</p>
   <a routerLink="/contacts/">Back</a>
+  <a routerLink="/contacts/{{ contact?.id }}/edit" style="padding-left: 10px"
+    >Edit</a
+  >
 </div>

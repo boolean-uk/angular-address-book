@@ -31,4 +31,16 @@ export class ContactsService {
     this.contacts.push(newContact);
     console.log(this.contacts);
   }
+  updateContact(id: number, name: string, phoneNr: string) {
+    // Update an existing object with provided data and update contacts array
+    // Input: id (number), name (string), phoneNumber (string)
+    // Return: n/a
+    const contact = this.getContact(id);
+    if (contact !== undefined) {
+      contact.name = name;
+      contact.phoneNr = phoneNr;
+    } else {
+      console.log('No contact with id: ', id, ' found');
+    }
+  }
 }
