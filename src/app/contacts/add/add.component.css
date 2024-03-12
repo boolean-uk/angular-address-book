@@ -13,18 +13,18 @@ form {
 }
 form > div {
   display: flex;
-  justify-content: space-around;
 }
 
 label {
   font-weight: bold;
+  width: 20%;
 }
 
 .actions {
   display: flex;
 }
 input {
-  flex: 2;
+  flex: 60%;
 }
 
 .spacer {
