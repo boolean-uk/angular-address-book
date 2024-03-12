@@ -17,9 +17,9 @@ export class EditComponent {
     private readonly route: ActivatedRoute
   ) {
     this.contactForm = this.formBuilder.group({
-      fullName: ['', Validators.required],
-      street: ['', Validators.required],
-      city: ['', Validators.required],
+      fullName: [this.contact?.fullName, Validators.required],
+      street: [this.contact?.street, Validators.required],
+      city: [this.contact?.city, Validators.required],
     });
   }
   id = this.route.snapshot.paramMap.get('id');

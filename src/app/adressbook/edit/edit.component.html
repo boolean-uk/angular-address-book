@@ -5,17 +5,17 @@
 <h1>Edit {{contact.fullName}}</h1>
 <form [formGroup]="contactForm" (ngSubmit)="editContact()">
   <label for="fullName">Full name:</label>
-  <input id="fullName" type="text" formControlName="fullName" [(ngModel)]="contact.fullName"/>
+  <input id="fullName" type="text" formControlName="fullName" />
 
   <label for="street">Street:</label>
-  <input id="street" type="text" formControlName="street" [(ngModel)]="contact.street"/>
+  <input id="street" type="text" formControlName="street" />
 
   <label for="city">City:</label>
-  <input id="city" type="text" formControlName="city" [(ngModel)]="contact.city"/>
+  <input id="city" type="text" formControlName="city" />
 
   <div class="actions">
     <div class="spacer"></div>
-    <button type="submit" [disabled]="contactForm.invalid">Edit</button>
+    <button type="submit" [disabled]="contactForm.invalid" routerLink="/contacts/">Edit</button>
   </div>
 </form>
 </ng-container>
