@@ -1,2 +1,5 @@
 <h2>List of Contacts</h2>
-<p>contacts-list works!</p>
+<div class="box" *ngFor="let contact of contactService.contacts">
+  <p>{{ contact.firstName }} {{ contact.lastName }}</p>
+  <a routerLink="/contacts/{{ contact.id }}">look at details</a>
+</div>
