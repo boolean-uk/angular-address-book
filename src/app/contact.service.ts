@@ -7,8 +7,9 @@ import { CONTACTS, Contact } from './contacts/contacts';
 export class ContactService {
   contact: Contact[] = CONTACTS;
 
-  getContact(id: string): Contact | undefined {
-    return this.contact.find((c) => c.id.toString() === id);
+  getContact(id: number): Contact | undefined {
+    console.log(this.contact);
+    return this.contact.find((c) => c.id === id);
   }
   createContact(name: string, surname: string, street: string, city: string) {
     const newContact: Contact = {
@@ -19,7 +20,9 @@ export class ContactService {
       city,
     };
 
-    this.contact.push(newContact);
+    console.log(CONTACTS);
+    CONTACTS.push(newContact);
+    console.log(CONTACTS);
   }
   constructor() {}
 }

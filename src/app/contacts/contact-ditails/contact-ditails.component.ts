@@ -9,10 +9,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./contact-ditails.component.css'],
 })
 export class ContactDitailsComponent implements OnInit {
-  //@ts-ignore
-  id: string;
-  //@ts-ignore
-  contact: Contact;
+  id: number = -1;
+  contact: Contact | undefined = undefined;
   contactService: ContactService;
 
   constructor(
@@ -24,12 +22,15 @@ export class ContactDitailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id') || '';
+    console.log('HELLO ?');
+    this.id = parseInt(this.route.snapshot.paramMap.get('id') || '-1');
     const contact = this.contactService.getContact(this.id);
     if (contact) {
+      console.log('contact ', contact);
       this.contact = contact;
     } else {
-      this.router.navigate(['/']);
+      console.log('contact in else: ', contact);
+      // this.router.navigate(['/']);
     }
   }
 }

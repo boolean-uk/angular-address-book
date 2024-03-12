@@ -6,7 +6,7 @@ export type Contact = {
   city: string;
 };
 
-export const CONTACTS: Contact[] = [
+export let CONTACTS: Contact[] = [
   {
     id: 1,
     name: 'Temp',
