@@ -25,5 +25,12 @@ export class PeopleService {
     this.people.push(person)
   }
 
+  public editPerson(updatedPerson: Person){
+    const index = this.people.findIndex((person) => (person.id) === updatedPerson.id)
+    if(index !== -1){
+      this.people[index] = updatedPerson
+    }
+  }
+
   constructor() { }
 }
