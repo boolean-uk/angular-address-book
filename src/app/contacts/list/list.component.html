@@ -1,0 +1,4 @@
+<h2>Contact List</h2>
+<ul *ngFor="let c of contacts">
+    <li>{{c.firstName}} {{c.lastName}} <a routerLink="/contacts/{{ c.id }}">View</a></li>
+</ul>
