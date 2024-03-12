@@ -1,1 +1,12 @@
-<p>view works!</p>
+<ng-container *ngIf="contact === null">
+    <div>
+        <p><strong>Contact not availiable</strong></p>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="contact !== null">
+    <div>
+        <h2>{{contact.firstname}} {{contact.lastname}}</h2>
+        <p>{{contact.street}}, {{contact.city}}</p>
+    </div>
+</ng-container>

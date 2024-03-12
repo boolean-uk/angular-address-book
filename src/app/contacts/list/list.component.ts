@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ContactService } from '../contact.service';
+import { Contact } from '../models/contact';
 
 @Component({
   selector: 'app-list',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
-
+  contactService = inject(ContactService)
+  contacts: Contact[] = this.contactService.getContacts()
 }

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AddComponent } from './add/add.component';
 import { ViewComponent } from './view/view.component';
 import { ListComponent } from './list/list.component';
+import { EditComponent } from './edit/edit.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -10,10 +12,12 @@ import { ListComponent } from './list/list.component';
   declarations: [
     AddComponent,
     ViewComponent,
-    ListComponent
+    ListComponent,
+    EditComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class ContactsModule { }
