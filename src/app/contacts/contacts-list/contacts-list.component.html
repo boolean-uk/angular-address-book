@@ -1,1 +1,8 @@
-<p>contacts-list works!</p>
+<h2>Contacts List</h2>
+<div class="contact-card" *ngFor="let contact of contactService.contact">
+  <p>Name: {{ contact.name }}</p>
+  <p>Surname: {{ contact.surname }}</p>
+  <p>Street: {{ contact.street }}</p>
+  <p>City: {{ contact.city }}</p>
+  <a href="/contact/{{ contact.id }}">View</a>
+</div>
