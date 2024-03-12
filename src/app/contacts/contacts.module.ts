@@ -20,6 +20,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     RouterModule,
     ReactiveFormsModule
+  ],
+  exports: [
+    AddComponent,
+    ViewComponent,
+    ListComponent,
+    EditComponent
   ]
 })
 export class ContactsModule { }

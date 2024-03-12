@@ -21,4 +21,13 @@ export class ContactService {
   public addContact(contact: Contact) {
     this.contacts.push(contact)
   }
+
+  public updateContact(contact: Contact, id: number) {
+    const index = this.contacts.findIndex((contact) => contact.id === id);
+    if (index !== -1) {
+      this.contacts[index] = contact;
+    } else {
+      console.error('Contact not found.');
+    }
+  }
 }
