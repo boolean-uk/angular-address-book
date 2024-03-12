@@ -17,4 +17,8 @@ export class ContactService {
 
     return contact === undefined ? null : contact
   }
+
+  public addContact(contact: Contact) {
+    this.contacts.push(contact)
+  }
 }
