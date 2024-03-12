@@ -15,7 +15,6 @@ export class AddComponent {
   contactService = inject(ContactsService);
   router = inject(Router);
 
-  contact: Contact = { id: 0, firstName: '', lastName: '', street: '', city: '' };
   contactForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
@@ -28,14 +27,14 @@ export class AddComponent {
   }
 
   addContact(){
-    this.contact = {
+    const contact: Contact = {
       id: this.contactService.contacts.length + 1,
       firstName: this.contactForm.value.firstName,
       lastName: this.contactForm.value.lastName,
       street: this.contactForm.value.street,
       city: this.contactForm.value.city
     }
-    this.contactService.addContact(this.contact);
+    this.contactService.addContact(contact);
     this.router.navigate(['/contacts']);
   }
 
