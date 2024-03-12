@@ -5,6 +5,7 @@ import { NewContactComponent } from './new-contact/new-contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ContactsViewComponent } from './contacts-view/contacts-view.component';
+import { EditContactComponent } from './edit-contact/edit-contact.component';
 
 
 
@@ -13,6 +14,7 @@ import { ContactsViewComponent } from './contacts-view/contacts-view.component';
     ContactsListComponent,
     NewContactComponent,
     ContactsViewComponent,
+    EditContactComponent,
   ],
   imports: [
     CommonModule,

@@ -7,7 +7,7 @@ import { ContactsViewComponent } from './contacts/contacts-view/contacts-view.co
 const routes: Routes = [
   { path: 'create-contact', component: NewContactComponent},
   { path: '', component: ContactsListComponent},
-  { path: 'contact/:firstname/:lastname', component: ContactsViewComponent}
+  { path: 'contact/:id', component: ContactsViewComponent}
 ];
 
 @NgModule({

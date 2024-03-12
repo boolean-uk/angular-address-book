@@ -14,11 +14,10 @@ export class ContactsViewComponent {
   constructor(private route: ActivatedRoute, private contactService: ContactServiceService) {}
 
   ngOnInit() {
-    const firstName = this.route.snapshot.paramMap.get("firstname");
-    const lastName = this.route.snapshot.paramMap.get("lastname");
+    let id = Number(this.route.snapshot.paramMap.get("id"));
 
-    if (firstName !== null && lastName !== null) {
-      this.contact = this.contactService.getContactByName(firstName, lastName)
+    if (id !== null) {
+      this.contact = this.contactService.getContactById(id)
     }
   }
 }

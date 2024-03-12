@@ -3,12 +3,11 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { ContactServiceService } from '../contact-service.service';
 
 @Component({
-  selector: 'app-new-contact',
-  templateUrl: './new-contact.component.html',
-  styleUrls: ['./new-contact.component.css'],
+  selector: 'app-edit-contact',
+  templateUrl: './edit-contact.component.html',
+  styleUrls: ['./edit-contact.component.css']
 })
-export class NewContactComponent {
-  private i: number = this.contactService.getNumberOfContacts();
+export class EditContactComponent {
   contactForm: FormGroup = new FormGroup({
     firstName: new FormControl(""),
     lastName: new FormControl(""),
@@ -28,7 +27,7 @@ export class NewContactComponent {
   }
 
   onSubmit(): void {
-    this.contactService.addContact({...this.contactForm?.value, id: this.i++})
+    this.contactService.addContact({...this.contactForm?.value})
   }
 
 }

@@ -7,12 +7,14 @@ import { Contact } from '../items/Contact';
 })
 export class ContactServiceService {
   private contactsSource = new BehaviorSubject<Contact[]>([
-      {firstName: "Tim", 
+    { id: 0,
+      firstName: "Tim", 
       lastName: "Johnsen", 
       street: "Somewhere 123", 
       city: "Atlantis"
     }, 
-    {firstName: "Allan", 
+    { id: 1,
+      firstName: "Allan", 
       lastName: "Burke", 
       street: "Here 777", 
       city: "El Dorado"
@@ -20,11 +22,15 @@ export class ContactServiceService {
   ]);
   contacts = this.contactsSource.asObservable();
 
+  getNumberOfContacts() {
+    return this.contactsSource.value.length;
+  }
+
   addContact(contact: Contact) {
     this.contactsSource.next([...this.contactsSource.value, contact])
   }
 
-  getContactByName(firstName: string, lastName: string) {
-    return this.contactsSource.value.filter((c) => c.firstName === firstName && c.lastName === lastName)[0] || undefined
+  getContactById(id: number) {
+    return this.contactsSource.value.filter((c) => c.id === id)[0] || undefined
   }
 }
