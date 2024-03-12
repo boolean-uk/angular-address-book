@@ -20,4 +20,9 @@ export class ContactService {
     console.log(c);
     console.log(this.contacts);
   }
+  public UpdateContact(c: Contact) {
+    this.contacts = this.contacts.map(con => con.id === c.id ? c : con)
+    console.log(c);
+    console.log(this.contacts);
+  }
 }
