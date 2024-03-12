@@ -1,0 +1,20 @@
+.contactlist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact span{
+    width: 250px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+:host {
+    padding: 0.5em;
+    width: 400px;
+  }
