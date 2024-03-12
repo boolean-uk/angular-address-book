@@ -1,0 +1,10 @@
+<ng-container *ngIf="contact === null">
+    <div><p><strong>No such contact!</strong></p></div>
+</ng-container>
+<ng-container *ngIf="contact !== null">
+    <div>
+        <h2>{{ contact.firstName }} {{contact.lastName.charAt(0)}}</h2>
+        <p>{{ contact.street }}, {{contact.city}}</p>
+    </div>
+</ng-container>
+
