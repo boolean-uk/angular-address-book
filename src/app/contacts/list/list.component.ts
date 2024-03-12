@@ -7,10 +7,8 @@ import { Contact } from '../models/contact';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-
 export class ListComponent {
-  contactService = inject(ContactService)
+  contactService = inject(ContactService);
 
   contacts: Contact[] = this.contactService.getAllContacts();
-
 }

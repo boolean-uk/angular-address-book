@@ -14,12 +14,11 @@ import { ContactsModule } from './contacts/contacts.module';
   imports: [
     BrowserModule, 
     AppRoutingModule, 
-    LayoutModule,
     CommonModule,
-    ContactsModule
-
-
+    LayoutModule,
+    ContactsModule,
   ],
+  providers: [],
   bootstrap: [
     AppComponent
   ],

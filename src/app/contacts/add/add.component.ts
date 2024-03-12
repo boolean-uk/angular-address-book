@@ -11,7 +11,7 @@ import { Contact } from '../models/contact';
 })
 
 export class AddComponent {
-  myContact: Contact = {id: 1, firstName: '', lastName: '', street: '', city: ''};
+  // myContact: Contact = {id: 1, firstName: '', lastName: '', street: '', city: ''};
   contactForm: FormGroup;
   contactService = inject(ContactService);
 
@@ -27,16 +27,18 @@ export class AddComponent {
   }
 
   addContact() {
-    this.myContact = {
+    const myContact = {
       id: this.contactService.contacts.length + 1,
       firstName: this.contactForm.value.firstName,
       lastName: this.contactForm.value.lastName,
       street: this.contactForm.value.street,
       city: this.contactForm.value.city,
-
-    }
-    this.contactService.addContact(this.myContact);
+    };
+    this.contactService.addContact(myContact);
     this.router.navigate(["contacts"])
+    console.log("contacts:", this.contactService)
+
   }
+
 
 }

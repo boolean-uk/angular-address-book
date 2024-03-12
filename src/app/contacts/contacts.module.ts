@@ -28,4 +28,4 @@ import { RouterModule } from '@angular/router';
     EditComponent
   ],
 })
-export class ContactsModule { }
+export class ContactsModule {}
