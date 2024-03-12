@@ -14,4 +14,9 @@ export class ContactService {
     }
     return contact;
   }
+  public addContact(contact: Contact){
+    contact.id = CONTACTS.length + 1
+    CONTACTS.push(contact)
+    console.log(CONTACTS)
+  }
 }
