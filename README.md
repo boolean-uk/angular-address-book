@@ -24,5 +24,6 @@ Implement the following requirements:
 - Create a view contact page where we can view a specific contact in the address book
 
 ## Extensions
+
 - Add a new page that will allow the user to edit existing contacts
 - If the user tries to edit a contact that does not exist - display a useful error to the user
