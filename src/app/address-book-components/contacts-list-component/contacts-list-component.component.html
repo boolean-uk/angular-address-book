@@ -1,0 +1,8 @@
+<p>Contacts</p>
+
+<div *ngIf="contacts" class="contacts-container">
+    <div *ngFor="let contact of contacts | async" class="contacts-list">
+        <span>{{ contact.firstName }} {{ contact.lastName }}</span>
+    </div>
+</div>
+<div *ngIf="!contacts">You have no friends..</div>
