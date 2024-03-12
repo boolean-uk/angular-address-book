@@ -17,6 +17,16 @@ export class ContactService {
   public addContact(contact: Contact){
     contact.id = CONTACTS.length + 1
     CONTACTS.push(contact)
-    console.log(CONTACTS)
+  }
+
+  public editContact(id: number, EditedContact: Contact){
+    let contactToEdit = CONTACTS.find((contact) => contact.id === id)
+    if(contactToEdit){
+      contactToEdit.id = id
+      contactToEdit.firstName = EditedContact.firstName
+      contactToEdit.lastName = EditedContact.lastName
+      contactToEdit.street = EditedContact.street
+      contactToEdit.city = EditedContact.city
+    }
   }
 }

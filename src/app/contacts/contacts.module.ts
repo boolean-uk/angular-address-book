@@ -5,6 +5,7 @@ import { ViewComponent } from './view/view.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './list/list.component';
 import { RouterModule } from '@angular/router';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -12,13 +13,14 @@ import { RouterModule } from '@angular/router';
   declarations: [
     CreateComponent,
     ViewComponent,
-    ListComponent
+    ListComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
   ],
-  exports: [CreateComponent, ViewComponent, ListComponent]
+  exports: [CreateComponent, ViewComponent, ListComponent, EditComponent]
 })
 export class ContactsModule { }
