@@ -1,0 +1,10 @@
+<h2>Contact List</h2>
+<div class="contact-container" [ngSwitch]="contacts.length !== 0">
+    <div *ngSwitchCase="true">
+        <div class="contact" *ngFor="let contact of contacts">
+            <span>{{ contact.name }}</span>
+            <a>View</a>
+        </div>
+    </div>
+    <div *ngSwitchDefault>No contacts yet</div>
+</div>
