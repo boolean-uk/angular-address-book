@@ -23,4 +23,13 @@ export class AdressbookService {
     console.log(c);
     console.log(this.contacts);
   }
+  public EditContact(updatedContact: Contact): void {
+    const index = this.contacts.findIndex(contact => contact.id === updatedContact.id);
+  
+    if (index !== -1) {
+      this.contacts[index] = updatedContact;
+    } else {
+      console.error(`Contact with ID ${updatedContact.id} not found.`);
+    }
+  }
 }

@@ -8,4 +8,5 @@
 <ng-container *ngIf="contact !== null">
   <h1>{{ contact.fullName }}</h1>
   <p>{{ contact.street }}, {{ contact.city }}</p>
+  <a routerLink="/contacts/edit/{{ contact.id }}">Edit</a>
 </ng-container>
