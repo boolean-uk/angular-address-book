@@ -7,6 +7,7 @@ import { CONTACTS } from '../data/contacts';
 })
 export class AddressbookService {
   public contacts: Contact[] = CONTACTS;
+
   public getContactById(id: number | null): Contact | null {
     const contact = this.contacts.find((contact) => contact.id === id);
     if(!contact){
@@ -19,5 +20,11 @@ export class AddressbookService {
     this.contacts.push(c);
     console.log(c);
     console.log(this.contacts);
+  }
+  public updateContact(updatedContact: Contact): void {
+    const index = this.contacts.findIndex(contact => contact.id === updatedContact.id);
+    if (index !== -1) {
+      this.contacts[index] = updatedContact;
+    }
   }
 }

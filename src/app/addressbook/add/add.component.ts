@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Contact } from '../models/contact';
 import { AddressbookService } from '../addressbook.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
@@ -12,7 +13,8 @@ export class AddComponent {
   contactForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private readonly addressBookService: AddressbookService
+    private readonly addressBookService: AddressbookService,
+    private router: Router,
   ) {
     this.contactForm = this.formBuilder.group({
       firstName: ['', Validators.required],
@@ -33,6 +35,7 @@ export class AddComponent {
       };
       this.addressBookService.AddContact(newContact);
       this.contactForm.reset();
+      this.router.navigate(['/contacts']);
     }
   }
 }
