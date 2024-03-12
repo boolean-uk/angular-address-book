@@ -10,4 +10,8 @@ export class ContactsService {
     { id: 2, firstName: 'Jane', lastName: 'Smith', city: 'Los Angeles', street: '456 Elm St' },
     { id: 3, firstName: 'Alice', lastName: 'Johnson', city: 'Chicago', street: '789 Oak St' },
   ];
+
+  public GetById(id:number): Contact | undefined {
+    return this.contacts.find(contact => contact.id === id)
+  }
 }
