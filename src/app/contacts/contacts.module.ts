@@ -4,6 +4,7 @@ import { ContactsListComponent } from './contacts-list/contacts-list.component'
 import { ContactViewComponent } from './contact-view/contact-view.component'
 import { ContactFormComponent } from './contact-form/contact-form.component'
 import { ReactiveFormsModule } from '@angular/forms'
+import { RouterModule } from '@angular/router'
 
 @NgModule({
   declarations: [
@@ -11,7 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms'
     ContactViewComponent,
     ContactFormComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   exports: [ContactsListComponent, ContactViewComponent, ContactFormComponent],
 })
 export class ContactsModule {}

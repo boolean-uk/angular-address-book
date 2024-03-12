@@ -3,7 +3,7 @@
 <div class="contact-container">
   <div class="contact" *ngFor="let contact of contactsService.contacts">
     <span>{{ contact.firstName }} {{ contact.lastName }}</span>
-    <a href="{{ '/contacts/' + contact.id }}">View</a>
+    <a routerLink="{{ '/contacts/' + contact.id }}">View</a>
   </div>
 </div>
 <!-- if we don't have contacts -->
