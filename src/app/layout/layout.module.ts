@@ -6,9 +6,10 @@ import { ContactsListComponent } from './menu/contacts-list/contacts-list.compon
 import { NewContactComponent } from './menu/new-contact/new-contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewContactComponent } from './menu/view-contact/view-contact.component';
+import { EditContactComponent } from './menu/edit-contact/edit-contact.component';
 
 @NgModule({
-  declarations: [MenuComponent, ContactsListComponent, NewContactComponent, ViewContactComponent],
+  declarations: [MenuComponent, ContactsListComponent, NewContactComponent, ViewContactComponent, EditContactComponent],
   imports: [CommonModule, RouterModule, ReactiveFormsModule],
   exports: [MenuComponent],
 })
