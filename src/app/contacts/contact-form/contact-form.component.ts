@@ -46,5 +46,6 @@ export class ContactFormComponent implements OnInit {
       this.form.value.street,
       this.form.value.city
     )
+    this.form.reset()
   }
 }

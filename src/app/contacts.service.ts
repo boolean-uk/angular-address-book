@@ -33,8 +33,6 @@ export class ContactsService {
       city: city,
     }
 
-    console.log('new contact id', newContact.id)
-
     this.contacts.push(newContact)
   }
 }
