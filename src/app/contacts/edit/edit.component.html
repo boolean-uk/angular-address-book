@@ -1,0 +1,25 @@
+<ng-container *ngIf="contact === null">
+    <div><p><strong>Contact not available!</strong></p></div>
+</ng-container>
+<ng-container *ngIf="contact !== null">
+<div>
+    <h2>Update Contact</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="updateContact()">
+
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" formControlName="firstname" />
+
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" formControlName="lastname" />
+ 
+        <label for="street">Street</label>
+        <input type="text" id="street" formControlName="street" />
+
+        <label for="city">City</label>
+        <input type="text" id="city" formControlName="city" />
+
+    <button type="submit" [disabled]="contactForm.invalid">Update Contact</button>
+    </form>
+</div>
+
+</ng-container>
