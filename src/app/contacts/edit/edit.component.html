@@ -1,5 +1,5 @@
-<div>
-  <h1>Edit Contact: {{contact?.firstName + " " + contact?.lastName}}</h1>
+<div *ngIf="contact">
+  <h1>Edit Contact: {{contact.firstName + " " + contact.lastName}}</h1>
   <form [formGroup]="contactForm" (ngSubmit)="editContact()">
     <div className="form-field">
       <label for="first-name">First Name</label>
@@ -19,4 +19,7 @@
     </div>
     <button type="submit" [disabled]="contactForm.invalid">Update</button>
   </form>
+</div>
+<div *ngIf="!contact">
+  <p>No contact with this id was found</p>
 </div>
