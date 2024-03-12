@@ -22,4 +22,10 @@ export class AddressBookService {
   public addContact(contact: Contact) {
     this.contacts.push(contact);
   }
+
+  public updateContact(updatedContact: Contact) {
+    this.contacts = this.contacts.map((contact) =>
+      contact.id === updatedContact.id ? updatedContact : contact
+    );
+  }
 }

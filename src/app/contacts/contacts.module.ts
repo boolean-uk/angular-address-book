@@ -5,9 +5,10 @@ import { ListComponent } from './list/list.component';
 import { ViewComponent } from './view/view.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
-  declarations: [AddComponent, ListComponent, ViewComponent],
+  declarations: [AddComponent, ListComponent, ViewComponent, EditComponent],
   imports: [CommonModule, RouterModule, ReactiveFormsModule],
   exports: [ListComponent, AddComponent, ViewComponent],
 })
