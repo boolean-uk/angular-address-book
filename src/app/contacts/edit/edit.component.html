@@ -1,0 +1,11 @@
+<div *ngIf="contact == null">
+    <p>Sorry, no contact found!</p>
+</div>
+<div *ngIf="contact != null">
+    <h1>Edit Contact</h1>
+    <form [formGroup]="editContactForm" (ngSubmit)="editContact()">
+        <label for="name">Name: </label>
+        <input type="text" id="name" formControlName="name">
+        <button type="submit">Save edit</button>
+    </form>
+</div>
