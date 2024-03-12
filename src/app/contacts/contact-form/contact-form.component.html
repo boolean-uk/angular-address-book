@@ -2,18 +2,54 @@
 <form [formGroup]="form" (submit)="onSubmit()">
   <label for="first-name">First name:</label>
   <input id="first-name" type="text" formControlName="firstName" />
+  <div
+    *ngIf="
+      form.get('firstName')?.invalid &&
+      (form.get('firstName')?.dirty || form.get('firstName')?.touched)
+    "
+    style="color: red"
+  >
+    Name is required
+  </div>
 
   <label for="last-name">Last name:</label>
   <input id="last-name" type="text" formControlName="lastName" />
+  <div
+    *ngIf="
+      form.get('lastName')?.invalid &&
+      (form.get('lastName')?.dirty || form.get('lastName')?.touched)
+    "
+    style="color: red"
+  >
+    Surname is required
+  </div>
 
   <label for="street">Street:</label>
   <input id="street" type="text" formControlName="street" />
+  <div
+    *ngIf="
+      form.get('street')?.invalid &&
+      (form.get('street')?.dirty || form.get('street')?.touched)
+    "
+    style="color: red"
+  >
+    Street is required
+  </div>
 
   <label for="city">City:</label>
   <input id="city" type="text" formControlName="city" />
+  <div
+    *ngIf="
+      form.get('city')?.invalid &&
+      (form.get('city')?.dirty || form.get('city')?.touched)
+    "
+    style="color: red"
+  >
+    City is required
+  </div>
 
   <div class="actions">
     <div class="spacer"></div>
-    <button type="submit">Create</button>
+    <button type="submit" [disabled]="!form.valid">Create</button>
   </div>
 </form>

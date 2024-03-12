@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { ContactsService } from 'src/app/contacts.service'
 
 @Component({
@@ -26,18 +20,15 @@ export class ContactFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      // name: ['', Validators.required],
-      // email: ['', [Validators.required, Validators.email]],
-      // password: ['', [Validators.required, Validators.minLength(5)]],
-      firstName: [''],
-      lastName: [''],
-      street: [''],
-      city: [''],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      street: ['', Validators.required],
+      city: ['', Validators.required],
     })
   }
 
   onSubmit() {
-    console.log('Valid?', this.form?.valid) // true or false
+    console.log('Valid?', this.form?.valid)
     console.log(this.form)
 
     this.contactsService.addContact(
