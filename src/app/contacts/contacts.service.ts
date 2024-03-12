@@ -24,4 +24,10 @@ export class ContactsService {
     console.log(contact);
     console.log(this.contacts);
   }
+  public EditContact(contact: Contact) {
+    const index = this.contacts.findIndex((c) => c.id === contact.id);
+    this.contacts[index] = { ...contact };
+    console.log(contact);
+    console.log(this.contacts);
+  }
 }
