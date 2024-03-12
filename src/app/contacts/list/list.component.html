@@ -1,24 +1,12 @@
 <h2>Contacts</h2>
 
 <table>
-    <thead>
-        <tr>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Street</th>
-            <th>City</th>
-            <th>View</th>
-            <th>Edit</th>
-        </tr>
-    </thead>
     <tbody>
-        <tr *ngFor="let contact of contacts"> <!---one tr per contact-->
-            <td>{{contact.firstName}}</td>
-            <td>{{contact.lastName}}</td>
-            <td>{{contact.street}}</td>
-            <td>{{contact.city}}</td>
-            <td><a [routerLink]="'/contacts/' + contact.id">View</a></td>
-            <td><a [routerLink]="'/contacts/edit/' + contact.id">Edit</a></td>
+        <tr class="contact" *ngFor="let contact of contacts"> <!---one tr per contact-->
+            <td class="contact-element">{{contact.firstName}}</td>
+            <td class="contact-element">{{contact.lastName}}</td>
+            <td class="contact-element"><a [routerLink]="'/contacts/' + contact.id">View</a></td>
+            <td class="contact-element"><a [routerLink]="'/contacts/edit/' + contact.id">Edit</a></td>
         </tr>
     </tbody>
 </table>
