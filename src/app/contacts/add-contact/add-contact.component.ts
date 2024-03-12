@@ -36,7 +36,6 @@ export class AddContactComponent implements OnInit {
       this.form.value.name,
       this.form.value.phoneNr
     );
-    // MAYBE REMOVE
     this.router.navigate(['/contacts']);
   }
 }
