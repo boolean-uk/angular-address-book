@@ -9,8 +9,8 @@ import { ContactServiceService } from '../contact-service.service';
 })
 export class NewContactComponent {
   contactForm: FormGroup = new FormGroup({
-    firstname: new FormControl(""),
-    lastname: new FormControl(""),
+    firstName: new FormControl(""),
+    lastName: new FormControl(""),
     street: new FormControl(""),
     city: new FormControl(""),
   })
@@ -19,8 +19,8 @@ export class NewContactComponent {
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
-      firstname: ["", Validators.required],
-      lastname: ["", Validators.required],
+      firstName: ["", Validators.required],
+      lastName: ["", Validators.required],
       street: ["", Validators.required],
       city: ["", Validators.required],
     })
@@ -28,7 +28,7 @@ export class NewContactComponent {
 
   onSubmit(): void {
     console.log(this.contactForm?.value)
-    this.contactService.setContact(this.contactForm?.value)
+    this.contactService.addContact(this.contactForm?.value)
   }
 
 }
