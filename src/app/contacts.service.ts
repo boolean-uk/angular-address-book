@@ -26,4 +26,17 @@ export class ContactsService {
     this.id++;
     this.contacts.push(newContact)
   }
+
+  editContact(id: number, firstName: string, lastName: string, email: string) {
+    const con = this.contacts.find((c) => c.id === id)
+    if (!con) {
+      return
+    }
+    this.contacts[this.contacts.indexOf(con)] = {
+      id: id,
+      firstName: firstName,
+      lastName: lastName,
+      email: email
+    }
+  }
 }

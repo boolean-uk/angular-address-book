@@ -9,9 +9,10 @@ import { CreateContactComponent } from './create-contact/create-contact.componen
 import { ViewContactComponent } from './view-contact/view-contact.component';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditContactComponent } from './edit-contact/edit-contact.component';
 
 @NgModule({
-  declarations: [AppComponent, ContactListComponent, CreateContactComponent, ViewContactComponent],
+  declarations: [AppComponent, ContactListComponent, CreateContactComponent, ViewContactComponent, EditContactComponent],
   imports: [BrowserModule, AppRoutingModule, LayoutModule, CommonModule, ReactiveFormsModule],
   bootstrap: [AppComponent],
 })
