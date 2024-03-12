@@ -10,4 +10,6 @@
         <h1>{{ contact.firstName }} {{ contact.lastName }}</h1>
         <p>{{ contact.street }} {{ contact.city }}</p>
     </div>
+    <div><a routerLink="/contacts/edit/{{ contact.id }}">Edit</a></div>
+
 </ng-container>

@@ -26,4 +26,10 @@ export class ContactService {
   public addContact(contact: Contact) {
     this.contacts.push(contact)
   }
+
+  public updateContact(updatedContact: Contact) {
+    this.contacts = this.contacts.map((aContact) =>
+      aContact.id === updatedContact.id ? updatedContact : aContact
+    )
+  }
 }
