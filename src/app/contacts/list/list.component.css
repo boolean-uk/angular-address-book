@@ -1,0 +1,13 @@
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    border: 1px solid lightgrey;
+    padding: 1rem;
+}
+
+li:hover {
+    background-color: lightgrey;
+}
