@@ -12,7 +12,6 @@ export class AdressbookService {
 
   public getContactById(id: number | null): Contact | null {
     const contact = this.contacts.find((contact) => contact.id === id);
-    console.log(contact)
     if (!contact) {
       return null;
     }
