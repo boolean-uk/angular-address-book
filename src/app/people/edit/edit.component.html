@@ -1,0 +1,26 @@
+<ng-container *ngIf="updatePerson !== null; else elseBlock">
+    <h1>Edit Contact</h1>
+    <form [formGroup]="personForm" (ngSubmit)="editPerson()">
+      <label for="firstName">First name:</label>
+      <input id="firstName" type="text" formControlName="firstName"/>
+  
+      <label for="lastName">Last name:</label>
+      <input id="lastName" type="text" formControlName="lastName"/>
+  
+      <label for="street">Street:</label>
+      <input id="street" type="text" formControlName="street"/>
+  
+      <label for="city">City:</label>
+      <input id="city" type="text" formControlName="city"/>
+  
+      <div class="actions">
+        <div class="spacer"></div>
+        <button type="submit">Edit</button>
+      </div>
+    </form>
+</ng-container>
+  
+<ng-template #elseBlock>
+    <h1>Error: 404</h1>
+    <h2>The user you tried to edit does not exist in the database</h2>
+</ng-template>
