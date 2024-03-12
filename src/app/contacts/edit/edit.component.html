@@ -1,0 +1,29 @@
+<h2>Update Contact</h2>
+
+<!-- if the user exists -->
+<ng-container *ngIf="contact !== null">
+    <div>
+        <form [formGroup]="contactForm" (ngSubmit)="updateContact()">
+            <label for="firstName">First name:</label>
+            <input id="firstName" type="text" formControlName="firstName" />
+            
+            <label for="lastName">Last name:</label>
+            <input id="lastName" type="text" formControlName="lastName" />
+            
+            <label for="street">Street:</label>
+            <input id="street" type="text" formControlName="street" />
+            
+            <label for="city">City:</label>
+            <input id="city" type="text" formControlName="city" />
+            
+            <div class="actions">
+                <div class="spacer"></div>
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</ng-container>
+<!-- if the user doesn't exist -->
+<ng-container *ngIf="contact === null">
+    <p>Contact with ID {{id}} not found</p>
+</ng-container>
