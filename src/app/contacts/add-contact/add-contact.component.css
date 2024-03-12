@@ -1,0 +1,9 @@
+.contact-list {
+  border-style: solid;
+  border-width: 1px;
+  padding: 5px;
+  width: 256px;
+}
+.form {
+  padding-right: 0.8em;
+}

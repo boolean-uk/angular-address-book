@@ -1,0 +1,9 @@
+<h2>Contact</h2>
+<div class="contact-list">
+  {{ contact?.id }}: {{ contact?.firstName }} {{ contact?.lastName }}
+  <p>{{ contact?.street }} : {{ contact?.city }}</p>
+  <a routerLink="/contacts/">Back</a>
+  <a routerLink="/contacts/{{ contact?.id }}/edit" style="padding-left: 10px"
+    >Edit</a
+  >
+</div>
