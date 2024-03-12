@@ -1,0 +1,5 @@
+<h2>Contacts</h2>
+<div *ngFor="let contact of contacts">
+  {{ contact.firstName }} {{ contact.lastName }}
+  <a href="/contacts/view/{{ contact.id }}" style="margin-left: 10px">View</a>
+</div>
