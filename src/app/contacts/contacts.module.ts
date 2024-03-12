@@ -5,13 +5,15 @@ import { AddComponent } from './add/add.component';
 import { ViewComponent } from './view/view.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { EditComponent } from './edit/edit.component';
 
 
 
 @NgModule({
   declarations: [
     ListComponent,
-    ViewComponent
+    ViewComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,

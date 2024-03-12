@@ -20,5 +20,15 @@ export class ContactsService {
     console.log(c);
     console.log(this.contacts);
   }
-  //constructor() { }
+
+  public EditContact(c: Contact){
+    const index = this.contacts.map(c => c.id).indexOf(c.id);
+    if (index !== -1){
+      this.contacts[index] = c;
+    } else {
+      console.error('Missing contact, cannot update');
+    }
+    console.log(c);
+    console.log(this.contacts);
+  };
 }

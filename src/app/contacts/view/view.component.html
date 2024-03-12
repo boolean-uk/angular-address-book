@@ -3,5 +3,7 @@
 </div>
 <div *ngIf="contact !== null">
     <h1>{{ contact.firstName }} {{ contact.lastName }}</h1>
-    <p>{{ contact.street }} {{ contact.city }}</p>
+    <p>{{ contact.street }}, {{ contact.city }}</p>
+    <button><a routerLink="/contacts/edit/{{contact.id}}">Edit</a></button>
+    <button><a routerLink="/contacts">Return to contacts list</a></button>
 </div>
