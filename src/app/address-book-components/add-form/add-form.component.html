@@ -1,1 +1,18 @@
-<p>add-form works!</p>
+<p>Create Contact</p>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <label for="first-name">First Name:</label>
+    <input id="first-name" type="text" formControlName="firstName" required>
+
+    <label for="last-name">Last Name:</label>
+    <input id="last-name" type="text" formControlName="lastName" required>
+
+    <label for="street">Street:</label>
+    <input id="street" type="text" formControlName="street" required>
+
+    <label for="city">City:</label>
+    <input id="city" type="text" formControlName="city" required>
+
+    <div>
+        <button type="submit">Create</button>
+    </div>
+</form>

@@ -8,10 +8,12 @@ import { AddFormComponent } from './address-book-components/add-form/add-form.co
 import { ContactViewPageComponent } from './address-book-components/contact-view-page/contact-view-page.component';
 import { ContactsListComponentComponent } from './address-book-components/contacts-list-component/contacts-list-component.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AddressbookModule } from './addressbook/addressbook.module';
 
 @NgModule({
-  declarations: [AppComponent, AddFormComponent, ContactViewPageComponent, ContactsListComponentComponent],
-  imports: [BrowserModule, AppRoutingModule, LayoutModule, FormsModule, ReactiveFormsModule],
+  declarations: [AppComponent],
+  imports: [AddressbookModule, BrowserModule, AppRoutingModule, LayoutModule, FormsModule, ReactiveFormsModule, RouterModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
