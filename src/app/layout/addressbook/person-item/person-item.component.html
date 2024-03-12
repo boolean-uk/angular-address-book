@@ -1,0 +1,8 @@
+<div class="flex gap-7 items-center justify-evenly border-2 p-3">
+  <p class="text-xl font-bold underline">
+    {{ person.firstName }} {{ person.lastName }}
+  </p>
+  <p>{{ person.city }}</p>
+  <p>{{ person.street }}</p>
+  <a [routerLink]="['/addressbook', person.id]">View</a>
+</div>

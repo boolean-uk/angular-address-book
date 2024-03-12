@@ -1,0 +1,46 @@
+<h1 class="text-3xl">Create Contact</h1>
+<form [formGroup]="form" (submit)="onSubmit()">
+  <label for="first-name">First name:</label>
+  <input
+    class="border-2 rounded-md bg-slate-200"
+    id="first-name"
+    formControlName="firstName"
+    type="text"
+  />
+
+  <label for="last-name">Last name:</label>
+  <input
+    class="border-2 rounded-md bg-slate-200"
+    id="last-name"
+    formControlName="lastName"
+    placeholder="Name"
+    type="text"
+  />
+
+  <label for="street">Street:</label>
+  <input
+    class="border-2 rounded-md bg-slate-200"
+    id="street"
+    formControlName="street"
+    type="text"
+  />
+
+  <label for="city">City:</label>
+  <input
+    class="border-2 rounded-md bg-slate-200"
+    id="city"
+    formControlName="city"
+    type="text"
+  />
+
+  <div class="actions">
+    <div class="spacer"></div>
+    <button
+      class="bg-green-400 p-3 px-5 rounded-md disabled:bg-slate-300 disabled:text-gray-500"
+      type="submit"
+      [disabled]="!form.valid"
+    >
+      Create
+    </button>
+  </div>
+</form>
