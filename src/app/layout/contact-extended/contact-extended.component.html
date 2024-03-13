@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<h2>Contact Details</h2>
 <div *ngIf="contact; else noContact">
-  <p><strong>First Name:</strong> {{ contact.firstName }}</p>
-  <p><strong>Last Name:</strong> {{ contact.lastName }}</p>
+  <h1>{{ contact.lastName }}, {{ contact.firstName }}</h1>
   <p><strong>Street:</strong> {{ contact.street }}</p>
   <p><strong>City:</strong> {{ contact.city }}</p>
 </div>

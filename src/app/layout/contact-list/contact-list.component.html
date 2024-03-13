@@ -3,7 +3,7 @@
 <div *ngIf="contacts && contacts.length; else noContacts">
   <ul>
     <li *ngFor="let contact of contacts">
-      {{ contact.firstName }} {{ contact.lastName }} -
+      {{ contact.lastName }}, {{ contact.firstName }} -
       <a [routerLink]="['/contacts/', contact.id]">View</a> -
       <a [routerLink]="['/contacts/', contact.id, 'edit']">Edit</a>
     </li>
