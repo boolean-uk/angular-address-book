@@ -1,0 +1,38 @@
+<div class="d-flex flex-column justify-content-center align-item-center bg-light vh-100">
+  <h2>Contact List</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>View</th> 
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="contacts$ | async as contacts; else noContacts">
+        <tr *ngFor="let contact of contacts">
+          <td>{{ contact.id }}</td>
+          <td>{{ contact.firstName }}</td>
+          <td>{{ contact.lastName }}</td>
+          <td>
+            <a [routerLink]="['/view-contact', contact.id]" class="btn btn-sm btn-outline-primary"> <!-- Modified routerLink -->
+              View
+            </a>
+          </td>
+          <td>
+            <a [routerLink]="['/edit-contact', contact.id]" class="btn btn-sm btn-outline-primary">Edit</a>
+          </td>
+          <td>
+            <a [routerLink]="['/delete-contact', contact.id]" class="btn btn-sm btn-danger">Delete</a>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
+<ng-template #noContacts>
+  <p>No contacts yet.</p>
+</ng-template>
