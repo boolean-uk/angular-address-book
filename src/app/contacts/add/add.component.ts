@@ -37,5 +37,4 @@ export class AddComponent {
       this.contactForm.reset();
     }
   }
-
 }

@@ -18,4 +18,9 @@ export class ContactService {
     c.id = this.contacts.reduce((acc, cur) => (cur.id > acc ? cur.id : acc), 0) + 1;
     this.contacts.push(c);
   }
+
+  public updateContact(c: Contact) {
+    const index = this.contacts.findIndex((contact) => contact.id === c.id);
+    this.contacts[index] = c;
+  }
 }

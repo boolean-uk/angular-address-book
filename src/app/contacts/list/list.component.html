@@ -5,6 +5,7 @@
     <div *ngFor="let c of contacts" class="contact-container">
         <span>{{c.firstName}} {{c.lastName}}</span>
         <a routerLink="/contacts/{{c.id}}">View</a>
+        <a routerLink="/contacts/{{c.id}}/edit">Edit</a>
         <br>
       </div>
 </div>
