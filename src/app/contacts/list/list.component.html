@@ -3,5 +3,6 @@
 <ul *ngFor="let c of contacts">
   <li>{{c.firstName}} {{c.lastName}}
     <a routerLink="/contacts/{{ c.id }}">View</a>
+    <a routerLink="/contacts/edit/{{ c.id }}">Edit</a>
   </li>
 </ul>
