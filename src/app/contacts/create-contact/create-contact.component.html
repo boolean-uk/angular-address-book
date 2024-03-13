@@ -1,0 +1,41 @@
+<h2>Add new Contact To list</h2>
+
+<form [formGroup]="form" (submit)="onSubmit()">
+  <div>
+    <label>First Name</label>
+    <input
+      formControlName="firstName"
+      type="text"
+      placeholder="first name"
+      autocomplete="false"
+    />
+  </div>
+  <div>
+    <label>Last Name</label>
+    <input
+      formControlName="lastName"
+      type="text"
+      placeholder="last name"
+      autocomplete="false"
+    />
+  </div>
+  <div>
+    <label>Street</label>
+    <input
+      formControlName="street"
+      type="text"
+      placeholder="street"
+      autocomplete="false"
+    />
+  </div>
+  <div>
+    <label>City</label>
+    <input
+      formControlName="city"
+      type="text"
+      placeholder="city"
+      autocomplete="false"
+    />
+  </div>
+  <button type="submit">Create new contact</button>
+</form>
