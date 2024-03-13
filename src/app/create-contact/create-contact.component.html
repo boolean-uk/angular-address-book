@@ -1,0 +1,21 @@
+<h1>Create Contact</h1>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <label for="first-name">First name:</label>
+  <input formControlName="firstName" id="first-name" type="text" required />
+
+  <label for="last-name">Last name:</label>
+  <input formControlName="lastName" id="last-name" type="text" required />
+
+  <label for="street">Street:</label>
+  <input formControlName="street" id="street" type="text" required />
+
+  <label for="city">City:</label>
+  <input formControlName="city" id="city" type="text" required />
+
+  <div class="actions">
+    <button type="submit" [disabled]="contactForm.invalid">Create</button>
+  </div>
+</form>
+<div *ngIf="contactForm.invalid">
+  <p>All fields are required.</p>
+</div>
