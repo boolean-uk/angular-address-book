@@ -5,6 +5,24 @@
 ul {
   padding: 0;
 }
+
 li {
   list-style: none;
+}
+
+a {
+  font-family: monospace;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: lightgrey;
+}
+
+a::before {
+  content: "\00a0\00a0";
+}
+
+.active::before {
+  content: "> ";
 }
