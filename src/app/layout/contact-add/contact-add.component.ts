@@ -37,9 +37,9 @@ export class ContactAddComponent {
         city: this.contactForm.value.city,
       };
       this.contactService.addContact(this.contact);
+      this.contactForm.reset();
     } else {
       console.log('Not valid form');
-      
     }
   }
 }
