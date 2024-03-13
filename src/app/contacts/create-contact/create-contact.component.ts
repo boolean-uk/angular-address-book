@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ContactsService } from 'src/app/contacts.service';
 
 @Component({
   selector: 'app-create-contact',
@@ -9,8 +10,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CreateContactComponent implements OnInit {
   //@ts-ignore
   form: FormGroup;
-
-  constructor(private fb: FormBuilder) {}
+  //@ts-ignore
+  contactService: ContactsService;
+  // add contact service
+  constructor(private fb: FormBuilder, contactService: ContactsService) {
+    this.contactService = contactService;
+  }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -34,5 +39,14 @@ export class CreateContactComponent implements OnInit {
     console.log('lastName', this.form.value.lastName);
     console.log('street', this.form.value.street);
     console.log('city', this.form.value.city);
+
+    //contact create contact in contact services
+
+    this.contactService.createContact(
+      this.form.value.firstName,
+      this.form.value.lastName,
+      this.form.value.street,
+      this.form.value.city
+    );
   }
 }
