@@ -1,0 +1,19 @@
+/* Style the contacts container */
+ul {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Style links */
+a {
+  text-decoration: none;
+  color: #007bff; /* Blue color for links */
+}
+
+a:hover {
+  text-decoration: underline;
+}
