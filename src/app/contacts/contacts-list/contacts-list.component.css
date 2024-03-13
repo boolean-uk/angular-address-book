@@ -1,15 +1,17 @@
-:host {
-  padding: 0 0.5em;
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
 }
 
-ul {
-  padding: 0;
-}
-li {
-  list-style: none;
+.contact-card > p {
+  margin: 5px;
+  font-size: 20px;
 }
 
-a {
+.contact-card > a {
   background-image: linear-gradient(
     to right,
     #aa076b 0%,
@@ -27,7 +29,7 @@ a {
   display: block;
 }
 
-a:hover {
+.contact-card > a:hover {
   background-position: right center;
   color: #fff;
   text-decoration: none;
