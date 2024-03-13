@@ -1,13 +1,13 @@
-ul {
-    list-style: none;
+.contact-list {
+    margin-top: 1rem;
     display: flex;
 }
 
-li {
+a {
     border: 1px solid lightgrey;
     padding: 1rem;
 }
 
-li:hover {
+a:hover {
     background-color: lightgrey;
 }

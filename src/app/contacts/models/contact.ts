@@ -4,3 +4,9 @@ export interface Contact {
     lastName: string;
     email: string;
 }
+
+export interface ContactInsertDTO {
+    firstName: string;
+    lastName: string;
+    email: string;
+}
