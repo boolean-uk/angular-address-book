@@ -1,2 +1,6 @@
-<p><b>name</b>: {{contact?.firstName}} {{contact?.lastName}}</p>
-<p><b>email</b>: {{contact?.email}}</p>
+<div *ngIf="contact">
+    <p><b>name</b>: {{contact.firstName}} {{contact.lastName}}</p>
+    <p><b>email</b>: {{contact.email}}</p>
+    <a [routerLink]="['/contacts', id, 'edit']">Edit</a>
+</div>
+<p *ngIf="!contact">Contact not found.</p>

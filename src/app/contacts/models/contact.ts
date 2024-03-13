@@ -5,7 +5,7 @@ export interface Contact {
     email: string;
 }
 
-export interface ContactInsertDTO {
+export interface ContactDTO {
     firstName: string;
     lastName: string;
     email: string;

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactsService } from '../contacts.service';
-import { ContactInsertDTO } from '../models/contact';
+import { ContactDTO } from '../models/contact';
 
 @Component({
   selector: 'app-add',
@@ -18,7 +18,7 @@ export class AddComponent {
 
   addContact() : void {
     if (this.newContactForm.valid) {
-      const contact : ContactInsertDTO = {
+      const contact : ContactDTO = {
         firstName: this.newContactForm.value.firstName,
         lastName: this.newContactForm.value.lastName,
         email: this.newContactForm.value.email

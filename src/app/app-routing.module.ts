@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListComponent } from './contacts/list/list.component';
 import { ViewComponent } from './contacts/view/view.component';
 import { AddComponent } from './contacts/add/add.component';
+import { EditComponent } from './contacts/edit/edit.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'contacts', pathMatch: 'full'},
   {path: 'contacts', component: ListComponent},
   {path: 'contacts/:id', component: ViewComponent},
+  {path: 'contacts/:id/edit', component: EditComponent},
   {path: 'new-contact', component: AddComponent},
 ];
 
