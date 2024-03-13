@@ -1,0 +1,8 @@
+<div *ngFor="let contact of contactService.contacts">
+    <span>{{contact.firstName}} {{contact.lastName}}
+        <p>{{contact.street}} - {{contact.city}}</p>
+    </span>
+    <a routerLink="/contacts/{{contact.uuid}}">View</a>
+    <br>
+    <a [routerLink]="['/contacts/edit/', contact.uuid]">Edit</a>
+</div>
