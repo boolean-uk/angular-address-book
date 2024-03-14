@@ -1,0 +1,66 @@
+<h1>Create a new contact</h1>
+<div>
+  <form [formGroup]="contactForm" (submit)="onSubmit()">
+    <label for="firstname">First Name:</label>
+    <input
+      formControlName="firstname"
+      type="text"
+      id="firstname"
+      name="firstname"
+    />
+    <div
+      class="error"
+      *ngIf="
+        contactForm.get('firstname')?.invalid &&
+        (contactForm.get('firstname')?.dirty ||
+          contactForm.get('firstname')?.touched)
+      "
+    >
+      First name is required.
+    </div>
+
+    <label for="lastname">Last Name:</label>
+    <input
+      formControlName="lastname"
+      type="text"
+      id="lastname"
+      name="lastname"
+    />
+    <div
+      class="error"
+      *ngIf="
+        contactForm.get('lastname')?.invalid &&
+        (contactForm.get('lastname')?.dirty ||
+          contactForm.get('lastname')?.touched)
+      "
+    >
+      Last name is required.
+    </div>
+
+    <label for="city">City:</label>
+    <input formControlName="city" type="text" id="city" name="city" />
+    <div
+      class="error"
+      *ngIf="
+        contactForm.get('city')?.invalid &&
+        (contactForm.get('city')?.dirty || contactForm.get('city')?.touched)
+      "
+    >
+      City is required.
+    </div>
+
+    <label for="street">Street:</label>
+    <input formControlName="street" type="text" id="street" name="street" />
+    <div
+      class="error"
+      *ngIf="
+        contactForm.get('street')?.invalid &&
+        (contactForm.get('street')?.dirty || contactForm.get('street')?.touched)
+      "
+    >
+      Street is required.
+    </div>
+
+    <button type="submit" [disabled]="isSubmitting">Add Contact</button>
+  </form>
+</div>
