@@ -6,6 +6,7 @@ import { ContactsService } from '../contacts.service';
   templateUrl: './contacts-list.component.html',
   styleUrls: ['./contacts-list.component.css']
 })
+
 export class ContactsListComponent {
   contactService: ContactsService;
 

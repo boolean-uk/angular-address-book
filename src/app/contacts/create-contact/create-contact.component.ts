@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactsService } from '../contacts.service'; 
 
 @Component({
@@ -19,8 +19,11 @@ export class CreateContactComponent implements OnInit {
 
 ngOnInit(): void {
   this.form = this.fb.group({
-    name: ['', Validators.required],
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
+    street: ['', Validators.required],
+    city: ['', Validators.required]
   });
 }
 
@@ -31,8 +34,11 @@ onSubmit() {
 
   // create contact
   this.contactService.createContact(
-    this.form.value.name,
-    this.form.value.email
+    this.form.value.firstName,
+    this.form.value.lastName,
+    this.form.value.email,
+    this.form.value.street,
+    this.form.value.city
   );
 }
 }

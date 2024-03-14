@@ -11,13 +11,21 @@ export class ContactsService {
     return this.contacts.find((contact) => contact.id === contactId);
   }
 
-  createContact(name: string, email: string) {
+  createContact(
+    firstName: string,
+    lastName: string,
+    email: string,
+    street: string, 
+    city: string
+    ) {
     const newContact: Contact = {
       id: this.contacts.length + 1,
-      name,
+      firstName,
+      lastName,
       email,
+      street,
+      city
     };
     this.contacts.push(newContact);
-    console.log("contacts: ", this.contacts)
   }
 }

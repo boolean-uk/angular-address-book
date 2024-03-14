@@ -1,10 +1,17 @@
 <h2>Add new contact: </h2>
 <form [formGroup]="form" (submit)="onSubmit()">
-    <label>Name</label>
+    <label>Firstname</label>
     <input
-      formControlName="name"
+      formControlName="firstName"
       type="text"
-      placeholder="Name"
+      placeholder="Firstname"
+      autocomplete="false"
+    />
+    <label>Lastname</label>
+    <input
+      formControlName="lastName"
+      type="text"
+      placeholder="Lastname"
       autocomplete="false"
     />
     <label>Email</label>
@@ -12,6 +19,20 @@
       formControlName="email"
       type="text"
       placeholder="Email"
+      autocomplete="false"
+    />
+    <label>Street</label>
+    <input
+      formControlName="street"
+      type="text"
+      placeholder="Street"
+      autocomplete="false"
+    />
+    <label>City</label>
+    <input
+      formControlName="city"
+      type="text"
+      placeholder="City"
       autocomplete="false"
     />
     <button type="submit" [disabled]="!form.valid">Create!</button>

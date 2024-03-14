@@ -1,18 +1,28 @@
 export type Contact = {
     id: number;
-    name: string;
+    firstName: string;
+    lastName: string;
     email: string;
+    street: string;
+    city: string;
+    
   };
   
   export const CONTACTS: Contact[] = [
     {
       id: 1,
-      name: 'Gordon',
-      email: 'gordon@example.com'
+      firstName: 'Gordon',
+      lastName: 'Johnson',
+      email: 'gordon@example.com',
+      street: 'ExampleStreet',
+      city: 'ExampleCity'
     },
     {
       id: 2,
-      name: 'Patrik',
-      email: 'patrik@example.com'
+      firstName: 'Gunnar',
+      lastName: 'Gunnarsson',
+      email: 'gunnar@example.com',
+      street: 'GunnarStreet',
+      city: 'GunnarTown'
     },
   ];

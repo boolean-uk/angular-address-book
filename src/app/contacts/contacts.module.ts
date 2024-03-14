@@ -11,4 +11,5 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
   exports: [ContactsListComponent, CreateContactComponent, ViewContactComponent]
 })
+
 export class ContactsModule {}
