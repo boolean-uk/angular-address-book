@@ -10,17 +10,16 @@ import { ContactsService } from 'src/app/contacts.service';
   styleUrls: ['./edit-contact.component.css'],
 })
 export class EditContactComponent implements OnInit {
-  contactsService: ContactsService;
   id: number = -1;
   user: Contact | undefined;
   contactForm: FormGroup;
+  isSubmitting = false;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    contactsService: ContactsService
+    private contactsService: ContactsService
   ) {
-    this.contactsService = contactsService;
     this.contactForm = new FormBuilder().group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
@@ -48,7 +47,9 @@ export class EditContactComponent implements OnInit {
   }
 
   onSubmit() {
+    this.isSubmitting = true;
     console.warn('User Edited', this.contactForm);
     this.contactsService.editContact(this.id, this.contactForm.value);
+    this.router.navigate(['/contacts']);
   }
 }

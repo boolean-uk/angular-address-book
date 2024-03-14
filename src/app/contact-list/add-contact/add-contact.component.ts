@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ContactsService } from 'src/app/contacts.service';
 
 @Component({
@@ -9,11 +10,13 @@ import { ContactsService } from 'src/app/contacts.service';
 })
 export class AddContactComponent {
   contactForm: FormGroup;
-  contactService: ContactsService;
+  isSubmitting = false;
 
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
     private formBuilder: FormBuilder,
-    contactsService: ContactsService
+    private contactService: ContactsService
   ) {
     this.contactForm = this.formBuilder.group({
       firstname: ['', Validators.required],
@@ -21,15 +24,16 @@ export class AddContactComponent {
       street: ['', Validators.required],
       city: ['', Validators.required],
     });
-    this.contactService = contactsService;
   }
 
   onSubmit() {
+    this.isSubmitting = true;
     this.contactService.addContact(
       this.contactForm.value.firstname,
       this.contactForm.value.lastname,
       this.contactForm.value.street,
       this.contactForm.value.city
     );
+    this.router.navigate(['/contacts']);
   }
 }
