@@ -1,0 +1,23 @@
+<h2>Address Book</h2>
+<table>
+    <thead>
+        <tr>
+            <th>|___Id___|</th>
+            <th>___First Name___|</th>
+            <th>___Last Name___|</th>
+            <th>___Phone number___|</th>
+            <th>___Links</th>
+            <th>____|</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of contacts">
+        <td>{{ contact.id }}</td>
+        <td>{{ contact.firstName }}</td>
+        <td>{{ contact.lastName }}</td>
+        <td>{{ contact.phone }}</td>
+        <td><a routerLink="/view/{{ contact.id }}">View</a></td>
+        <td><a routerLink="/edit/{{ contact.id }}">Edit</a></td>
+        </tr>
+    </tbody>
+</table>
