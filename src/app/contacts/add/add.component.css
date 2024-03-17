@@ -1,0 +1,26 @@
+:host {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.5em;
+    width: 40vw;
+  }
+  
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .actions {
+    display: flex;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
