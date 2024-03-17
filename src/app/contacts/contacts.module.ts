@@ -1,0 +1,15 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ContactsListComponent } from './contacts-list/contacts-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CreateContactComponent } from './create-contact/create-contact.component';
+import { ViewContactComponent } from './view-contact/view-contact.component';
+import { RouterModule } from '@angular/router';
+
+@NgModule({
+  declarations: [ContactsListComponent, CreateContactComponent, ViewContactComponent],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  exports: [ContactsListComponent, CreateContactComponent, ViewContactComponent]
+})
+
+export class ContactsModule {}
