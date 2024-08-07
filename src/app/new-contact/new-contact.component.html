@@ -1,0 +1,12 @@
+<div class="w-fit mx-auto">
+  <div class="mx-auto max-w-lg text-center py-6">
+    <h3 class="text-2xl font-bold sm:text-3xl">Add a new contact!</h3>
+
+    <p class="mt-1 text-gray-500">
+      Please fill out the form below to add a new contact.
+    </p>
+  </div>
+  <ul class="flex flex-col gap-y-1"></ul>
+</div>
+
+<app-contact-form (saveContact)="saveContact($event)"></app-contact-form>

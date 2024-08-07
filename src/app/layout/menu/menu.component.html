@@ -1,5 +1,44 @@
-<h2>Menu</h2>
-<ul>
-  <li><a>Contacts list</a></li>
-  <li><a>Add new contact</a></li>
+<div class="pb-6">
+  <h2 class="text-5xl pb-1">Menu</h2>
+  <p class="font-light italic">What would you like to do?</p>
+</div>
+
+<a
+  class="group relative inline-block focus:outline-none focus:ring hover:cursor-pointer"
+  (click)="goBack()"
+>
+  <span
+    class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-red-300 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+  ></span>
+
+  <span
+    class="relative flex gap-x-1 items-center border-[1px] border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+      />
+    </svg>
+    <span> Go Back</span>
+  </span>
+</a>
+
+<ul class="font-medium hover:cursor-pointer my-6">
+  <li class="hover:text-blue-300 underline hover:no-underline">
+    <a [routerLink]="['/contact-list']">View Contacts list</a>
+  </li>
+  <li class="hover:text-blue-300 underline hover:no-underline">
+    <a [routerLink]="['/add-contact']">Add new contact</a>
+  </li>
 </ul>
+
+<router-outlet></router-outlet>
