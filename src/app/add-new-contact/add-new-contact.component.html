@@ -1,0 +1,27 @@
+<h2>Add new contact!</h2>
+<form [formGroup]="userForm" (ngSubmit)="submit($event)">
+  <label for="firstName"> First Name: </label>
+  <input type="text" name="firstName" formControlName="firstName" />
+  <label for="lastName"> Last Name: </label>
+  <input type="text" name="lastName" formControlName="lastName" />
+  <label for="email"> Email: </label>
+  <input type="email" name="email" formControlName="email" />
+  <label for="street"> Street: </label>
+  <input type="text" name="street" formControlName="street" />
+  <label for="city"> City: </label>
+  <input type="text" name="city" formControlName="city" />
+
+  <button [disabled]="userForm.invalid" type="submit">Create</button>
+
+  <div *ngIf="userForm.get('firstName')?.hasError('invalidName') && userForm.get('firstName')?.touched">
+  First Name must be at least 3 characters long and cannot contain spaces.
+</div>
+<div *ngIf="userForm.get('lastName')?.hasError('invalidName') && userForm.get('lastName')?.touched">
+  Last Name must be at least 3 characters long and cannot contain spaces.
+</div>
+<div *ngIf="userForm.get('email')?.hasError('invalidEmail') && userForm.get('email')?.touched">
+  Invalid email format. Email must end with "@boolean.co.uk".
+</div>
+</form>
+
+

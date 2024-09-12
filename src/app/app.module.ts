@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { LayoutModule } from './layout/layout.module';
+import { ContactComponent } from './contact/contact.component';
+import { AddNewContactComponent } from './add-new-contact/add-new-contact.component';
+import { ContactDetailsComponent } from './contact-details/contact-details.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, LayoutModule],
+  declarations: [AppComponent, ContactComponent, AddNewContactComponent, ContactDetailsComponent], 
+  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
