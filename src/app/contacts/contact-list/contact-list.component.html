@@ -1,0 +1,6 @@
+<div class="list-group">
+    <a 
+    *ngFor = "let contact of contacts; let i = index;" 
+    [routerLink] ="['/contact', i]" 
+    class="list-group-item list-group-item-action">{{contact.firstName}} {{contact.lastName}}</a>
+</div>
