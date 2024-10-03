@@ -1,39 +1,42 @@
-<h2>Add new contact: </h2>
-<form [formGroup]="form" (submit)="onSubmit()">
-    <label>Firstname</label>
-    <input
-      formControlName="firstName"
-      type="text"
-      placeholder="Firstname"
-      autocomplete="false"
-    />
-    <label>Lastname</label>
-    <input
-      formControlName="lastName"
-      type="text"
-      placeholder="Lastname"
-      autocomplete="false"
-    />
-    <label>Email</label>
-    <input
-      formControlName="email"
-      type="text"
-      placeholder="Email"
-      autocomplete="false"
-    />
-    <label>Street</label>
-    <input
-      formControlName="street"
-      type="text"
-      placeholder="Street"
-      autocomplete="false"
-    />
-    <label>City</label>
-    <input
-      formControlName="city"
-      type="text"
-      placeholder="City"
-      autocomplete="false"
-    />
-    <button type="submit" [disabled]="!form.valid">Create!</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<h1>Add new contact: </h1>
+  <form [formGroup]="form" (submit)="onSubmit()">
+      <label>Firstname</label>
+      <input
+        formControlName="firstName"
+        type="text"
+        placeholder="Firstname"
+        autocomplete="false"
+      />
+      <label>Lastname</label>
+      <input
+        formControlName="lastName"
+        type="text"
+        placeholder="Lastname"
+        autocomplete="false"
+      />
+      <label>Email</label>
+      <input
+        formControlName="email"
+        type="text"
+        placeholder="Email"
+        autocomplete="false"
+      />
+      <label>Street</label>
+      <input
+        formControlName="street"
+        type="text"
+        placeholder="Street"
+        autocomplete="false"
+      />
+      <label>City</label>
+      <input
+        formControlName="city"
+        type="text"
+        placeholder="City"
+        autocomplete="false"
+      />
+      <button type="submit" [disabled]="!form.valid">Create!</button>
+  </form>
+</html>
