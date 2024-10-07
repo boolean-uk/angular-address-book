@@ -1,42 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<h1>Add new contact: </h1>
+<h1 class="centered">Add new Contact: </h1>
+<div class="contact-card">
   <form [formGroup]="form" (submit)="onSubmit()">
-      <label>Firstname</label>
+    <span class="textbox">
+      <label class="highlight">Firstname: </label>
       <input
         formControlName="firstName"
         type="text"
         placeholder="Firstname"
         autocomplete="false"
       />
-      <label>Lastname</label>
+      <div *ngIf="form.get('firstName')?.errors?.['invalidInput']">
+        Potential harmful code detected (XSS or SQL Injection)
+      </div>
+    </span>
+
+    <span class="textbox">
+      <label class="highlight">Lastname: </label>
       <input
         formControlName="lastName"
         type="text"
         placeholder="Lastname"
         autocomplete="false"
       />
-      <label>Email</label>
+      <div *ngIf="form.get('lastName')?.errors?.['invalidInput']">
+        Potential harmful code detected (XSS or SQL Injection)
+      </div>
+    </span>
+
+    <span class="textbox">
+      <label class="highlight">Email: </label>
       <input
         formControlName="email"
         type="text"
         placeholder="Email"
         autocomplete="false"
       />
-      <label>Street</label>
+      <div *ngIf="form.get('email')?.errors?.['invalidInput']">
+        Potential harmful code detected (XSS or SQL Injection)
+      </div>
+    </span>
+
+    <span class="textbox">
+      <label class="highlight">Street: </label>
       <input
         formControlName="street"
         type="text"
         placeholder="Street"
         autocomplete="false"
       />
-      <label>City</label>
+      <div *ngIf="form.get('street')?.errors?.['invalidInput']">
+        Potential harmful code detected (XSS or SQL Injection)
+      </div>
+    </span>
+
+    <span class="textbox">
+      <label class="highlight">City: </label>
       <input
         formControlName="city"
         type="text"
         placeholder="City"
         autocomplete="false"
       />
+      <div *ngIf="form.get('city')?.errors?.['invalidInput']">
+        Potential harmful code detected (XSS or SQL Injection)
+      </div>
+    </span>
+    
       <button type="submit" [disabled]="!form.valid">Create!</button>
   </form>
+</div>
 </html>

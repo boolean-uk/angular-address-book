@@ -1,8 +1,12 @@
-<h1>Contacts</h1>
+<!DOCTYPE html>
+<html lang="en">
+<h1 class="centered">Contacts</h1>
 <div class="contact-container">
-  <div *ngFor="let contact of contactService.contacts">
+  <div class= "contact-card" *ngFor="let contact of contactService.contacts">
     <h3>{{ contact.firstName }} {{contact.lastName}}</h3>
-    <span>{{contact.email}} {{contact.city}}</span>
+    <span>{{contact.email}}</span><br>
+    <span>{{contact.city}}</span><br>
     <a routerLink="{{ '/contacts/' + contact.id }}">View</a>
   </div>
 </div>
+</html>
