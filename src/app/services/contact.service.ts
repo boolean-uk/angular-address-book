@@ -20,4 +20,13 @@ export class ContactService {
   getContacts(): Contact[] {
     return this.contacts;
   }
+
+  addContact(contact: Contact): void {
+    const newId = this.contacts.length + 1;
+    this.contacts.push({ ...contact, id: newId });
+  }
+
+  removeContact(id: number): void {
+    this.contacts = this.contacts.filter(contact => contact.id !== id);
+  }
 }
