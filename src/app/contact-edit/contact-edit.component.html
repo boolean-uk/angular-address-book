@@ -1,0 +1,19 @@
+<h1>Edit Contact</h1>
+<form (ngSubmit)="onSubmit()">
+  <label for="first-name">First name:</label>
+  <input id="first-name" [(ngModel)]="contact.firstName" name="firstName" type="text" />
+
+  <label for="last-name">Last name:</label>
+  <input id="last-name" [(ngModel)]="contact.lastName" name="lastName" type="text" />
+
+  <label for="street">Street:</label>
+  <input id="street" [(ngModel)]="contact.street" name="street" type="text" />
+
+  <label for="city">City:</label>
+  <input id="city" [(ngModel)]="contact.city" name="city" type="text" />
+
+  <div class="actions">
+    <div class="spacer"></div>
+    <button type="submit">Save</button>
+  </div>
+</form>
