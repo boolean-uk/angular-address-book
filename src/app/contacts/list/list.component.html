@@ -6,6 +6,7 @@
     <p>Email: {{ contact.email }}</p>
     <p>Phone: {{ contact.phone }}</p>
     <a [routerLink]="['/contacts', i]">View</a>
+    <a [routerLink]="['/contacts/edit', i]">Edit</a>
     <hr>
   </li>
 </ul>

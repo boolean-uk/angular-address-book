@@ -23,4 +23,8 @@ export class ContactsService {
   getContactById(id: number): { name: string, email: string, phone: string } | undefined {
     return this.contacts[id]; 
   }
+
+  updateContact(id: number, updatedContact: { name: string; email: string; phone: string }): void {
+    this.contacts[id] = updatedContact; 
+  }
 }
