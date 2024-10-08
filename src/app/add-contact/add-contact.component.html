@@ -1,0 +1,16 @@
+<h1>Add Contact</h1>
+<form [formGroup]="contactForm" (ngSubmit)="addContact()">
+  <label for="firstName">Name</label>
+  <input type="text" id="firstName" name="firstName" ngModel required>
+  
+  <label for="lastName">Last Name</label>
+  <input type="text" id="lastName" name="lastName" ngModel required>
+
+  <label for="street">Street</label>
+  <input type="text" id="street" name="street" ngModel required>
+
+  <label for="city">City</label>
+  <input type="text" id="city" name="city" ngModel required>
+  
+  <button type="submit" [disabled]="contactForm.invalid" >Add Contact</button>
+</form>
