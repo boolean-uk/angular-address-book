@@ -8,9 +8,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [AddComponent, ViewComponent, ListComponent],
+  declarations: [AddComponent, ViewComponent, ListComponent, EditComponent],
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
-  exports: [AddComponent, ViewComponent, ListComponent],
+  exports: [AddComponent, ViewComponent, ListComponent, EditComponent],
 })
 
 export class ContactsModule { }

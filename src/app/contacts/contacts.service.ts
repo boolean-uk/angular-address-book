@@ -20,4 +20,11 @@ export class ContactsService {
     }
     return contact;
   }
+  public UpdateContact(id: number, contact: Contact) {
+    let existing = this.contacts.find((c) => c.id === id)!;
+    existing.firstName = contact.firstName;
+    existing.lastName = contact.lastName;
+    existing.city = contact.city;
+    existing.street = contact.street;
+  }
 }
