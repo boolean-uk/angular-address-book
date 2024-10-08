@@ -20,4 +20,16 @@ export class ContactsService {
     }
     return contact;
   }
+
+  public Update(c: Contact) {
+    const newContacts = this.contacts.map((contact) => {
+      if (c.id === contact.id) {
+        return c;
+      }
+      else {
+        return contact;
+      }
+    })
+    this.contacts = newContacts;
+  }
 }

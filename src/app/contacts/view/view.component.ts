@@ -15,7 +15,6 @@ export class ViewComponent {
     private readonly contactsService: ContactsService,
     private readonly route: ActivatedRoute
   ) {
-    //id = this.route.snapshot.paramMap.get('id');
     this.contact = this.contactsService.GetById(
       Number(route.snapshot.paramMap.get('id'))
     );

@@ -25,7 +25,7 @@ export class AddComponent {
     this.service = this.cService;
   }
 
-  addPet(): void {
+  addContact(): void {
     const newContact: Contact = {
       id: 0,
       firstName: this.contactForm.value.firstName,

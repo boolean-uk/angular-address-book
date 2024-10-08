@@ -1,6 +1,6 @@
-<div>
-    <h2>Add Contact</h2>
-    <form [formGroup]="contactForm" (ngSubmit)="addContact()">
+<div *ngIf="contact !== null">
+    <h2>Update Contact</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="updateContact()">
       <div>
         <label for="firstName">First Name:</label><br/>
         <input type="text" id="firstName" formControlName="firstName" />
@@ -21,6 +21,10 @@
         <input type="text" id="city" formControlName="city" />
       </div><br/>
   
-      <button type="submit" [disabled]="contactForm.invalid">Add Contact</button>
+      <button type="submit" [disabled]="contactForm.invalid">Update Contact</button>
     </form>
   </div>
+
+<div *ngIf="contact === null">
+    <p>Contact not found...</p>
+</div>

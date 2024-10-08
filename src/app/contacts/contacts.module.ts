@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ViewComponent } from './view/view.component';
 import { AddComponent } from './add/add.component';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -12,7 +13,8 @@ import { AddComponent } from './add/add.component';
   declarations: [
     ListComponent,
     ViewComponent,
-    AddComponent
+    AddComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { AddComponent } from './add/add.component';
   exports: [
     ListComponent,
     ViewComponent,
-    AddComponent
+    AddComponent,
+    EditComponent
   ]
 })
 export class ContactsModule { }
