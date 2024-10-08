@@ -9,7 +9,7 @@ import { ContactsService } from '../../services/contacts.service';
 })
 export class EditComponent implements OnInit {
   contactId!: number;
-  contact: { name: string; email: string; phone: string }  | null = null; ;
+  contact: { firstName: string; lastName: string; street: string; city: string }  | null = null; ;
   errorMessage: string | null = null;
 
   constructor(
@@ -40,9 +40,10 @@ export class EditComponent implements OnInit {
     if (existingContact) {
 
       this.contactsService.updateContact(this.contactId, {
-        name: this.contact.name,
-        email: this.contact.email,
-        phone: this.contact.phone
+        firstName: this.contact.firstName,
+        lastName: this.contact.lastName,
+        street: this.contact.street,
+        city: this.contact.city
       });
       this.router.navigate(['/contacts']);
     } else {

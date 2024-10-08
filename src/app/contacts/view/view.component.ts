@@ -8,7 +8,7 @@ import { ContactsService } from '../../services/contacts.service';
   styleUrls: ['./view.component.css']
 })
 export class ViewComponent implements OnInit {
-  contact: { name: string, email: string, phone: string } | undefined; 
+  contact: { firstName: string; lastName: string; street: string; city: string } | undefined; 
 
   constructor(
     private route: ActivatedRoute, 

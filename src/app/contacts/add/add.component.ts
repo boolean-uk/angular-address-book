@@ -12,9 +12,10 @@ export class AddComponent {
 
   constructor(private fb: FormBuilder, private contactsService: ContactsService) {
     this.contactForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.pattern('^[0-9-+ ]+$')]]
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      street: ['', Validators.required],
+      city: ['', Validators.required]
     });
   }
 
