@@ -1,0 +1,17 @@
+<ng-container *ngIf="adrs === null; else elseBlock">
+    <div>
+        <p>
+            <strong>
+                Person with this ID does not exist
+            </strong>
+        </p>
+    </div>
+</ng-container>
+
+<ng-template #elseBlock>
+    <div>
+        <h1>{{adrs?.firstName}}  {{adrs?.lastName}}</h1>
+        <p>{{adrs?.street}}, {{adrs?.city}}</p>
+        <a routerLink="/address/edit/{{adrs?.id}}">Edit this contact</a>
+    </div>
+</ng-template>

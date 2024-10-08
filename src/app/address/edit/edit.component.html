@@ -1,0 +1,27 @@
+<ng-container *ngIf="adrs === null; else elseBlock">
+  <h1>User with This ID does not exist. Try with another ID</h1>
+</ng-container>
+
+<ng-template #elseBlock>
+  <div>
+    <h1>Edit Contact</h1>
+    <form [formGroup]="addressForm" (ngSubmit)="editAddress()">
+      <label for="first-name">First name:</label>
+      <input id="first-name" type="text" formControlName="firstName"/>
+
+      <label for="last-name">Last name:</label>
+      <input id="last-name" type="text" formControlName="lastName" />
+
+      <label for="street">Street:</label>
+      <input id="street" type="text" formControlName="street" />
+
+      <label for="city">City:</label>
+      <input id="city" type="text" formControlName="city"  />
+
+      <div class="actions">
+        <div class="spacer"></div>
+        <button type="submit">Edit Contact</button>
+      </div>
+    </form>
+   </div>
+</ng-template>

@@ -1,0 +1,9 @@
+.data {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    border-bottom: 1px solid #ddd;
+}
