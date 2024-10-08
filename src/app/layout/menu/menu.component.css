@@ -4,7 +4,8 @@
 
 ul {
   padding: 0;
+  top: 50px;
 }
 li {
-  list-style: none;
+  list-style: circle
 }
