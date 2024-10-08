@@ -4,10 +4,10 @@
 
 
 <ng-template #yesContacts>
-    <ul className="contacts-container">
-        <li className= "contact" *ngFor="let c of contacts">
-            <span id="item{{c.id}}">{{c.firstName}} {{c.lastName}}</span>
-            <a routerLink="/contacts/{{c.id}}">View</a>
+    <ul class="contacts-container">
+        <li *ngFor="let c of contacts">
+                <span id="item{{c.id}}">{{c.firstName}} {{c.lastName}}</span>
+                <a routerLink="/contacts/{{c.id}}">View</a>
         </li>
     </ul>
 </ng-template>
