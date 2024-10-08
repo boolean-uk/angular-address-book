@@ -30,4 +30,12 @@ export class ContactsService {
     this.contacts.push(contact);
     console.log(this.contacts);
   }
+
+  public update(id: number, contact: Contact) {
+    let existing = this.contacts.find((c) => c.id === id)!;
+    existing.firstName = contact.firstName;
+    existing.lastName = contact.lastName;
+    existing.city = contact.city;
+    existing.street = contact.street;
+  }
 }

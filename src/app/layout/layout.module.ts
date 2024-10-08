@@ -1,20 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CreatecontactComponent } from './createcontact/createcontact.component';
 import { ViewcontactsComponent } from './viewcontacts/viewcontacts.component';
-import { ReactiveFormsModule } from '@angular/forms';
-
-const routes: Routes = [
-  { path: '', component: MenuComponent },
-  { path: 'contacts', component: ViewcontactsComponent },
-  { path: 'contacts/add', component: CreatecontactComponent },
-];
+import { ViewcontactComponent } from './viewcontact/viewcontact.component';
+import { RouterModule } from '@angular/router';
+import { EditcontactComponent } from './editcontact/editcontact.component';
 
 @NgModule({
-  declarations: [MenuComponent, CreatecontactComponent],
-  imports: [CommonModule, RouterModule.forRoot(routes), ReactiveFormsModule],
-  exports: [MenuComponent],
+  declarations: [
+    MenuComponent,
+    CreatecontactComponent,
+    ViewcontactsComponent,
+    ViewcontactComponent,
+    EditcontactComponent,
+  ],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  exports: [
+    MenuComponent,
+    CreatecontactComponent,
+    ViewcontactsComponent,
+    ViewcontactComponent,
+    EditcontactComponent,
+  ],
 })
 export class LayoutModule {}
