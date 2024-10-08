@@ -1,0 +1,25 @@
+<h1>Edit Contact</h1>
+<div *ngIf="contact !== null">
+    <form [formGroup]="contactForm" (ngSubmit)="editContact()">
+        <label for="firstName">First Name: </label>
+        <input type="text" id="firstName" formControlName="firstName">
+    
+        <label for="lastName">Last Name: </label>
+        <input type="text" id="lastName" formControlName="lastName">
+    
+        <label for="street">Street: </label>
+        <input type="text" id="street" formControlName="street">
+    
+        <label for="city">City: </label>
+        <input type="text" id="city" formControlName="city">
+    
+        <div class="actions">
+            <div class="spacer"></div>
+            <button type="submit" [disabled]="contactForm.invalid">Create</button>
+        </div>
+    </form> 
+</div>
+
+<div *ngIf="contact === null">
+    <p>Contact doesn't exist</p>
+</div>
