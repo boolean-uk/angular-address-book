@@ -5,14 +5,14 @@ import { ListComponent } from './list/list.component';
 import { AddComponent } from './add/add.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-
-//Add edit import here in extension
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
     AddComponent,
     ListComponent,
     ViewComponent,
+    EditComponent,
   ],
   imports: [
     CommonModule,
@@ -23,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddComponent,
     ListComponent,
     ViewComponent,
+    EditComponent
   ]
 })
 export class ContactsModule { }

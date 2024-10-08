@@ -28,4 +28,10 @@ export class ContactService {
     this.contacts.push({ ...contact, id: this.currentId});
   }
 
+  public editContact(contact: Contact, paramId: number) {
+    const matchingIndex = this.contacts.findIndex((contact) => contact.id === paramId);
+    this.contacts[matchingIndex] = { ...contact, id: paramId };
+    console.log('Edited')
+    }
+
 }
