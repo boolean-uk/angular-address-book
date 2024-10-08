@@ -19,4 +19,12 @@ export class ContactsService {
     }
     return contact;
   }
+
+  public UpdateContact(updatedContact: Contact): void {
+    let index = this.contacts.findIndex(contact => contact.id === updatedContact.id);
+    if (index !== -1) {
+
+      this.contacts[index] = updatedContact;
+    } 
+  }
 }
