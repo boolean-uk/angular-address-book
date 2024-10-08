@@ -1,0 +1,18 @@
+<ng-container *ngIf="uuidToEdit === null || (isEditMode && uuidToEdit !== null)">
+    <form [formGroup]="contactForm" (submit)="pruneContact($event)">
+        <h2>First Name</h2>
+        <input formControlName="firstName" type="text" placeholder="Enter..." />
+        <h2>Last Name</h2>
+        <input formControlName="lastName" type="text" placeholder="Enter..." />
+        <h2>City</h2>
+        <input formControlName="city" type="text" placeholder="Enter..." />
+        <h2>Street</h2>
+        <input formControlName="street" type="text" placeholder="Enter..." />
+        <br><br>
+        <button *ngIf="!isEditMode" type="submit" [disabled]="contactForm.invalid">Add Contact</button>
+        <button *ngIf="isEditMode" type="submit" [disabled]="contactForm.invalid">Confirm Edits</button>
+    </form>
+</ng-container>
+<ng-container *ngIf="uuidToEdit !== null && contactToEdit === undefined">
+    <p style="color: red;">Attempted to edit a contact but the contact was not found!</p>
+</ng-container>
