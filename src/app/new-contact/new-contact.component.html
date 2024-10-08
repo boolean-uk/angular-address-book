@@ -1,0 +1,9 @@
+<h2>Create Contact</h2>
+<form class="contact-form" [formGroup]="contactForm">
+  <input type="text" formControlName="firstName" placeholder="First Name" />
+  <input type="text" formControlName="lastName" placeholder="Last Name" />
+  <input type="text" formControlName="street" placeholder="Street"/>
+  <input type="text" formControlName="city" placeholder="City" />
+  <div *ngIf="formSubmitted && contactForm.invalid" class="error">Please fill in all the fields.</div>
+  <button type="button" (click)="onSubmit()">Create</button>
+</form>
