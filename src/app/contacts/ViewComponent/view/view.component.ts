@@ -1,27 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Contact } from '../../models/contact';
 import { ContactsService } from '../../contacts.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { catchError, EMPTY, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-view',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './view.component.html',
   styleUrl: './view.component.css'
 })
-export class ViewComponent {
+export class ViewComponent implements OnInit {
 
-  contact: Contact | null = null;
+  contact: Observable<Contact | null> = EMPTY;
   
   constructor(
-    private readonly contactServie: ContactsService,
+    private readonly contactService: ContactsService,
     private readonly route: ActivatedRoute
-  ) {
-    this.contact = contactServie.GetContactById(
-      Number(route.snapshot.paramMap.get('id'))
-    );
-  
+  ) {}
+
+  ngOnInit(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    if (id) {
+      this.contact = this.contactService.GetContactById(id).pipe(
+        catchError((error) => {
+          console.error('Error fetching contact:', error);
+          return EMPTY;
+        })
+      );
+    }
   }
 }

@@ -1,0 +1,24 @@
+<h1>Edit Contact</h1>
+<form [formGroup]="contactForm" (ngSubmit)="saveContact()">
+  <!-- Using async to bind the contact data -->
+  <ng-container *ngIf="contact | async as contact; else loading">
+    <label for="firstName">First name:</label>
+    <input id="firstName" type="text" formControlName="firstName" [value]="contact.firstName" />
+
+    <label for="lastName">Last name:</label>
+    <input id="lastName" type="text" formControlName="lastName" [value]="contact.lastName" />
+
+    <label for="street">Street:</label>
+    <input id="street" type="text" formControlName="street" [value]="contact.street" />
+
+    <label for="city">City:</label>
+    <input id="city" type="text" formControlName="city" [value]="contact.city" />
+
+    <button type="submit" [disabled]="contactForm.invalid">Save</button>
+  </ng-container>
+
+  <ng-template #loading>
+    <p>Loading contact details...</p>
+  </ng-template>
+</form>
+

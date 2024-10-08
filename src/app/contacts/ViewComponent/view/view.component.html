@@ -1,6 +1,8 @@
-<ng-container *ngIf="contact; else noContact">
+<ng-container *ngIf="contact | async as contact; else noContact">
     <h1>{{ contact?.firstName }} {{ contact?.lastName }}</h1>
     <p>{{ contact?.street }}, {{ contact?.city }}</p>
+
+    <a [routerLink]="['/contacts/edit', contact.id]">Edit Contact</a>
   </ng-container>
   <!-- if we don't have a contact -->
   <ng-template #noContact>
