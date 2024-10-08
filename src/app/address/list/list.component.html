@@ -1,0 +1,11 @@
+<h1>Contact List</h1>
+
+<div class="contactBody">
+    <div *ngFor="let adrs of address" class="item">
+        <div class="data">
+            <p>{{adrs.firstName}} {{adrs.lastName}}</p>
+
+            <a routerLink="/address/{{adrs.id}}">View</a>
+        </div>
+    </div>
+</div>
