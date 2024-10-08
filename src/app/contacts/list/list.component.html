@@ -1,11 +1,13 @@
 <h2>Contacts List</h2>
 
 <ul>
-  <li *ngFor="let contact of contacts; let i = index"> 
-    <p>Name: {{ contact.name }}</p>
-    <p>Email: {{ contact.email }}</p>
-    <p>Phone: {{ contact.phone }}</p>
-    <a [routerLink]="['/contacts', i]">View</a>
-    <hr>
-  </li>
+    <li *ngFor="let contact of contacts; let i = index">
+        <p><strong>First Name:</strong> {{ contact.firstName }}</p>
+        <p><strong>Last Name:</strong> {{ contact.lastName }}</p>
+        <p><strong>Street:</strong> {{ contact.street }}</p>
+        <p><strong>City:</strong> {{ contact.city }}</p>
+        <a [routerLink]="['/contacts/view', i]">View</a>
+        <a [routerLink]="['/contacts/edit', i]">Edit</a>
+        <hr>
+    </li>
 </ul>

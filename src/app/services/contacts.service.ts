@@ -5,22 +5,57 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ContactsService {
-  private contacts: { name: string, email: string, phone: string }[] = [];
-
-  private contactsSubject: BehaviorSubject<{ name: string, email: string, phone: string }[]> = new BehaviorSubject(this.contacts);
+  private contacts: { 
+    firstName: string; 
+    lastName: string; 
+    street: string; 
+    city: string; 
+  }[] = [];
+  
+  private contactsSubject: BehaviorSubject<{ 
+    firstName: string; 
+    lastName: string; 
+    street: string; 
+    city: string; 
+  }[]> = new BehaviorSubject(this.contacts);
 
   constructor() {}
 
-  addContact(contact: { name: string, email: string, phone: string }): void {
+  addContact(contact: { 
+    firstName: string; 
+    lastName: string; 
+    street: string; 
+    city: string; 
+  }): void {
     this.contacts.push(contact);
     this.contactsSubject.next(this.contacts); 
   }
 
-  getContacts(): Observable<{ name: string, email: string, phone: string }[]> {
+  getContacts(): Observable<{ 
+    firstName: string; 
+    lastName: string; 
+    street: string; 
+    city: string; 
+  }[]> {
     return this.contactsSubject.asObservable();
   }
 
-  getContactById(id: number): { name: string, email: string, phone: string } | undefined {
+  getContactById(id: number): { 
+    firstName: string; 
+    lastName: string; 
+    street: string; 
+    city: string; 
+  } | undefined {
     return this.contacts[id]; 
+  }
+
+  updateContact(id: number, updatedContact: { 
+    firstName: string; 
+    lastName: string; 
+    street: string; 
+    city: string; 
+  }): void {
+    this.contacts[id] = updatedContact;
+    this.contactsSubject.next(this.contacts); 
   }
 }

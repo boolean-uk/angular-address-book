@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'; 
-import { ContactsService } from 'src/app/services/contacts.service';
+import { ContactsService } from '../../services/contacts.service'; 
 
 @Component({
   selector: 'app-view',
@@ -8,7 +8,7 @@ import { ContactsService } from 'src/app/services/contacts.service';
   styleUrls: ['./view.component.css']
 })
 export class ViewComponent implements OnInit {
-  contact: { name: string, email: string, phone: string } | undefined; 
+  contact: { firstName: string; lastName: string; street: string; city: string } | undefined; 
 
   constructor(
     private route: ActivatedRoute, 
@@ -17,7 +17,7 @@ export class ViewComponent implements OnInit {
 
   ngOnInit(): void {
     const contactId = +this.route.snapshot.paramMap.get('id')!;
-
+    
     this.contact = this.contactsService.getContactById(contactId);
   }
 }
