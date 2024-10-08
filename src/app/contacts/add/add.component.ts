@@ -38,6 +38,9 @@ export class AddComponent {
       (this.myContact.street = this.contactForm.value.street),
       (this.myContact.city = this.contactForm.value.city),
       this.contactService.addContact(this.myContact);
+
+    this.contactForm.reset();
+
     this.router.navigate(['cars']);
   }
 }
