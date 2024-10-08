@@ -1,2 +1,3 @@
-<h1> {{ this.firstName }} {{ this.lastName }} </h1>
-<p> {{ this.street }}, {{ this.city }} </p>
+<h1 *ngIf="contact"> {{ contact?.firstName }} {{ contact?.lastName }} </h1>
+<p *ngIf="contact"> {{ contact?.street }}, {{ contact?.city }} </p>
+<p *ngIf="!contact"> Contact not found. </p>
