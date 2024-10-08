@@ -1,0 +1,10 @@
+<p>list works!</p>
+<ul>
+  <li *ngFor="let c of contacts">
+    <span id="item{{ c.id }}" class="red">
+      <a routerLink="/contacts/{{ c.id }}">{{ c.name }}</a> | {{ c.address }}
+      <button routerLink="/edit/{{ c.id }}">Edit</button>
+    </span>
+  </li>
+</ul>
+
