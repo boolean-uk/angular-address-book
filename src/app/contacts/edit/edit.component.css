@@ -1,0 +1,28 @@
+.formDiv {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.question-text {
+    margin-bottom: 0.5rem;
+}
+
+button {
+    display: flex;
+    margin-left: auto;
+}
+
+.badId {
+    width: 72vw;
+    display: flex;
+    flex-wrap: wrap;
+    word-break: break-word;
+}
