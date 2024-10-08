@@ -5,3 +5,6 @@
   <p>Date of birth: {{ contact.birthday }}</p>
   <button (click)="editContact()">Edit</button>
 </div>
+<div *ngIf="contact === null">
+  <h2>Doesnt exist lol</h2>
+</div>

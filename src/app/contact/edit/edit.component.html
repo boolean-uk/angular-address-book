@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="contact !== null">
   <h2>Edit Contact</h2>
   <form [formGroup]="contactForm" (ngSubmit)="editContact()">
     <div>
@@ -23,4 +23,7 @@
 
     <button type="submit">Submit changes</button>
   </form>
+</div>
+<div *ngIf="contact === null">
+  <h2>Doesnt exist lol</h2>
 </div>
