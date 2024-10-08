@@ -1,0 +1,39 @@
+:host {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-page-layout {
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 20px;
+}
+
+.contact-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.contact-list__item:last-child {
+  border-bottom: none;
+}
+
+.view-button {
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
