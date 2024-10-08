@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<p>view works!</p>
+
+<ng-container *ngIf="contact === null; else elseBlock">
+  <div>
+    <p><Strong>Contact is not available</Strong></p>
+  </div>
+</ng-container>
+<ng-template #elseBlock>
+  <div>
+    <h1>{{contact?.firstName}}  {{contact?.lastName}}</h1>
+    <div>
+        <p>From: {{contact?.street}}, {{contact?.city}}</p>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<h2>Contacts</h2>
+<table>
+    <thead>
+        <th>Name</th>
+        <th>View</th>
+        <th>Edit</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of contacts">
+            <td>{{contact.firstName}} {{contact.lastName}}</td>
+            <td><a routerLink="/contacts/{{contact.id}}">View</a></td>
+            <td><a routerLink="/contacts/edit/{{contact.id}}">Edit</a></td>
+        </tr>
+    </tbody>
+</table>
