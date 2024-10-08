@@ -28,4 +28,8 @@ export class ContactService {
             return null;
         }
     }
+
+    GetContacts(): Contact[] {
+        return this.contacts;
+      }
 }
