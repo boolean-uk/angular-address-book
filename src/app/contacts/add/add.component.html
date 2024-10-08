@@ -1,0 +1,37 @@
+<h2>Add New Contact</h2>
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="firstName">First Name:</label>
+    <input id="firstName" formControlName="firstName" required />
+    <div *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched">
+      <small>First Name is required.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" formControlName="lastName" required />
+    <div *ngIf="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched">
+      <small>Last Name is required.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="street">Street:</label>
+    <input id="street" formControlName="street" required />
+    <div *ngIf="contactForm.get('street')?.invalid && contactForm.get('street')?.touched">
+      <small>Street is required.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="city">City:</label>
+    <input id="city" formControlName="city" required />
+    <div *ngIf="contactForm.get('city')?.invalid && contactForm.get('city')?.touched">
+      <small>City is required.</small>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="contactForm.invalid">Add Contact</button>
+</form>
