@@ -1,0 +1,28 @@
+<ul>
+    <li *ngFor="let c of contacts">
+      <span id="item{{ c.id }}" >{{ c.firstName }}</span>
+    </li>
+  </ul>
+  
+  <table>
+    <thead>
+      <tr>
+        <td><strong>First Name</strong></td>
+        <td><strong>Last Name</strong></td>
+        <td><strong>Street</strong></td>
+        <td><strong>City</strong></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of contacts">
+        <td>
+          <a routerLink="/contacts/{{ c.id }}">{{ c.firstName }}</a>
+        </td>
+  
+        <td>{{ c.lastName }}</td>
+        <td>{{ c.street }}</td>
+        <td>{{ c.city }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
