@@ -12,4 +12,11 @@ export class ContactService {
     c.id = this.contacts.length + 1;
     this.contacts.push(c);
   }
+  public GetContactById(id: number | null) {
+    const contact = this.contacts.find((contact) => contact.id === id);
+    if (!contact) {
+      return null;
+    }
+    return contact;
+  }
 }

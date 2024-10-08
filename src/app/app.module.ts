@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ContactModule } from './contact/contact.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
     LayoutModule,
     FormsModule,
     ReactiveFormsModule,
+    ContactModule,
   ],
   bootstrap: [AppComponent, ReactiveFormsModule, FormsModule],
 })
