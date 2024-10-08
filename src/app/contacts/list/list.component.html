@@ -1,0 +1,13 @@
+
+<h1>Contacts</h1>
+
+<div *ngIf="contacts !== null" class="contact-container">
+    <li *ngFor="let c of contacts">{{ c.firstName }} {{ c.lastName }} 
+        <div class="contact-buttons">
+            <a routerLink="/contacts/{{c.id}}">View</a>
+            <a routerLink="/contacts/edit/{{c.id}}">Edit</a>
+        </div>
+    </li>
+</div>
+
+<div *ngIf="contacts === null">No contacts yet</div>
