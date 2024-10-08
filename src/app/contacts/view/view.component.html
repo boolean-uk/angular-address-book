@@ -1,0 +1,14 @@
+<ng-container *ngIf="contact === null; else elseBlock">
+    <div>
+      <p><strong>Contact not available</strong></p>
+    </div>
+  </ng-container>
+  <ng-template #elseBlock>
+    <div>
+      <h2>{{contact?.firstName}} {{contact?.lastName}}</h2>
+      <p>Street name: {{contact?.street}}</p>
+      <p>City: {{contact?.city}}</p>
+    </div>
+  </ng-template>
+<a routerLink="/contacts">Back</a>
+<a routerLink="#" style="margin-left: 10px;">Edit</a>
