@@ -20,4 +20,9 @@ export class ContactsService {
         contact.id = this.contacts.length + 1;
         this.contacts.push(contact);
     }
+
+    public EditContact(contact: Contact){
+        const i = this.contacts.findIndex(c => c.id === contact.id);
+        this.contacts[i] = contact;
+    }
 }
