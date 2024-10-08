@@ -2,6 +2,6 @@
 <ul class="contact-list">
   <li class="contact-list-item" *ngFor="let contact of contacts">
     <span class="contact-name">{{ contact.firstName }} {{ contact.lastName }}</span>
-    <a href="#" class="contact-view-link">View</a>
+    <a [routerLink]="['/contacts', contact.id]" class="contact-view-link">View</a>
   </li>
 </ul>
