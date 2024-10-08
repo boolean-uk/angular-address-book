@@ -6,7 +6,7 @@ import { CONTACTS } from './contacts/data/contacts';
   providedIn: 'root',
 })
 export class ContactsService {
-  private currentId: number = 2; // Starting at 2 since we have two example data contacts already
+  private currentId: number = 2; // Starting at 2 since we have two example data contacts already 
   private contacts: Contact[] = CONTACTS;
 
   public getContactById(id: number | null): Contact | null {
