@@ -5,8 +5,8 @@ import { Contact } from './model/Contact';
   providedIn: 'root',
 })
 export class ContactsService {
-  private currentId: number = 1;
-  public contacts: Contact[] = [
+  public currentId: number = 1;
+  private contacts: Contact[] = [
     {
       id: this.currentId++,
       firstName: 'Dave',

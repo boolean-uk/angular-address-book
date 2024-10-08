@@ -24,8 +24,18 @@ export class CreatecontactComponent {
 
   addContact(event: Event) {
     event.preventDefault();
-    if (this.form.valid) {
-      console.log(this.form.value);
+    if (!this.form.valid) {
+      console.error('invalid form');
+      return;
     }
+
+    this.service.add({
+      id: this.service.currentId++,
+      firstName: this.form.value.firstName,
+      lastName: this.form.value.lastName,
+      city: this.form.value.city,
+      street: this.form.value.street,
+    });
+    this.router.navigate(['contacts']);
   }
 }
