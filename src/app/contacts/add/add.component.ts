@@ -41,6 +41,6 @@ export class AddComponent {
 
     this.contactForm.reset();
 
-    this.router.navigate(['cars']);
+    this.router.navigate(['contacts']);
   }
 }
