@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+button:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}

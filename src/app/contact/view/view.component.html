@@ -1,0 +1,11 @@
+<ng-container *ngIf="contact === null; else elseBlock">
+  <div>
+    <p><strong>Contact not available with that id!</strong></p>
+  </div>
+</ng-container>
+<ng-template #elseBlock>
+  <h1>{{ contact?.firstName }} {{ contact?.lastName }}</h1>
+  <p>{{ contact?.city }}</p>
+  <p>{{ contact?.street }}</p>
+    <button><a routerLink="edit">Edit</a></button>
+</ng-template>
