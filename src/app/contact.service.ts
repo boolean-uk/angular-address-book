@@ -23,4 +23,9 @@ export class ContactService {
     return this.contacts;
   }
 
+  public addContact(contact: Contact) {
+    this.currentId++;
+    this.contacts.push({ ...contact, id: this.currentId});
+  }
+
 }

@@ -4,6 +4,7 @@ import { ViewComponent } from './view/view.component';
 import { ListComponent } from './list/list.component';
 import { AddComponent } from './add/add.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //Add edit import here in extension
 
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     AddComponent,

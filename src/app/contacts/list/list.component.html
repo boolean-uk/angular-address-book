@@ -1,20 +1,18 @@
 <h1>Contacts</h1>
-<!-- if we dont have contacts -->
- <ng-container *nfIf="contacts === null; else elseBlock">
-    <div>
-        <p><strong>No contacts yet</strong></p>
-    </div>
+<!-- if we have have contacts -->
+ <ng-container *ngIf="contacts !== null; else elseBlock">
+    <div class="contact-container" >
+        <div class="contact" *ngFor="let contact of contacts" >
+          <span>{{ contact?.firstName }} {{ contact?.lastName }}</span>
+          <a routerLink="/contacts/{{ contact?.id }}">View</a>
+        </div>
+      </div>
+
+   
  </ng-container>
 
  <!-- if we have contacts -->
- <ng-container #elseBlock>
- <div class="contact-container" >
-    <div class="contact" *ngFor="let contact of contacts" >
-      <span>{{ contact?.firstName }} {{ contact?.lastName }}</span>
-      <a routerLink="/contacts/{{ contact?.id }}">View</a>
-    </div>
-  </div>
- </ng-container>
-
-
+ <ng-template #elseBlock>
+    <p><strong>No contacts yet</strong></p>
+ </ng-template>
 
