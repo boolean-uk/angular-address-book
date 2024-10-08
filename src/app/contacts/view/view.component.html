@@ -1,0 +1,12 @@
+<h2>Contact Details</h2>
+
+<div *ngIf="contact">
+  <p><strong>First Name:</strong> {{ contact.firstName }}</p>
+  <p><strong>Last Name:</strong> {{ contact.lastName }}</p>
+  <p><strong>Street:</strong> {{ contact.street }}</p>
+  <p><strong>City:</strong> {{ contact.city }}</p>
+</div>
+
+<div *ngIf="!contact">
+  <p>Contact not found.</p>
+</div>
