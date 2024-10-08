@@ -1,0 +1,11 @@
+<form [formGroup]="form" (submit)="addContact($event)">
+    <label>First Name</label>
+    <input formControlName="firstName" type="text" placeholder="Enter..." />
+    <label>Last Name</label>
+    <input formControlName="lastName" type="text" placeholder="Enter..." />
+    <label>City</label>
+    <input formControlName="city" type="text" placeholder="Enter..." />
+    <label>Street</label>
+    <input formControlName="street" type="text" placeholder="Enter..." />
+    <button type="submit">Submit</button>
+</form>

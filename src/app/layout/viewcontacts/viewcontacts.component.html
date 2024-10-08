@@ -1,0 +1,10 @@
+@for (contact of service.getAll(); track contact) {
+  <div>
+    <h4>Contact {{ contact.id }}</h4>
+    <p>First name: {{contact.firstName}}</p>
+    <p>Last name: {{contact.lastName}}</p>
+    <p>City: {{contact.city}}</p>
+    <p>Street: {{contact.street}}</p>
+    <a routerLink="{{ contact.id }}">view</a>
+  </div>
+}
