@@ -1,41 +1,49 @@
-<h2>Add New Contact</h2>
+<h1>Add new contact</h1>
 
 <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-  <label for="firstName">First Name:</label>
-  <input
-    type="text"
-    id="firstName"
-    [(ngModel)]="newContact.firstName"
-    name="firstName"
-    required
-  />
+  <div class="form-section">
+    <label for="firstName">First Name:</label>
+    <input
+      type="text"
+      id="firstName"
+      [(ngModel)]="newContact.firstName"
+      name="firstName"
+      required
+    />
+  </div>
 
-  <label for="lastName">Last Name:</label>
-  <input
-    type="text"
-    id="lastName"
-    [(ngModel)]="newContact.lastName"
-    name="lastName"
-    required
-  />
+  <div class="form-section">
+    <label for="lastName">Last Name:</label>
+    <input
+      type="text"
+      id="lastName"
+      [(ngModel)]="newContact.lastName"
+      name="lastName"
+      required
+    />
+  </div>
 
-  <label for="street">Street:</label>
-  <input
-    type="text"
-    id="street"
-    [(ngModel)]="newContact.street"
-    name="street"
-    required
-  />
+  <div class="form-section">
+    <label for="street">Street:</label>
+    <input
+      type="text"
+      id="street"
+      [(ngModel)]="newContact.street"
+      name="street"
+      required
+    />
+  </div>
 
-  <label for="city">City:</label>
-  <input
-    type="text"
-    id="city"
-    [(ngModel)]="newContact.city"
-    name="city"
-    required
-  />
+  <div class="form-section">
+    <label for="city">City:</label>
+    <input
+      type="text"
+      id="city"
+      [(ngModel)]="newContact.city"
+      name="city"
+      required
+    />
+  </div>
 
   <button type="submit" [disabled]="!contactForm.form.valid">
     Add Contact
