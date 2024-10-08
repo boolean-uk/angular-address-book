@@ -1,11 +1,18 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
 
 export interface Contact {
   id: number;
-  name: string;
-  street: string;
-  city: string;
+  firstName?: string;
+  lastName?: string;
+  street?: string;
+  city?: string;
+}
+
+export interface ContactData {
+  firstName?: string;
+  lastName?: string;
+  street?: string;
+  city?: string;
 }
 
 @Injectable({
@@ -13,15 +20,15 @@ export interface Contact {
 })
 export class ContactService {
   private contacts: Contact[] = [
-    { id: 1, name: 'John Doe', street: '123 Main St', city: 'Anytown'},
-    { id: 2, name: 'Jane Doe', street: '456 Main St', city: 'Anytown'}
+    { id: 1, firstName: 'John', lastName: 'Snow', street: '123 Main St', city: 'Anytown'},
+    { id: 2, firstName: 'Jane', lastName: 'Doe', street: '456 Main St', city: 'Anytown'}
   ];
 
   getContacts(): Contact[] {
     return this.contacts;
   }
 
-  addContact(contact: Contact): void {
+  addContact(contact: ContactData): void {
     const newId = this.contacts.length + 1;
     this.contacts.push({ ...contact, id: newId });
   }

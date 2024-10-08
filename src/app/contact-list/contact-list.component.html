@@ -1,1 +1,7 @@
-<p>contact-list works!</p>
+<h2>Contacts list</h2>
+<ul class="contact-list">
+  <li class="contact-list-item" *ngFor="let contact of contacts">
+    <span class="contact-name">{{ contact.firstName }} {{ contact.lastName }}</span>
+    <a href="#" class="contact-view-link">View</a>
+  </li>
+</ul>
