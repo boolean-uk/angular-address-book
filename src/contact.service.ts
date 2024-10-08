@@ -5,8 +5,8 @@ import { Contact } from './model/Contact';
   providedIn: 'root',
 })
 export class ContactsService {
-  public currentId: number = 1;
-  private contacts: Contact[] = [
+  currentId: number = 1;
+  #contacts: Contact[] = [
     {
       id: this.currentId++,
       firstName: 'Dave',
@@ -16,23 +16,22 @@ export class ContactsService {
     },
   ];
 
-  public getById(id: number | null): Contact | null {
-    const contact = this.contacts.find((contact) => contact.id === id);
-    if (!contact) return null;
+  getById(id: number): Contact | null {
+    const contact = this.#contacts.find((contact) => contact.id === id);
+    if (contact === undefined) return null;
     return contact;
   }
 
-  public getAll(): Contact[] {
-    return this.contacts;
+  getAll(): Contact[] {
+    return this.#contacts;
   }
 
-  public add(contact: Contact) {
-    this.contacts.push(contact);
-    console.log(this.contacts);
+  add(contact: Contact) {
+    this.#contacts.push(contact);
   }
 
-  public update(id: number, contact: Contact) {
-    let existing = this.contacts.find((c) => c.id === id)!;
+  update(id: number, contact: Contact) {
+    let existing = this.#contacts.find((c) => c.id === id)!;
     existing.firstName = contact.firstName;
     existing.lastName = contact.lastName;
     existing.city = contact.city;
