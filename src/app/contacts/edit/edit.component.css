@@ -26,3 +26,7 @@ button {
     flex-wrap: wrap;
     word-break: break-word;
 }
+
+.leaveLink {
+    font-size: xx-large;
+}

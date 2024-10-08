@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactsService } from '../contacts.service';
 import { Contact } from '../models/contact';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
@@ -13,7 +13,7 @@ export class EditComponent {
   contactForm:FormGroup;
   cService:ContactsService;
   contact:Contact|null = null;
-  constructor(private formBuilder:FormBuilder, private readonly contactsService:ContactsService, private readonly route:ActivatedRoute) {
+  constructor(private formBuilder:FormBuilder, private readonly contactsService:ContactsService, private readonly route:ActivatedRoute, private router: Router) {
     this.contactForm = this.formBuilder.group({
       firstName:['', Validators.required],
       lastName:['', Validators.required],
@@ -38,6 +38,7 @@ export class EditComponent {
         city: this.contactForm.value.city
       };
       this.cService.EditContact(updatedContact);
+      this.router.navigate(['/contacts']);
     }
   }
 }
