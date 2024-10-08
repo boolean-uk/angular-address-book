@@ -16,9 +16,10 @@ export class AddComponent {
     private readonly contactService: ContactsService
   ) {
     this.contactForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      description: ['', Validators.required],
-      age: [0, Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      street: ['', Validators.required],
+      city: ['', Validators.required],
     });
     this.cservice = this.contactService;
   }
