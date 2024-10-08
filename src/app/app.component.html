@@ -1,4 +1,20 @@
-<app-menu></app-menu>
-<div class="page">
-  <router-outlet></router-outlet>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>App</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <h1>Menu</h1>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/contacts">Contacts</a></li>
+        <li><a routerLink="/contacts/new">New Contact</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <h1 *ngIf="router.url === '/'" class="centered">Home</h1>
+      <router-outlet/>
+    </div>
+  </body>
+</html>
