@@ -1,6 +1,4 @@
 <div *ngIf="contact !== null">
-    <h2>First Name: {{ contact.firstName }}</h2>
-    <h2>Last Name: {{ contact.lastName }}</h2>
-    <h2>Street: {{ contact.street }}</h2>
-    <h2>City: {{ contact.city }}</h2>
+    <h2>{{ contact.firstName }} {{ contact.lastName }}</h2>
+    <p>{{ contact.street }} {{ contact.city }}</p>
 </div>
