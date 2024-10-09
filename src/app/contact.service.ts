@@ -6,7 +6,7 @@ import { CONTACTS } from './contacts/data/contacts';
   providedIn: 'root',
 })
 export class ContactsService {
-  private currentId: number = 2; // Starting at 2 since we have two example data contacts already 
+  private currentId: number = 2; // Starting at 2 since we have two example data contacts already
   private contacts: Contact[] = CONTACTS;
 
   public getContactById(id: number | null): Contact | null {
@@ -22,7 +22,14 @@ export class ContactsService {
   }
 
   public addContact(contact: Contact) {
-    this.currentId++;
-    this.contacts.push({ ...contact, id: this.currentId });
+    const mayExist = this.contacts.find((c) => c.id === contact.id);
+    if (mayExist === undefined) {
+      this.currentId++;
+      this.contacts.push({ ...contact, id: this.currentId });
+    } else {
+      this.contacts[this.contacts.indexOf(mayExist)] = contact;
+    }
   }
+
+  public updateContact(contact: Contact) {}
 }
