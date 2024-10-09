@@ -1,0 +1,5 @@
+<h2>{{ isEditMode ? 'Edit Contact' : 'Add New Contact' }}</h2>
+<app-contact-form 
+    [contact]="contact"
+    (submittedContact)="onFormSubmit($event)"
+></app-contact-form>
