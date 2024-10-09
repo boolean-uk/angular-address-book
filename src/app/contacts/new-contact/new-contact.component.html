@@ -1,0 +1,25 @@
+<p>new-contact works!</p>
+
+<div class="new-contact-form">
+    <h2>Add New Contact</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required [(ngModel)]="newContact.firstName" name="firstName">
+      </div>
+      <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required [(ngModel)]="newContact.lastName" name="lastName">
+      </div>
+      <div>
+        <label for="street">Street:</label>
+        <input type="text" id="street" required [(ngModel)]="newContact.street" name="street">
+      </div>
+      <div>
+        <label for="city">City:</label>
+        <input type="text" id="city" required [(ngModel)]="newContact.city" name="city">
+      </div>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+  
