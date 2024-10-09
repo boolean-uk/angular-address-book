@@ -1,5 +1,7 @@
 <ul>
     <li *ngFor="let contact of contacts">
-        {{contact.firstname}} {{contact.lastname}} - <a routerLink="/contacts/{{contact.id}}">View</a>
+        {{contact.firstname}} {{contact.lastname}} - 
+        <a routerLink="/contacts/{{contact.id}}">View</a> - 
+        <a routerLink="/contacts/{{contact.id}}/edit">Edit</a>
     </li>
 </ul>

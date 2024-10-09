@@ -26,4 +26,9 @@ export class ContactService {
     this.currentId++; // Get a new value each time we add a car
     this.contacts.push({ ...contact, id: this.currentId }); // Set that value in the object we push
   }
+
+  public updateContact(updatedContact: Contact) {
+    this.contacts = this.contacts.map((contact) => 
+      contact.id === updatedContact.id ? updatedContact : contact)
+  }
 }
