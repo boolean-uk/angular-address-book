@@ -1,0 +1,11 @@
+<ng-container *ngIf="contact; then yesContact; else noContact"/>
+
+<ng-template #yesContact>
+    <h1>{{ contact?.firstName }} {{ contact?.lastName }}</h1>
+    <p>{{ contact?.street }}, {{contact?.city}}</p>
+    <a routerLink="/edit/{{contact?.id}}">Edit</a>
+</ng-template>
+
+<ng-template #noContact>
+    <h1>Contact not found</h1>
+</ng-template>
