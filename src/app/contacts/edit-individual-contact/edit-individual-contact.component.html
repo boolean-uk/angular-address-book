@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="contact-card">
+<form [formGroup]="form" (submit)="onSubmit()">
+    <h3>Please enter new firstname</h3>
+    <label class="highlight">Firstname: </label>
+    <input
+        formControlName="firstName"
+        type="string"
+        placeholder="Firstname"
+        autocomplete="false"
+    />
+    <button type="submit" [disabled]="!form.valid">Update</button>
+    <div *ngIf="form.get('firstName')?.errors?.['invalidInput']">
+        Potential harmful code detected (XSS or SQL Injection)
+    </div>
+</form>
+</div>
+</html>

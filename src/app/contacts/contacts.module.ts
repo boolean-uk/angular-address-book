@@ -6,9 +6,10 @@ import { CreateContactComponent } from './create-contact/create-contact.componen
 import { ViewContactComponent } from './view-contact/view-contact.component';
 import { RouterModule } from '@angular/router';
 import { EditContactComponent } from './edit-contact/edit-contact.component';
+import { EditIndividualContactComponent } from './edit-individual-contact/edit-individual-contact.component';
 
 @NgModule({
-  declarations: [ContactsListComponent, CreateContactComponent, ViewContactComponent, EditContactComponent],
+  declarations: [ContactsListComponent, CreateContactComponent, ViewContactComponent, EditContactComponent, EditIndividualContactComponent],
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
   exports: [ContactsListComponent, CreateContactComponent, ViewContactComponent]
 })

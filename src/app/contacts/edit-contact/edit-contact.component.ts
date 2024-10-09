@@ -12,6 +12,9 @@ export class EditContactComponent implements OnInit {
 
   form!: FormGroup;
   contactService: ContactsService;
+  contactID: any;
+  contactFound: any;
+  formSubmitted = false;
 
   constructor(
     private fb: FormBuilder,
@@ -29,14 +32,14 @@ export class EditContactComponent implements OnInit {
   }
 
   onSubmit() {
-    const contactID = this.form.value.ID;
-    const contactFound = this.contactService.getContact(this.form.value.ID);
+    this.contactID = this.form.value.ID;
+
+    this.formSubmitted = true;
+    this.contactFound = this.contactService.getContact(this.contactID);
 
     console.log('Valid ID?: ', this.form.valid)
-    console.log(contactID);
-    console.log(contactFound);
-
-    this.router.navigate(['/contacts/' + contactID]);
+    console.log(this.contactID);
+    console.log(this.contactFound);
   }
 
 }
