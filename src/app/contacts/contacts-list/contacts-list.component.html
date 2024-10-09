@@ -4,6 +4,8 @@
     <li *ngFor="let contact of contacts">
       <a>{{ contact.firstName }} {{ contact.lastName }}  </a>
       <a [routerLink]="['/contacts', contact.id]">View</a>
+      <a> | </a>
+      <a [routerLink]="['/contacts/edit', contact.id]">Edit</a>
     </li>
   </ul>
 </div>

@@ -25,4 +25,13 @@ export class ContactsService implements OnInit{
     }
     return contact;
   }
+
+  public updateContact(id: number, updatedContact: Contact): boolean {
+    const index = this.contacts.findIndex((contact) => contact.id === id);
+    if (index === -1) {
+      return false;
+    }
+    this.contacts[index] = { ...this.contacts[index], ...updatedContact };
+    return true;
+  }
 }
