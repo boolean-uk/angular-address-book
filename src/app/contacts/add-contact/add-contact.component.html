@@ -1,0 +1,16 @@
+<h2>Add New Contact</h2>
+<form (ngSubmit)="onSubmit()">
+  <label for="firstname">First Name:</label>
+  <input id="firstname" [(ngModel)]="newContact.firstname" name="firstname" required>
+
+  <label for="lastname">Last Name:</label>
+  <input id="lastname" [(ngModel)]="newContact.lastname" name="lastname" required>
+
+  <label for="street">Street:</label>
+  <input id="street" [(ngModel)]="newContact.street" name="street" required>
+
+  <label for="city">City:</label>
+  <input id="city" [(ngModel)]="newContact.city" name="city" required>
+
+  <button type="submit">Add Contact</button>
+</form>
