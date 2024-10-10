@@ -10,7 +10,12 @@ import { noXssOrSql } from '../validators';
   styleUrls: ['./edit-individual-contact.component.css']
 })
 export class EditIndividualContactComponent {
-  form!: FormGroup;
+  formFirstName!: FormGroup;
+  formLastName!: FormGroup;
+  formEmail!: FormGroup;
+  formStreet!: FormGroup;
+  formCity!: FormGroup;
+
   contactService: ContactsService;
   contactID: any;
   updatedContact: any;
@@ -23,23 +28,73 @@ export class EditIndividualContactComponent {
   )
   {
     this.contactService = contactService;
+    this.contactID = parseInt(this.route.snapshot.paramMap.get("contactId") || "-1");
   }
 
   ngOnInit(): void {
-    this.form = this.fb.group({
+    this.formFirstName = this.fb.group({
       firstName: ['', [Validators.required, noXssOrSql]]
+    });
+
+    this.formLastName = this.fb.group({
+      lastName: ['', [Validators.required, noXssOrSql]]
+    });
+
+    this.formEmail = this.fb.group({
+      email: ['', [Validators.required, Validators.email, noXssOrSql]]
+    });
+
+    this.formStreet = this.fb.group({
+      street: ['', [Validators.required, noXssOrSql]]
+    });
+
+    this.formCity = this.fb.group({
+      city: ['', [Validators.required, noXssOrSql]]
     });
   }
 
-  onSubmit() {
-    const contactID = parseInt(this.route.snapshot.paramMap.get("contactId") || "-1");
-    this.updatedContact = this.contactService.updateContact(
-      contactID, 
+  onSubmitFirstName() {
+    this.contactService.updateContact(
+      this.contactID, 
       "firstName", 
-      this.form.value.firstName);
+      this.formFirstName.value.firstName);
 
-    console.log("updatedContact; ", this.updatedContact);
-    console.log("contactID: ", contactID);
-    this.router.navigate([`/contacts/${contactID}`]);
+    this.router.navigate([`/contacts/${this.contactID}`]);
+  }
+
+  onSubmitLastName() {
+    this.contactService.updateContact(
+      this.contactID, 
+      "lastName", 
+      this.formLastName.value.lastName);
+
+    this.router.navigate([`/contacts/${this.contactID}`]);
+  }
+
+  onSubmitEmail() {
+    this.contactService.updateContact(
+      this.contactID, 
+      "email", 
+      this.formEmail.value.email);
+
+    this.router.navigate([`/contacts/${this.contactID}`]);
+  }
+
+  onSubmitStreet() {
+    this.contactService.updateContact(
+      this.contactID, 
+      "street", 
+      this.formStreet.value.street);
+
+    this.router.navigate([`/contacts/${this.contactID}`]);
+  }
+
+  onSubmitCity() {
+    this.contactService.updateContact(
+      this.contactID, 
+      "city", 
+      this.formCity.value.city);
+
+    this.router.navigate([`/contacts/${this.contactID}`]);
   }
 }

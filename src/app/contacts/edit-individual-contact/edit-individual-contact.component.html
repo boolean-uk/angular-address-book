@@ -1,19 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<div class="contact-card">
-<form [formGroup]="form" (submit)="onSubmit()">
-    <h3>Please enter new firstname</h3>
-    <label class="highlight">Firstname: </label>
-    <input
-        formControlName="firstName"
-        type="string"
-        placeholder="Firstname"
-        autocomplete="false"
-    />
-    <button type="submit" [disabled]="!form.valid">Update</button>
-    <div *ngIf="form.get('firstName')?.errors?.['invalidInput']">
-        Potential harmful code detected (XSS or SQL Injection)
+    <div class="contact-card">
+        <form [formGroup]="formFirstName" (submit)="onSubmitFirstName()">
+            <h3>Please enter new firstname</h3>
+            <label class="highlight">Firstname: </label>
+            <input
+                formControlName="firstName"
+                type="string"
+                placeholder="Firstname"
+                autocomplete="false"
+            />
+            <button type="submit" [disabled]="!formFirstName.valid">Update</button>
+            <div *ngIf="formFirstName.get('firstName')?.errors?.['invalidInput']">
+                Potential harmful code detected (XSS or SQL Injection)
+            </div>
+        </form>
     </div>
-</form>
-</div>
+
+    <div class="contact-card">
+        <form [formGroup]="formLastName" (submit)="onSubmitLastName()">
+            <h3>Please enter new lastname</h3>
+            <label class="highlight">Lastname: </label>
+            <input
+                formControlName="lastName"
+                type="string"
+                placeholder="Lastname"
+                autocomplete="false"
+            />
+            <button type="submit" [disabled]="!formLastName.valid">Update</button>
+            <div *ngIf="formLastName.get('lastName')?.errors?.['invalidInput']">
+                Potential harmful code detected (XSS or SQL Injection)
+            </div>
+        </form>
+    </div>
+
+    <div class="contact-card">
+        <form [formGroup]="formEmail" (submit)="onSubmitEmail()">
+            <h3>Please enter new email</h3>
+            <label class="highlight">Email: </label>
+            <input
+                formControlName="email"
+                type="string"
+                placeholder="Email"
+                autocomplete="false"
+            />
+            <button type="submit" [disabled]="!formEmail.valid">Update</button>
+            <div *ngIf="formEmail.get('email')?.errors?.['invalidInput']">
+                Potential harmful code detected (XSS or SQL Injection)
+            </div>
+        </form>
+    </div>
+
+    <div class="contact-card">
+        <form [formGroup]="formStreet" (submit)="onSubmitStreet()">
+            <h3>Please enter new street</h3>
+            <label class="highlight">Street: </label>
+            <input
+                formControlName="street"
+                type="string"
+                placeholder="Street"
+                autocomplete="false"
+            />
+            <button type="submit" [disabled]="!formStreet.valid">Update</button>
+            <div *ngIf="formStreet.get('street')?.errors?.['invalidInput']">
+                Potential harmful code detected (XSS or SQL Injection)
+            </div>
+        </form>
+    </div>
+
+    <div class="contact-card">
+        <form [formGroup]="formCity" (submit)="onSubmitCity()">
+            <h3>Please enter new city</h3>
+            <label class="highlight">City: </label>
+            <input
+                formControlName="city"
+                type="string"
+                placeholder="City"
+                autocomplete="false"
+            />
+            <button type="submit" [disabled]="!formCity.valid">Update</button>
+            <div *ngIf="formCity.get('city')?.errors?.['invalidInput']">
+                Potential harmful code detected (XSS or SQL Injection)
+            </div>
+        </form>
+    </div>
 </html>
