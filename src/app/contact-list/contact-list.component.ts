@@ -17,4 +17,8 @@ export class ContactListComponent implements OnInit {
   viewContact(id: number) {
     this.router.navigate(['/contact-profile', id]);
   }
+
+  editContact(id: number) {
+    this.router.navigate(['/edit-contact', id]);
+  }
 }
