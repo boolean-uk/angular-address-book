@@ -1,0 +1,20 @@
+<div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+  <div *ngIf="contact">
+    <form (ngSubmit)="saveContact()">
+      <label for="firstName">First Name:</label>
+      <input id="firstName" [(ngModel)]="contact.firstName" name="firstName" required>
+      
+      <label for="lastName">Last Name:</label>
+      <input id="lastName" [(ngModel)]="contact.lastName" name="lastName" required>
+      
+      <label for="street">Street:</label>
+      <input id="street" [(ngModel)]="contact.street" name="street" required>
+      
+      <label for="city">City:</label>
+      <input id="city" [(ngModel)]="contact.city" name="city" required>
+      
+      <button type="submit">Save Contact</button>
+    </form>
+  </div>
