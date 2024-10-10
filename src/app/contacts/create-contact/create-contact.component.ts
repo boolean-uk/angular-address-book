@@ -32,11 +32,6 @@ ngOnInit(): void {
 }
 
 onSubmit() {
-  console.log('Valid?', this.form.valid);
-  console.log('Name', this.form.value.name);
-  console.log('Email', this.form.value.email);
-
-  // create contact
   this.contactService.createContact(
     this.form.value.firstName,
     this.form.value.lastName,

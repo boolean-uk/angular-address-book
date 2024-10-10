@@ -17,7 +17,8 @@ export class ViewContactComponent implements OnInit{
     private route: ActivatedRoute, 
     private router: Router,
     contactService: ContactsService
-    ) {
+    ) 
+    {
       this.contactService = contactService;
     }
   

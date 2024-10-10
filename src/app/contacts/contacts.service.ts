@@ -7,12 +7,10 @@ import { CONTACTS, Contact } from './contacts';
 export class ContactsService {
   contacts: Contact[] = CONTACTS;
 
-  //get contact
   getContact(contactId: number): Contact | undefined {
     return this.contacts.find((contact) => contact.id === contactId);
   }
 
-  //update contact
   updateContact(contactId: number, attributeToUpdate: string, updatedValue: string): Contact | undefined {
     const contactToUpdate = this.contacts.find((contact) => contact.id === contactId);
     if (contactToUpdate) {
@@ -21,7 +19,6 @@ export class ContactsService {
     return contactToUpdate;
   }
 
-  //create contact
   createContact(
     firstName: string,
     lastName: string,

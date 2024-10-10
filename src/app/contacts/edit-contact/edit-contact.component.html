@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<h1 class="centered">Edit Contact</h1>
-<div class="contact-card">
-<form [formGroup]="form" (submit)="onSubmit()">
-    <h3>Please enter contactID</h3>
-    <label class="highlight">ContactID: </label>
-    <input
-        formControlName="ID"
-        type="number"
-        placeholder="ID"
-        autocomplete="false"
-    />
-    <button type="submit">Search</button>
-</form>
-</div>
-<div *ngIf="contactFound" class="contact-card">
-    <h3>
-        Contact Found: 
-    </h3>
-    <p class="highlight">{{contactFound.firstName +' '+ contactFound.lastName}}</p>
-    <button routerLink="{{ '/contacts/edit/' + contactID }}">Edit</button>
-</div>
-<div class="contact-card" *ngIf="contactFound === undefined && formSubmitted">
-    <h3>No contact found with the porivided ID: {{contactID}}</h3>
-</div>
+    <h1 class="centered">Edit Contact</h1>
+    <div class="contact-card">
+        <form [formGroup]="form" (submit)="onSubmit()">
+            <h3>Please enter contactID</h3>
+            <label class="highlight">ContactID: </label>
+            <input
+                formControlName="ID"
+                type="number"
+                placeholder="ID"
+                autocomplete="false"
+            />
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div *ngIf="contactFound" class="contact-card">
+        <h3>Contact Found: </h3>
+        <p class="highlight">{{contactFound.firstName +' '+ contactFound.lastName}}</p>
+        <button routerLink="{{ '/contacts/edit/' + contactID }}">Edit</button>
+    </div>
+    <div class="contact-card" *ngIf="contactFound === undefined && formSubmitted">
+        <h3>No contact found with the porivided ID: {{contactID}}</h3>
+    </div>
 </html>

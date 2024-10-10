@@ -12,17 +12,17 @@ export type Contact = {
     {
       id: 1,
       firstName: 'Gordon',
-      lastName: 'Johnson',
+      lastName: 'Gordonsson',
       email: 'gordon@example.com',
-      street: 'ExampleStreet',
-      city: 'ExampleCity'
+      street: 'Gordonstreet',
+      city: 'Gordoncity'
     },
     {
       id: 2,
       firstName: 'Gunnar',
       lastName: 'Gunnarsson',
       email: 'gunnar@example.com',
-      street: 'GunnarStreet',
-      city: 'GunnarTown'
+      street: 'Gunnarstreet',
+      city: 'Gunnartown'
     },
   ];

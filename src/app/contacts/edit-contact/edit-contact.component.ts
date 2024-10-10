@@ -36,10 +36,6 @@ export class EditContactComponent implements OnInit {
 
     this.formSubmitted = true;
     this.contactFound = this.contactService.getContact(this.contactID);
-
-    console.log('Valid ID?: ', this.form.valid)
-    console.log(this.contactID);
-    console.log(this.contactFound);
   }
 
 }
