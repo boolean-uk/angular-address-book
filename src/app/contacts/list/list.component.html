@@ -2,7 +2,7 @@
 <table>
   <thead>
     <tr>
-      <th>Id</th>
+      <th>id</th>
       <th>firstName</th>
       <th>lastName</th>
       <th>street</th>
@@ -17,7 +17,8 @@
       <td>{{contact.lastName}}</td>
       <td>{{contact.street}}</td>
       <td>{{contact.city}}</td>
-      <td><a routerLink="/contacts/{{ contacts.id }}">Link</a></td>
+      <td><a routerLink="/contacts/{{ contact.id }}">Link</a></td>
+      <td><a routerLink="/contacts/{{ contact.id }}/edit">Edit</a></td>
     </tr>
   </tbody>
 </table>

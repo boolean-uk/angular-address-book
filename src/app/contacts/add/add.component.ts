@@ -1,5 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Contact } from '../models/contact';
+import { ContactService } from 'src/app/contact.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
@@ -7,9 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './add.component.css'
 })
 export class AddComponent {
-
-  contactForm = FormGroup;
+  contactForm: FormGroup;
   formBuilder = inject(FormBuilder);
+  contactService = inject(ContactService);
+  router = inject(Router);
 
   constructor() {
     this.contactForm = this.formBuilder.group({
@@ -21,7 +25,7 @@ export class AddComponent {
   }
 
   addContact() {
-    this.contactService.addContact(this.contactForm.value);
-    this.router.navigate(['/contacts']);
-
+      this.contactService.addContact(this.contactForm.value);
+      this.router.navigate(['contacts'])    
+  }
 }
