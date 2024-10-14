@@ -1,0 +1,13 @@
+<h1>Contacts</h1>
+<div *ngIf="contacts.length > 0; else noContacts">
+  <div class="contact-container" *ngFor="let contact of contacts">
+    <div class="contact">
+      <span>{{ contact.firstName }} {{ contact.lastName }}</span>
+      <a [routerLink]="['/view-contact', contact.id]">View</a>
+
+    </div>
+  </div>
+</div>
+<ng-template #noContacts>
+  <div>No contacts yet</div>
+</ng-template>

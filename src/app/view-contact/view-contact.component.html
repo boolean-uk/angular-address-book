@@ -1,0 +1,8 @@
+<ng-container *ngIf="contact; else notFound">
+  <h1>{{ contact?.firstName }} {{ contact?.lastName }}</h1>
+  <p>Street: {{ contact?.street }}</p>
+  <p>City: {{ contact?.city }}</p>
+</ng-container>
+<ng-template #notFound>
+  <h1>Contact not found</h1>
+</ng-template>
