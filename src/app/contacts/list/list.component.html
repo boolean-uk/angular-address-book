@@ -1,0 +1,22 @@
+
+<h2>Contact list:</h2>
+<table class="contact_table">
+    <thead>
+        <tr >
+            <td>id</td>
+            <td>name</td>
+            <td>age</td>
+            <td>phone number</td>
+            <td>email</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of contacts">
+                <td><a routerLink="/contacts/{{ c.id }}">{{c.id}}</a></td>
+                <td>{{c.name}}</td>
+                <td>{{c.age}}</td>
+                <td>{{c.phoneNumber}}</td>
+                <td>{{c.email}}</td>
+        </tr>
+    </tbody>
+</table>

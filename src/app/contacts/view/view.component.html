@@ -1,0 +1,11 @@
+<div *ngIf="contact !==null " class="page">
+    <h2>Contact {{ contact.id }}:</h2>
+    <ul>
+        <li>{{ contact.name }}</li>
+        <li>{{ contact.age }}</li>
+        <li>{{ contact.email }}</li>
+        <li>{{ contact.phoneNumber }}</li>
+    </ul>
+    <a routerLink="/contacts/{{ contact.id }}/edit"><button>Edit Contact</button></a>
+</div>
+
