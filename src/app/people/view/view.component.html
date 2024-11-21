@@ -1,0 +1,17 @@
+<!-- ng-container is a nice way to have if/else displays,
+     without having the "container" being rendered to the dom -->
+<!-- if we have a contact -->
+<ng-container *ngIf="person !== null; else elseBlock">
+    <h1>{{ person.firstName }} {{ person.lastName }}</h1>
+    <div class="contact-details">
+        <label>Street:</label>
+        <p>{{ person.street }}</p>
+        <label>City:</label>
+        <p>{{ person.city }}</p>
+        <button routerLink="/contacts/edit/{{person.id}}">Edit</button>
+    </div>
+  </ng-container>
+  <!-- if we don't have a contact -->
+  <ng-template #elseBlock>
+    <h1>Contact not found</h1>
+  </ng-template>
