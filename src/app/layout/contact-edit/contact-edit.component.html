@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<h1>Edit Contact</h1>
+<div *ngIf="error; else noError">{{ error }}</div>
+<ng-template #noError>
+  <form *ngIf="contactForm" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <input formControlName="id" type="hidden" />
+
+    <div>
+      <label for="first-name">First name:</label>
+      <input formControlName="firstName" id="first-name" type="text" required />
+    </div>
+
+    <div>
+      <label for="last-name">Last name:</label>
+      <input formControlName="lastName" id="last-name" type="text" required />
+    </div>
+
+    <div>
+      <label for="street">Street:</label>
+      <input formControlName="street" id="street" type="text" required />
+    </div>
+
+    <div>
+      <label for="city">City:</label>
+      <input formControlName="city" id="city" type="text" required />
+    </div>
+
+    <div class="actions">
+      <button type="submit" [disabled]="contactForm.invalid">Update</button>
+    </div>
+  </form>
+  <div *ngIf="contactForm.invalid">
+    <p>All fields are required.</p>
+  </div>
+</ng-template>

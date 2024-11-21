@@ -5,5 +5,8 @@
 .page {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  padding-left: 30px;
+  border-left: lightgrey solid 1px;
+  height: 97vh;
 }
