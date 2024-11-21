@@ -1,0 +1,29 @@
+:host {
+  width: 400px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between; 
+  border-bottom: 1px solid #ddd;
+  padding: 0.5em 0;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+}
+.routes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.routes a, .routes button {
+  margin-right: 8px; 
+}
+
+.routes a:last-child, .routes button:last-child {
+  margin-right: 0;
+}
