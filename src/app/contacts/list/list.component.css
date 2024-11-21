@@ -1,0 +1,30 @@
+li {
+    list-style: none;
+    border-bottom: 1px solid #000;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+}
+
+.contact p {
+    width: 100%;
+}
+
+.linkDiv {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.view {
+    border-right: 1px solid #000;
+    padding-right: 1rem;
+}
