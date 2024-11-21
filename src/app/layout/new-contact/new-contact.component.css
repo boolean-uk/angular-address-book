@@ -1,0 +1,10 @@
+input, label {
+  display:block;
+}
+
+label {
+  font-weight: bold;
+  font-family: 'Roboto Medium', sans-serif;
+  width: 100%;
+}
+
