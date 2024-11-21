@@ -1,0 +1,22 @@
+<h2>Book List Page</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>City</th>
+            <th>Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td>{{ book.id }}</td>
+            <td>{{ book.firstName }}</td>
+            <td>{{ book.lastName }}</td>
+            <td>{{ book.city }}</td>
+            <td><a routerLink="/book/{{ book.id }}">View</a></td>
+            <td><a href="/book/edit/{{book.id}}">Edit</a></td>
+        </tr>
+    </tbody>
+</table>

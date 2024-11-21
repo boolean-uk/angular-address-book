@@ -1,0 +1,18 @@
+<div>
+    <h2>Add Book</h2>
+    <form [formGroup]="bookForm" (ngSubmit)="updateBook()">
+        <div>
+            <label for="firstName">firstName</label>
+            <input type="text" id="firstName" formControlName="firstName" />
+        </div>
+        <div>
+            <label for="lastName">lastName</label>
+            <input type="text" id="lastName" formControlName="lastName" />
+        </div>
+        <div>
+            <label for="city">city</label>
+            <input type="text" id="city" formControlName="city" />
+        </div>
+        <button type="submit">UPDATE Book</button>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+<ng-container *ngIf="book === null">
+    <div>
+        <p><strong>Car not available!</strong></p>
+    </div>
+</ng-container>
+<ng-container *ngIf="book !== null">
+    <div>
+        <h1>{{ book.firstName }} {{ book.lastName }}</h1>
+        <p>{{ book.city }}</p>
+    </div>
+</ng-container>
