@@ -1,0 +1,11 @@
+li {
+    list-style: none;
+}
+
+div{
+    padding: 1rem;
+}
+
+label{
+    padding-right: 2rem;
+}
