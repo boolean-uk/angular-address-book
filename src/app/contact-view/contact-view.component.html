@@ -1,0 +1,8 @@
+<div *ngIf="contact" class="blog-post">
+  <h2 class="blog-title">{{ contact.firstName }} {{ contact.lastName }}</h2>
+  <div class="blog-content">
+    <p><strong>Address:</strong> {{ contact.street}}, {{ contact.city }}</p>
+    <p><strong>Email:</strong> {{ contact.email }}</p>
+
+  </div>
+</div>
