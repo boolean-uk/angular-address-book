@@ -1,0 +1,19 @@
+:host {
+    padding: 0.5em;
+    width: 400px;
+}
+  
+table {
+    border-collapse: collapse; /* Ensure table cells border each other without spacing */
+    width: 100%;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd; /* Add border bottom to all table cells */
+    padding: 0.5em 0; /* Add padding to align text vertically */
+}
+
+th {
+    text-align: left; /* Align header text to the left */
+}
+
