@@ -1,0 +1,7 @@
+<div *ngIf="Contact === null">
+    <p><strong>Contact not available</strong></p>
+</div>
+<div *ngIf="Contact !== null">
+    <h1>{{Contact.firstName}} {{Contact.lastName}}</h1>
+    <td><a routerLink="/contacts/view/{{Contact.id}}/edit">Edit</a></td>
+</div>
