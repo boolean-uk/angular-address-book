@@ -1,0 +1,13 @@
+.contact-list {
+    margin-top: 1rem;
+    display: flex;
+}
+
+a {
+    border: 1px solid lightgrey;
+    padding: 1rem;
+}
+
+a:hover {
+    background-color: lightgrey;
+}
