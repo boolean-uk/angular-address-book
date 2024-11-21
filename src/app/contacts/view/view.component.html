@@ -1,0 +1,15 @@
+<ng-container *ngIf="contact === null">
+    <div>
+        <p>
+            <strong>Contact not available!</strong>
+        </p>
+    </div>
+</ng-container>
+<ng-container *ngIf="contact !== null">
+    <div>
+        <h1>{{ contact.firstName }} {{ contact.lastName }}</h1>
+        <p>{{ contact.street }} {{ contact.city }}</p>
+    </div>
+    <div><a routerLink="/contacts/edit/{{ contact.id }}">Edit</a></div>
+
+</ng-container>
