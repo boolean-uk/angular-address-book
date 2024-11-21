@@ -1,0 +1,34 @@
+<h1>Create Contact</h1>
+
+<form [formGroup]="formContact" (submit)="submit($event)">
+  <div class="new-contact">
+    <div>
+      <label for="firstName">First name:</label>
+      <input id="firstName" type="text" formControlName="firstName" />
+    </div>
+
+    <div>
+      <label for="lastName">Last name:</label>
+      <input id="lastName" type="text" formControlName="lastName" />
+    </div>
+
+    <div>
+      <label for="street">Street:</label>
+      <input id="street" type="text" formControlName="street" />
+    </div>
+
+    <div>
+      <label for="city">City:</label>
+      <input id="city" type="text" formControlName="city" />
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" type="text" formControlName="email" />
+    </div>
+
+    <div>
+      <button [disabled]="!formContact.valid" type="submit">Create</button>
+    </div>
+  </div>
+</form>
