@@ -1,0 +1,8 @@
+<ul>
+    <li *ngFor="let c of contacts">
+        <a routerLink="/contacts/{{ c.id }}">
+            {{c.firstName}} {{c.lastName}}
+        </a>
+        <button (click)="edit(c.id)">Edit</button>
+    </li>
+</ul>
