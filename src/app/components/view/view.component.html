@@ -1,0 +1,9 @@
+<h1> Contact Details </h1>
+
+<div *ngIf="contact">
+    <p>First Name: {{ contact.firstName}} </p>
+    <p>Last Name: {{ contact.lastName}} </p>
+    <p> Street: {{ contact.street }}</p>
+    <p> City: {{ contact.city }}</p>
+    <a [routerLink]="['/contact', contact.id, 'edit']" class="btn btn-primary"> Edit Contact </a>
+</div>
