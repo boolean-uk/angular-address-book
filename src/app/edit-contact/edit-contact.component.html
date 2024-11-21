@@ -1,0 +1,17 @@
+<div *ngIf="hasData; else noContactData">
+  <h2>Edit contact</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="edit-form">
+    <input
+      type="text"
+      formControlName="firstName"
+      [value]="contact.firstName"
+    />
+    <input type="text" formControlName="lastName" [value]="contact.lastName" />
+    <input type="text" formControlName="street" [value]="contact.street" />
+    <input type="text" formControlName="city" [value]="contact.city" />
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<ng-template #noContactData>
+  <p>No contact data available.</p>
+</ng-template>

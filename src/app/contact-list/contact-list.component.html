@@ -1,0 +1,14 @@
+<div class="contact-list-container" *ngIf="contacts.length; else emptyList">
+  <ul class="list">
+    <li *ngFor="let contact of contacts">
+      <a [routerLink]="['/contact', contact.id]"
+        >{{ contact.firstName }} {{ contact.lastName }}</a
+      >
+      <a [routerLink]="['/edit', contact.id]">Edit</a>
+    </li>
+  </ul>
+</div>
+
+<ng-template #emptyList>
+  <p>The contact list is empty.</p>
+</ng-template>
