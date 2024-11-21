@@ -1,0 +1,9 @@
+<!-- view-contact.component.html -->
+<ng-container *ngIf="contact">
+  <h1>{{ contact.firstName }} {{ contact.lastName }}</h1>
+  <p>{{ contact.street }}, {{ contact.city }}</p>
+</ng-container>
+
+<ng-container *ngIf="!contact">
+  <h1>Contact not found</h1>
+</ng-container>

@@ -1,0 +1,30 @@
+<h1>Edit Contact</h1>
+<div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+<form *ngIf="!errorMessage" (ngSubmit)="saveContactChanges()">
+  <label for="first-name">First name:</label>
+  <input
+    id="first-name"
+    type="text"
+    [(ngModel)]="contact.firstName"
+    name="firstName"
+  />
+
+  <label for="last-name">Last name:</label>
+  <input
+    id="last-name"
+    type="text"
+    [(ngModel)]="contact.lastName"
+    name="lastName"
+  />
+
+  <label for="street">Street:</label>
+  <input id="street" type="text" [(ngModel)]="contact.street" name="street" />
+
+  <label for="city">City:</label>
+  <input id="city" type="text" [(ngModel)]="contact.city" name="city" />
+
+  <div class="actions">
+    <div class="spacer"></div>
+    <button type="submit">Save Changes</button>
+  </div>
+</form>
