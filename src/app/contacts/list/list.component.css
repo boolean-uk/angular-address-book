@@ -1,0 +1,16 @@
+:host {
+    padding: 0.5em;
+    width: 400px;
+  }
+  
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5em 0;
+  }
+  .items{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }

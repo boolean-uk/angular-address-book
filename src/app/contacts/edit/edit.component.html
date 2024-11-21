@@ -1,0 +1,21 @@
+<ng-container *ngIf="contact === null">
+    <h1>Contact not found</h1>
+</ng-container>
+<ng-container *ngIf="contact !== null">
+<h1>Edit {{contact.fullName}}</h1>
+<form [formGroup]="contactForm" (ngSubmit)="editContact()">
+  <label for="fullName">Full name:</label>
+  <input id="fullName" type="text" formControlName="fullName" />
+
+  <label for="street">Street:</label>
+  <input id="street" type="text" formControlName="street" />
+
+  <label for="city">City:</label>
+  <input id="city" type="text" formControlName="city" />
+
+  <div class="actions">
+    <div class="spacer"></div>
+    <button type="submit" [disabled]="contactForm.invalid" routerLink="/contacts/">Edit</button>
+  </div>
+</form>
+</ng-container>
