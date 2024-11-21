@@ -1,0 +1,7 @@
+<div *ngIf="contact === null">
+    <h2>Contact Could not be found</h2>
+</div>
+<div *ngIf="contact !== null">
+    <h1>{{ contact.firstName }} {{ contact.lastName }}</h1>
+    <p>{{ contact.street }}, {{contact.city}}</p>
+</div>
