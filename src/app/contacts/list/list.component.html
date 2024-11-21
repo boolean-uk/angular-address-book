@@ -1,0 +1,12 @@
+<h2>Contacts</h2>
+
+<table>
+    <tbody>
+        <tr class="contact" *ngFor="let contact of contacts"> <!---one tr per contact-->
+            <td class="contact-element">{{contact.firstName}}</td>
+            <td class="contact-element">{{contact.lastName}}</td>
+            <td class="contact-element"><a [routerLink]="'/contacts/' + contact.id">View</a></td>
+            <td class="contact-element"><a [routerLink]="'/contacts/edit/' + contact.id">Edit</a></td>
+        </tr>
+    </tbody>
+</table>
