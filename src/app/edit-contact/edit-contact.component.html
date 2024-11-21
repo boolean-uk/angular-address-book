@@ -1,0 +1,17 @@
+<h2>Edit Contact</h2>
+<form *ngIf="contactExists" [formGroup]=" form" (ngSubmit)="onSubmit(form)">
+    <div>
+        <label>First name: </label>
+        <input formControlName="firstName" type="text" placeholder="First name" />
+    </div>
+    <div>
+        <label>Last name: </label>
+        <input formControlName="lastName" type="text" placeholder="Last name" />
+    </div>
+    <div>
+        <label>Email: </label>
+        <input formControlName="email" type="email" placeholder="email@example.com" />
+    </div>
+    <button type="submit">Edit</button>
+</form>
+<div *ngIf="!contactExists">Contact {{contactId}} doesn't exist</div>
