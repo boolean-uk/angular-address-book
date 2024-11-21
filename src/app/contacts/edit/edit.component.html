@@ -1,0 +1,24 @@
+<ng-container *ngIf="contact; else elseblock">
+  <h1>Update Contact</h1>
+  <form [formGroup]="contactForm" (ngSubmit)="updateContact()">
+    <label for="first-name">First name:</label>
+    <input id="first-name" type="text" formControlName="firstName" />
+
+    <label for="last-name">Last name:</label>
+    <input id="last-name" type="text" formControlName="lastName" />
+
+    <label for="street">Street:</label>
+    <input id="street" type="text" formControlName="street" />
+
+    <label for="city">City:</label>
+    <input id="city" type="text" formControlName="city" />
+
+    <div class="actions">
+      <div class="spacer"></div>
+      <button type="submit" [disabled]="contactForm.invalid">Update</button>
+    </div>
+  </form>
+</ng-container>
+<ng-template #elseblock>
+  <p>Contact not found</p>
+</ng-template>
