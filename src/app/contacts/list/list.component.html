@@ -1,0 +1,10 @@
+<h2>My Contacts</h2>
+<ul>
+  @for (contact of contacts; track contact.id) {
+    <li>
+      {{contact.firstName}} {{contact.lastName}}
+      <a routerLink="/contacts/view/{{contact.id}}">View</a>
+      <!-- <hr /> -->
+    </li>
+  }
+</ul>

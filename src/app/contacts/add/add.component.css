@@ -1,0 +1,9 @@
+button {
+    float: right;
+    /* margin-top: 10px; */
+    margin-right: 8px;
+}
+
+input {
+    margin-bottom: 8px;
+}

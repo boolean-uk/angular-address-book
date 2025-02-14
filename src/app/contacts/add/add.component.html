@@ -1,0 +1,14 @@
+<div>
+  <h2>Add new contact</h2>
+  <form [formGroup]="contactForm" (submit)="addContact()">
+    <label for="first-name">First name</label><br>
+    <input type="text" id="first-name" formControlName="firstName" /><br>
+    <label for="last-name">Last name</label><br>
+    <input type="text" id="last-name" formControlName="lastName" /><br>
+    <label for="street">Street</label><br>
+    <input type="text" id="street" formControlName="street" /><br>
+    <label for="city">City</label><br>
+    <input type="text" id="city" formControlName="city" /><br>
+    <button class="create-btn" type="submit">Create</button>
+  </form>
+</div>
