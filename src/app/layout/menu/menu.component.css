@@ -7,4 +7,5 @@ ul {
 }
 li {
   list-style: none;
+  margin: 5px;
 }
