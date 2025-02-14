@@ -1,0 +1,22 @@
+<ng-container *ngIf="contact; else notFound">
+  <h1>{{contact.firstName}} {{contact.lastName}}</h1>
+  <div class="contact-details">
+    <div class="detail-group">
+      <label>Street:</label>
+      <p>{{contact.street}}</p>
+    </div>
+    <div class="detail-group">
+      <label>City:</label>
+      <p>{{contact.city}}</p>
+    </div>
+  </div>
+  <div class="actions">
+    <button routerLink="/contacts">Back to List</button>
+    <button [routerLink]="['/contacts', contact.id, 'edit']">Edit Contact</button>
+  </div>
+</ng-container>
+
+<ng-template #notFound>
+  <h1>Contact not found</h1>
+  <button routerLink="/contacts">Back to List</button>
+</ng-template> 
