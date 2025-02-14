@@ -1,0 +1,18 @@
+<h1>Contacts</h1>
+<div class="contact-container">
+  <ng-container *ngIf="(contacts$ | async)?.length; else noContacts">
+    <div class="contact" *ngFor="let contact of contacts$ | async">
+      <span>{{contact.firstName}} {{contact.lastName}}</span>
+      <div>
+        <a [routerLink]="['/contacts', contact.id]">View</a> |
+        <a [routerLink]="['/contacts', contact.id, 'edit']">Edit</a>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #noContacts>
+    <div>No contacts yet</div>
+  </ng-template>
+</div>
+<div class="actions">
+  <button routerLink="/contacts/new">Add New Contact</button>
+</div> 
