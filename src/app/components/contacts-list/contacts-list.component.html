@@ -1,0 +1,35 @@
+<div class="contacts-container">
+  <div class="header">
+    <h1>Contacts</h1>
+    <button class="add-button" routerLink="/contacts/new">Add New Contact</button>
+  </div>
+
+  <div class="contacts-list" *ngIf="contacts.length > 0; else noContacts">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of contacts">
+          <td>{{ contact.firstName }} {{ contact.lastName }}</td>
+          <td>{{ contact.email }}</td>
+          <td>{{ contact.phone }}</td>
+          <td class="actions">
+            <button (click)="viewContact(contact.id)">View</button>
+            <button (click)="editContact(contact.id)">Edit</button>
+            <button class="delete" (click)="deleteContact(contact.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noContacts>
+    <p class="no-contacts">No contacts found. Add your first contact!</p>
+  </ng-template>
+</div> 

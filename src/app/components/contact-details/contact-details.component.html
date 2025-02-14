@@ -1,0 +1,35 @@
+<div class="details-container" *ngIf="contact">
+  <div class="header">
+    <h1>Contact Details</h1>
+    <div class="actions">
+      <button (click)="onEdit()">Edit</button>
+      <button class="delete" (click)="onDelete()">Delete</button>
+    </div>
+  </div>
+
+  <div class="contact-info">
+    <div class="info-group">
+      <label>Name</label>
+      <p>{{ contact.firstName }} {{ contact.lastName }}</p>
+    </div>
+
+    <div class="info-group">
+      <label>Email</label>
+      <p>{{ contact.email }}</p>
+    </div>
+
+    <div class="info-group">
+      <label>Phone</label>
+      <p>{{ contact.phone }}</p>
+    </div>
+
+    <div class="info-group">
+      <label>Address</label>
+      <p>{{ contact.address }}</p>
+    </div>
+  </div>
+
+  <div class="back-link">
+    <a routerLink="/contacts">← Back to Contacts</a>
+  </div>
+</div> 
