@@ -1,0 +1,10 @@
+<div class="view" *ngIf="contact">
+  <h2>{{ contact!.firstName }} {{ contact!.lastName }}</h2>
+  <p><b>Street:</b> {{ contact!.street }}</p>
+  <p><b>City:</b> {{ contact!.city }}</p>
+  <button (click)="navigateToEdit()">Edit</button>
+</div>
+
+<div *ngIf="!contact">
+  <p>Contact not found.</p>
+</div>

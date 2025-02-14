@@ -1,0 +1,9 @@
+<h2>Contacts</h2>
+<ul>
+  @for (contact of contacts; track $index) {
+  <li class="row">
+    <div>{{ contact.firstName + " " + contact.lastName }}</div>
+    <a [routerLink]="['/contacts', contact.id]">View</a>
+  </li>
+  }
+</ul>
