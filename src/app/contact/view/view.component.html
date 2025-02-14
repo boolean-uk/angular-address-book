@@ -1,0 +1,13 @@
+
+    <div *ngIf="contact !== undefined">
+        <p>FirstName: {{contact.firstName}}</p>
+        <p>LastName: {{contact.lastName}}</p>
+        <p>Street: {{contact.street}}</p>
+        <p>City: {{contact.city}}</p>
+    </div>
+    
+    <div *ngIf="contact === undefined">
+        <p>User with id={{id}} does not exist!</p>
+    </div>
+    
+    

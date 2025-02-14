@@ -1,0 +1,25 @@
+<h1>Edit Contact</h1>
+<form *ngIf="currentContact !== undefined" [formGroup]="editForm" (ngSubmit)="UpdateContact()">
+    <div>
+        <label for="firstName">First Name</label>
+        <br/>
+        <input type="text" id="firstName" formControlName="firstName" />
+    </div>
+    <div>
+        <label for="lastName">Last Name</label>
+        <br/>
+        <input type="text" id="lastName" formControlName="lastName" />
+    </div>
+    <div>
+        <label for="street">Street</label>
+        <br/>
+        <input type="text" id="street" formControlName="street" />
+    </div>
+    <div>
+        <label for="city">City</label>
+        <br/>
+        <input type="text" id="city" formControlName="city" />
+    </div>
+    <button type="submit" [disabled]="editForm.invalid">Add Contact</button>
+</form>
+<div *ngIf="currentContact === undefined">User not found!</div>
