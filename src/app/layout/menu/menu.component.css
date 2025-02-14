@@ -1,10 +1,44 @@
-:host {
-  padding: 0 0.5em;
+/* Menu Container */
+h2 {
+  color: #333333;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 20px 0 16px;
 }
 
 ul {
-  padding: 0;
-}
-li {
   list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  background-color: #ffffff;
+}
+
+li {
+  border-bottom: 1px solid #eeeeee;
+}
+
+
+li a {
+  display: block;
+  padding: 12px 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+li a:hover {
+  background-color: #f8f9fa;
+  color: #0056b3;
+  padding-left: 24px;
+}
+
+li a.active {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+li a.active:hover {
+  background-color: #0056b3;
+  padding-left: 24px;
 }

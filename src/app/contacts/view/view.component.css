@@ -1,0 +1,45 @@
+div {
+    padding: 24px;
+    margin: 20px 0;
+    max-width: 800px;
+  }
+  
+  h1 {
+    color: #333333;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+  }
+  
+  p {
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+  }
+  
+  p strong {
+    color: #dc3545;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    padding: 40px 0;
+  }
+  
+  a {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  a:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+  }
