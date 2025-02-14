@@ -1,0 +1,29 @@
+<ng-container *ngIf="contact === null; else elseBlock">
+  <div>
+    <p><strong>Contact not available</strong></p>
+  </div>
+</ng-container>
+<ng-template #elseBlock>
+  <div>
+    <h2>Edit a contact</h2>
+    <form [formGroup]="editContactForm" (ngSubmit)="editContact()">
+      <div>
+        <label for="firstName">Firstname</label>
+        <input type="text" id="firstName" formControlName="firstName" />
+      </div>
+      <div>
+        <label for="lastName">Lastname</label>
+        <input type="text" id="lastName" formControlName="lastName" />
+      </div>
+      <div>
+        <label for="street">Street</label>
+        <input type="text" id="street" formControlName="street" />
+      </div>
+      <div>
+        <label for="city">City</label>
+        <input type="text" id="city" formControlName="city" />
+      </div>
+      <button type="submit" [disabled]="editContactForm.invalid">Edit Contact</button>
+    </form>
+  </div>
+</ng-template>
