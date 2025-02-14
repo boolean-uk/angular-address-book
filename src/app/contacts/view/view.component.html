@@ -1,0 +1,14 @@
+<div *ngIf="contact; else loading">
+    <h2>{{ contact.firstname }} {{ contact.lastname }}</h2>
+    <p>Street: {{ contact.street }}</p>
+    <p>City: {{ contact.city }}</p>
+    
+    <div class="my-btn">
+        <button routerLink="/contacts/{{ contact.id }}/edit">Edit Contact</button>
+        <button routerLink="/contacts">Back to List</button>
+    </div>
+</div>
+  
+  <ng-template #loading>
+    <p>Loading contact details...</p>
+  </ng-template>
