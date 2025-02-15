@@ -1,0 +1,23 @@
+<table>
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Firstname</td>
+        <td>Lastname</td>
+        <td>Street</td>
+        <td>City</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of contacts">
+        <td>
+          <a routerLink="/contacts/{{ c.id }}">{{ c.id }}</a>
+        </td>
+        <td>{{ c.firstname }}</td>
+        <td>{{ c.lastname }}</td>
+        <td>{{ c.street }}</td>
+        <td>{{ c.city }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
