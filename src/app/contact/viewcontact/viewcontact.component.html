@@ -1,0 +1,7 @@
+<div *ngIf="contact; else loading">
+    <h1>{{contact.firstName}} {{contact.lastName}}</h1>
+    <p>{{contact.street}} {{contact.city}}</p>
+</div>
+<ng-template #loading>
+    <p>Contact not found</p>
+</ng-template> 
