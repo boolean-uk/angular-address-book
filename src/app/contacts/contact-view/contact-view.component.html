@@ -1,0 +1,33 @@
+<ng-container *ngIf="contact?.id == null">
+  <p>Contact does not exist!</p>
+</ng-container>
+
+<ng-container *ngIf="contact?.id != null">
+  <ng-container  *ngIf="!isEditing">
+    <h2>{{ contact?.firstname }} {{ contact?.lastname }}</h2>
+    <p>{{ contact?.street }}, {{ contact?.city }}</p>
+    <button (click)="toggleEdit()">Edit</button>
+  </ng-container >
+
+  <ng-container  *ngIf="isEditing">
+    <form *ngIf="isEditing" [formGroup]="contactForm" (ngSubmit)="saveChanges()">
+        <label for="first-name">First name:</label>
+        <input id="first-name" formControlName="firstname" type="text" />
+
+        <label for="last-name">Last name:</label>
+        <input id="last-name" formControlName="lastname" type="text" />
+
+        <label for="street">Street:</label>
+        <input id="street" formControlName="street" type="text" />
+
+        <label for="city">City:</label>
+        <input id="city" formControlName="city" type="text" />
+
+      <div class="actions">
+        <div class="spacer"></div>
+        <button type="button"  (click)="toggleEdit()">Cancel</button>
+        <button type="submit" [disabled]="contactForm.invalid">Edit</button>
+    </div>
+    </form>
+  </ng-container>
+</ng-container>
