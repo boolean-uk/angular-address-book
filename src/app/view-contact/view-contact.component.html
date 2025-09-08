@@ -1,0 +1,8 @@
+<div *ngIf="contact; else notFound">
+    <h2>{{ contact.name }}</h2>
+    <p>Email: {{ contact.email }}</p>
+</div>
+
+<ng-template #notFound>
+    <p>Contact not found!</p>
+</ng-template>

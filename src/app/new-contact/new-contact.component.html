@@ -1,0 +1,20 @@
+<h2>New Contact</h2>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <label>
+        Name:
+        <input type="text" formControlName="name">
+    </label>
+    <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+        Name is required
+    </div>
+
+    <label>
+        Email:
+        <input type="email" formControlName="email">
+    </label>
+    <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+        Enter a valid email
+    </div>
+
+    <button type="submit" [disabled]="contactForm.invalid">Add Contact</button>
+</form>
