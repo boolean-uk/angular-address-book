@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+.side-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-left: 50px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 150px 1fr; /* første kolonne labels, andre inputs */
+  gap: 0.5rem 1rem; /* rad- og kolonneavstand */
+  max-width: 400px;
+}
+form label {
+  text-align: right; /* høyrejustert label */
+  padding-right: 0.5rem;
+}
+form input {
+  width: 100%;
+}

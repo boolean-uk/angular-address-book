@@ -1,0 +1,12 @@
+
+@if (this.contact === null) {
+    <div class="side-page">
+        <p><strong>Contact is null</strong></p>
+    </div>
+} @else {
+    <div class="side-page">
+        <h1>{{this.contact.firstName}} {{this.contact.lastName}}</h1>
+        <h2>Street: {{this.contact.street}}</h2>
+        <h2>City: {{this.contact.city}}</h2>
+    </div> 
+}

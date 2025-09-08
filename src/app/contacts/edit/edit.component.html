@@ -1,0 +1,27 @@
+
+@if (this.contact === null) {
+    <p>Contact does not exist!!!</p>
+} @else {
+    <div class="side-page">
+      <h2>Edit contact</h2>
+      <form [formGroup]="contactForm" (ngSubmit)="editContact()">
+        <div>
+          <label for="firstName">first name</label>
+          <input type="text" id="firstName" formControlName="firstName" />
+        </div>
+        <div>
+          <label for="lastName">last name</label>
+          <input type="text" id="lastName" formControlName="lastName" />
+        </div>
+        <div>
+          <label for="street">street</label>
+          <input type="text" id="street" formControlName="street" />
+        </div>
+        <div>
+          <label for="city">city</label>
+          <input type="text" id="city" formControlName="city" />
+        </div>
+        <button type="submit">Update contact</button>
+      </form>
+    </div>
+}
