@@ -1,0 +1,13 @@
+<h2 class="contacts">Contacts</h2>
+@if (contacts.length <= 0) {
+    <p> No contacts in your list </p>
+} @else {
+    @for (contact of contacts; track $index) {
+        <div class="contact">
+            <span class="name">
+                {{contact.firstName}} {{contact.lastName}}
+            </span>
+            <span><a routerLink="/contacts/{{contact.id}}"> Link</a></span>
+        </div>
+    }
+}
