@@ -1,0 +1,13 @@
+<!-- ng-container is a nice way to have if/else displays,
+     without having the "container" being rendered to the dom -->
+
+@if (this.contact === null){
+  <div>
+    <p><strong>Contact not available</strong></p>
+  </div>
+}@else{
+  <div>
+    <h1>{{contact.firstName}} {{contact.lastName}}</h1>
+    <p>{{contact.city}}</p>
+  </div>
+}
