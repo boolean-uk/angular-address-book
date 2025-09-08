@@ -1,0 +1,27 @@
+<h1>Edit Contact</h1>
+<ng-container *ngIf="contact; else notFound">
+    <form [formGroup]="contactForm" (ngSubmit)="editContact()" class="form">
+    <label for="first-name" class="label">First name:</label>
+    <input id="first-name" formControlName="firstName" type="text" [(ngModel)]="firstNameValue" />
+
+    <label for="last-name" class="label">Last name:</label>
+    <input id="last-name" formControlName="lastName" type="text" [(ngModel)]="lastNameValue" />
+
+    <label for="street" class="label">Street:</label>
+    <input id="street" formControlName="street" type="text" [(ngModel)]="streetValue" />
+
+    <label for="city" class="label">City:</label>
+    <input id="city" formControlName="city" type="text" [(ngModel)]="cityValue" />
+
+    <div class="actions">
+        <div class="spacer"></div>
+        <button type="submit" [disabled]="contactForm.invalid">Update</button>
+    </div>
+    </form>
+</ng-container>
+
+
+<!-- if we don't find the a contact -->
+<ng-template #notFound>
+  <h1>Contact not found, nothing to edit!!</h1>
+</ng-template>
