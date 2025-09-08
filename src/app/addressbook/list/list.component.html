@@ -1,0 +1,25 @@
+<h2>Contact List Page</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Street</th>
+            <th>City</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (contact of this.contacts; track contact) {
+        <tr>
+            <td>{{ contact.id }}</td>
+            <td>{{ contact.firstName }}</td>
+            <td>{{ contact.lastName }}</td>
+            <td>{{ contact.street }}</td>
+            <td>{{ contact.city }}</td>
+            <td><a routerLink="/addressbook/{{ contact.id }}">Link</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
