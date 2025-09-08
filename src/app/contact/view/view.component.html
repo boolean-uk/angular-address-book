@@ -1,0 +1,12 @@
+<div *ngIf="contact === null">
+  <p><strong>Contact Does Not Exist</strong></p>
+  <a routerLink="/contacts" class="back-button">← Back to Contacts</a>
+</div>
+
+<div *ngIf="contact !== null">
+  <h1>{{ contact?.firstName }} {{ contact?.lastName }}</h1>
+  <p>{{ contact?.email }}</p>
+  <p>{{ contact?.phone }}</p>
+
+  <a routerLink="/contacts" class="back-button">← Back to Contacts</a>
+</div>
