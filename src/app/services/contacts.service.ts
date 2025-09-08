@@ -7,4 +7,9 @@ import { CONTACTS } from '../data/contacts';
 })
 export class ContactsService {
   public contacts: Contact[] = CONTACTS;
+
+  public AddContact(contact: Contact): void {
+    this.contacts.push(contact)
+  }
+
 }
