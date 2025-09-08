@@ -1,0 +1,14 @@
+
+<div *ngIf="inContacts()">
+  <h2>Edit Contact</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="EditContact()">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name" />
+    </div>
+
+    <button type="submit" [disabled]="contactForm.invalid">Edit Contact</button>
+  </form>
+</div>
+
+<div *ngIf="!inContacts()">Contact not in your contact list!</div>

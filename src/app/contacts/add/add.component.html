@@ -1,0 +1,12 @@
+<p>add works!</p>
+<div>
+  <h2>Add Contact</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="addContact()">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name" />
+    </div>
+
+    <button type="submit" [disabled]="contactForm.invalid">Add Contact</button>
+  </form>
+</div>

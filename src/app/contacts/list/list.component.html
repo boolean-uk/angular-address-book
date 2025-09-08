@@ -1,0 +1,22 @@
+<p>list works!</p>
+
+<ul>
+    <li *ngFor="let c of contacts">
+        <span id="item{{c.id}}">{{ c.name }}</span>
+    </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <td>name</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of contacts">
+      <td>
+        <a routerLink="/contacts/{{ c.id }}">{{ c.name }}</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

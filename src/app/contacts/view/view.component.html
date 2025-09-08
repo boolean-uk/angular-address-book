@@ -1,0 +1,7 @@
+<p>view works!</p>
+<div *ngIf="contact !== null">
+  <h2>
+    {{ contact.name }}
+  </h2>
+    <li><a routerLink="/contacts/{{contact.id}}/edit">Edit contact</a></li>
+</div>
