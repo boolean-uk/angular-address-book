@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  box-sizing: border-box;
+  width: 40vw;
+  flex-direction: column;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 0.5em 0;
+}
