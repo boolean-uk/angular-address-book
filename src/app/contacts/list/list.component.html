@@ -1,0 +1,14 @@
+<h2>Contacts Page</h2>
+<ul>
+  @for (contact of contacts; track $index) {
+    <li>
+      <p>{{ contact.firstName }} {{ contact.lastName }}</p>
+      <a [routerLink]="['/contacts', $index]">view</a>
+      <div></div>
+       <!-- <a routerLink="/contacts/0">view</a> -->
+              <a [routerLink]="['/contacts/edit', $index]">edit</a>
+
+
+    </li>
+  }
+</ul>
