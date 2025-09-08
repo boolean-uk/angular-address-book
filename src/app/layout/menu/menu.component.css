@@ -1,10 +1,35 @@
-:host {
-  padding: 0 0.5em;
+h2 {
+  margin-bottom: 1em;
+  font-size: 50px;
+  color: #333;              
+}
+
+h2 a {
+  text-decoration: none;
+  color: inherit;        
+}
+
+h2 a:hover {
+  text-decoration: underline;  
 }
 
 ul {
   padding: 0;
 }
+
 li {
   list-style: none;
+  text-decoration: none;
+   border: 1px solid #ccc;      
+  border-radius: 8px;        
+  background: #f9f9f9;         
+  margin-bottom: 0.75em;      
+  padding: 1em;               
+}
+
+li a {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+  color: #333;
 }

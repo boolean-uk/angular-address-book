@@ -1,0 +1,32 @@
+.contacts-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2em;
+  font-family: Arial, sans-serif;
+}
+
+.contacts-table th,
+.contacts-table td {
+  padding: 1em 1em;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.contacts-table th {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+
+.contacts-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.view-button {
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.view-button:hover {
+  background-color: #e0e0e0;
+}

@@ -1,0 +1,33 @@
+h2 {
+  font-size: 2em;
+}
+
+form div {
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.25em;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #054992;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
