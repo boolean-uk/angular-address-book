@@ -1,0 +1,18 @@
+<div>
+  <h2>Add a car</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="addContact()">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" formControlName="name" />
+    </div>
+    <div>
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" formControlName="phone" />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="text" id="email" formControlName="email" />
+    </div>
+    <button type="submit">Add Contact</button>
+  </form>
+</div>

@@ -1,0 +1,12 @@
+<ng-container *ngIf="contact === null; else elseBlock">
+  <div>
+    <p><strong>Contact not available</strong></p>
+  </div>
+</ng-container>
+<ng-template #elseBlock>
+  <div>
+    <h1>{{contact?.name}} </h1>
+    <p> Phone: {{contact?.phone}}<br>
+        Email: {{contact?.email}}</p>
+  </div>
+</ng-template>
