@@ -1,0 +1,39 @@
+<div>
+  <h2>Edit Contact</h2>
+  <form *ngIf="contact; else noContact" [formGroup]="contactForm" (ngSubmit)="editContact()">
+    <div>
+      <label for="firstName">First Name:</label>
+      <br />
+      <input type="text" id="firstName" formControlName="firstName" />
+    </div>
+    <br />
+
+    <div>
+      <label for="lastName">Last Name:</label>
+      <br />
+      <input type="text" id="lastName" formControlName="lastName" />
+    </div>
+    <br />
+
+    <div>
+      <label for="street">Street:</label>
+      <br />
+      <input type="text" id="street" formControlName="street" />
+    </div>
+    <br />
+
+    <div>
+      <label for="city">City:</label>
+      <br />
+      <input type="text" id="city" formControlName="city" />
+    </div>
+
+    <br />
+
+    <button type="submit" [disabled]="contactForm.invalid">Edit Contact</button>
+  </form>
+
+  <ng-template #noContact>
+    <p>No contact with that id.</p>
+  </ng-template>
+</div>

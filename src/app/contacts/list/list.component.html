@@ -1,0 +1,8 @@
+@for (contact of contacts; track contact.id) {
+  <div style="display: flex; align-items: center; gap: 8px;">
+    <span>{{ contact.firstName }} {{ contact.lastName }}</span>
+     <a routerLink="/contacts/{{ contact.id }}">View</a>
+     <a routerLink="/contacts/{{ contact.id }}/edit">Edit</a>
+  </div>
+  <hr />
+}
