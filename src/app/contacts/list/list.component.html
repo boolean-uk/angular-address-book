@@ -1,0 +1,20 @@
+
+<h1>Contacts</h1>
+
+@if (this.contacts.length===0){
+    <div>No contacts yet</div>
+} @else {
+    <div class="contact-container">
+      <div class="contact">
+        <ul style="list-style-type: none;">
+            @for (contact of this.contacts; track contact){
+                <li>{{contact.firstName}} {{contact.lastName}}</li>
+                <li>{{contact.street}}</li>
+                <li>{{contact.city}}</li>
+                <li><a routerLink="/contacts/{{ contact.id }}">View Contact</a></li> 
+            }
+        </ul>
+      </div>
+    </div>
+}
+
