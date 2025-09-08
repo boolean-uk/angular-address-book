@@ -1,0 +1,67 @@
+@if (contact) {
+<div>
+  <h2>Edit Contact</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="editContact()" class="form-group">
+    <div>
+      <label for="firstName" class="form-control">First Name:</label>
+      <br />
+      <input
+        type="text"
+        id="firstName"
+        formControlName="firstName"
+        class="form-control"
+      />
+    </div>
+
+    <div>
+      <label for="lastName" class="form-control">Last Name:</label>
+      <br />
+      <input
+        type="text"
+        id="lastName"
+        formControlName="lastName"
+        class="form-control"
+      />
+    </div>
+
+    <div>
+      <label for="street" class="form-control">Street:</label>
+      <br />
+      <input
+        type="text"
+        id="street"
+        formControlName="street"
+        class="form-control"
+      />
+    </div>
+
+    <div>
+      <label for="city" class="form-control">City:</label>
+      <br />
+      <input
+        type="text"
+        id="city"
+        formControlName="city"
+        class="form-control"
+      />
+    </div>
+
+    <div class="actions">
+      <div class="spacer"></div>
+
+      <button
+        type="submit"
+        [disabled]="contactForm.invalid"
+        class="btn btn-success"
+      >
+        Edit Contact
+      </button>
+    </div>
+  </form>
+</div>
+
+} @else {
+<ng-container>
+  <h1>Contact not found</h1>
+</ng-container>
+}
