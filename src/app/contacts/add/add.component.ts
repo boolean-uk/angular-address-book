@@ -25,7 +25,7 @@ export class AddComponent {
 
   addContact(): void {
     const newContact: Contact = {
-      id: 0, // TODO: SHOULD CHANGE????
+      id: 0,
       name: this.contactForm.value.name,
       street: this.contactForm.value.street,
       city: this.contactForm.value.city,

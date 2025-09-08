@@ -3,7 +3,7 @@
     @for (contact of contacts; track contact.id ) {
         <div class="contact">
             <span>{{contact.name}}</span>
-            <a>View</a>
+            <a routerLink='/contacts/{{ contact.id }}'>View</a>
         </div>
     }
 </div>
