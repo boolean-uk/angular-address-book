@@ -1,0 +1,9 @@
+@if(contact === null) {
+  <h2>Contact not found</h2>
+} @else {
+  <h2>Contact Details</h2>
+  <p>{{ contact.firstName }} {{ contact.lastName }}</p>
+  <!-- <p>Last Name: {{ contact.lastName }}</p> -->
+  <p>{{ contact.street }} {{ contact.city}}</p>
+  <!-- <p>City: {{ contact.city }}</p> -->
+}
