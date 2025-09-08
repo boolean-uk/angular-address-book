@@ -1,0 +1,9 @@
+<h2>Contacts list</h2>
+<div class="contact-container">
+    @for (contact of contacts; track contact.id ) {
+        <div class="contact">
+            <span>{{contact.name}}</span>
+            <a>View</a>
+        </div>
+    }
+</div>
