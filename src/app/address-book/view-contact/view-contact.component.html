@@ -1,0 +1,31 @@
+<div *ngIf="contact; else notFound">
+
+  <!-- View Mode -->
+  <div *ngIf="!editMode">
+    <h2>{{ contact.name }}</h2>
+    <p><strong>Email:</strong> {{ contact.email }}</p>
+    <p><strong>Phone:</strong> {{ contact.phone }}</p>
+    <button (click)="toggleEdit()">Edit</button>
+  </div>
+
+  <!-- Edit Mode -->
+  <div *ngIf="editMode">
+    <h2>Edit Contact</h2>
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="contact.name"><br><br>
+
+    <label>Email:</label>
+    <input type="email" [(ngModel)]="contact.email"><br><br>
+
+    <label>Phone:</label>
+    <input type="text" [(ngModel)]="contact.phone"><br><br>
+
+    <button (click)="toggleEdit()">Cancel</button>
+    <button (click)="saveContact()">Save</button>
+  </div>
+
+</div>
+
+<ng-template #notFound>
+  <p>Contact not found.</p>
+</ng-template>
