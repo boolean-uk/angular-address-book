@@ -21,4 +21,12 @@ export class ContactsService {
     return of(contact)
   }
 
+  public EditContact(editContact: Contact): void {
+    const contact = this.contacts.find((c) => c.id === editContact.id);
+    if (contact === undefined) return; 
+    contact.name = editContact.name;
+    contact.street = editContact.street;
+    contact.city = editContact.city
+  }
+
 }
