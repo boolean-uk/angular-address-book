@@ -1,0 +1,29 @@
+<div>
+  <div *ngIf="contactNotFound" style="color: red;">
+  Contact with ID {{ id }} not found.
+  </div> 
+  <div *ngIf="!contactNotFound">
+  <h2>Edit Contact</h2>
+  <a routerLink="/contacts" class="back-button">← Back to Contacts</a>
+  <form [formGroup]="contactForm" (ngSubmit)="editContact()">
+    <div>
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" formControlName="firstName" />
+    </div>
+
+    <div>
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" formControlName="lastName" />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="text" id="email" formControlName="email" />
+    </div>
+    <div>
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" formControlName="phone" />
+    </div>
+    <button type="submit" [disabled]="contactForm.invalid">Apply Edit</button>
+  </form>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+/* Contacts List Component Styles */
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-left: 5px solid #00ffd1;
+  padding-left: 1rem;
+  color: #eaeaea;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 255, 209, 0.2);
+}
+
+thead {
+  background-color: #00ffd1;
+  color: #000;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid #3a3a3a;
+  transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: #3c3c3c;
+}
+
+/* Action Links */
+td a {
+  text-decoration: none;
+  color: #00ffd1;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+td a:hover {
+  color: #ffffff;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 1rem;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+
+  td {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #444;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #00ffd1;
+  }
+}
