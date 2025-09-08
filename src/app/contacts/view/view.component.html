@@ -1,0 +1,12 @@
+@if (this.contact===null) {
+    <div>
+        <p><strong>Contact not available</strong></p>
+    </div>
+} @else {
+    <div>
+        <h3>{{contact.firstName}} {{contact.lastName}}</h3>
+        <p>Street: {{contact.street}}</p>
+        <p>City: {{contact.city}}</p>
+        <a routerLink="/contacts/edit/{{contact.id}}"><button>Edit</button></a>
+    </div>
+}
