@@ -6,12 +6,13 @@
 } @else {
     <div class="contact-container">
       <div class="contact">
-        <ul style="list-style-type: none;">
+        <ul class="contact-list" style="list-style-type: none;">
             @for (contact of this.contacts; track contact){
                 <li>{{contact.firstName}} {{contact.lastName}}</li>
                 <li>{{contact.street}}</li>
                 <li>{{contact.city}}</li>
                 <li><a routerLink="/contacts/{{ contact.id }}">View Contact</a></li> 
+                <li><a routerLink="/contacts/update/{{ contact.id }}">Update Contact</a></li>
             }
         </ul>
       </div>

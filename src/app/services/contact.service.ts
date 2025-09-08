@@ -26,4 +26,13 @@ export class ContactService {
     contact.id = this.currentId
     this.contacts.push(contact)
   }
+
+  public editContact(updatedContact: Contact) {
+    const cont = this.contacts.find((contact) => contact.id === updatedContact.id)
+    if (cont === undefined) return;
+    cont.firstName = updatedContact.firstName;
+    cont.lastName = updatedContact.lastName;
+    cont.street = updatedContact.street;
+    cont.city = updatedContact.city;
+  }
 }
