@@ -1,10 +1,10 @@
 
-<h1>Contacts</h1>
+<h1 style="text-align: center;">Contacts</h1>
 
 @if (this.contacts.length===0){
     <div>No contacts yet</div>
 } @else {
-    <div class="contact-container">
+    <div class="side-page">
       <div class="contact">
         <ul class="contact-list" style="list-style-type: none;">
             @for (contact of this.contacts; track contact){

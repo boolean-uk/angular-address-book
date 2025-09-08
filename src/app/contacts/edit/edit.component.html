@@ -2,7 +2,7 @@
 @if (this.contact === null) {
     <p>Contact does not exist!!!</p>
 } @else {
-    <div>
+    <div class="side-page">
       <h2>Edit contact</h2>
       <form [formGroup]="contactForm" (ngSubmit)="editContact()">
         <div>
