@@ -1,0 +1,44 @@
+<hr />
+<h2>Contacts List</h2>
+<hr />
+<table class="table table-dark table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Street</th>
+      <th>City</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of contacts$ | async">
+      <td>
+        {{ c.id }}
+      </td>
+      <td>
+        <a class="badge" routerLink="/contacts/{{ c.id }}">
+            {{ c.firstName }}</a>
+      </td>
+
+      <td class="red">{{ c.street }}</td>
+      <td class="green">{{ c.city}}</td>
+      <td>{{ c.city }}</td>
+      <td>
+        <a
+          class="btn btn-sm btn-success"
+          routerLink="/contacts/edit/{{ c.id }}"
+          title="Edit this contact"
+          >✂️</a
+        >
+        <a
+          class="btn btn-danger btn-sm"
+          (click)="deleteContact(c.id!)"
+          title="Delete this contact"
+          >🗑️</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>

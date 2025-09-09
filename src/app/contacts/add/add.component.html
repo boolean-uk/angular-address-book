@@ -1,0 +1,78 @@
+<hr />
+<h2>Add Contact</h2>
+<hr />
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Add Contact</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="contactForm" (ngSubmit)="addContact()">
+            <div class="mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                class="form-control"
+                formControlName="firstName"
+                placeholder="Enter contact first name"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                class="form-control"
+                formControlName="lastName"
+                placeholder="Enter contact last name"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="street" class="form-label">Street</label>
+              <input
+                type="text"
+                id="street"
+                class="form-control"
+                formControlName="street"
+                placeholder="Enter street"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="city" class="form-label">City</label>
+              <input
+                type="text"
+                id="city"
+                class="form-control"
+                formControlName="city"
+                placeholder="Enter city"
+              />
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <button
+                type="submit"
+                class="btn btn-success"
+                [disabled]="contactForm.invalid"
+              >
+                Add Contact
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                (click)="cancel()"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
