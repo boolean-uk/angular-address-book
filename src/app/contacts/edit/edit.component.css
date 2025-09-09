@@ -1,0 +1,45 @@
+form div {
+	margin-bottom: 1.2em;
+}
+
+label {
+	display: block;
+	margin-bottom: 0.4em;
+	font-weight: 400;
+	color: #333;
+}
+
+input[type="text"] {
+	width: 100%;
+	padding: 0.6em;
+	border-radius: 4px;
+	font-size: 1em;
+	transition: border-color 0.2s;
+    border: 1.5px solid #ccc;
+}
+
+input[type="text"]:focus {
+	border-color: #007bff;
+	outline: none;
+}
+
+button[type="submit"] {
+	background: #007bff;
+	border: none;
+	padding: 0.7em 1.5em;
+	border-radius: 4px;
+	font-size: 1em;
+	cursor: pointer;
+	transition: background 0.2s;
+    color: #fff;
+}
+
+button[type="submit"]:hover {
+	background: #0056b3;
+}
+
+h2 {
+	text-align: center;
+	color: #007bff;
+	margin-bottom: 1.5em;
+}
