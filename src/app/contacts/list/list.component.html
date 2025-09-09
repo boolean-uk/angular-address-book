@@ -1,0 +1,26 @@
+<ul>
+  <li *ngFor="let c of contacts">
+    <span id="item{{ c.id }}" class="red">{{ c.firstname }} {{ c.lastname }}</span>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Street</td>
+      <td>City</td>
+      <td> </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of contacts">
+      <td>
+        <a routerLink="/contacts/{{ c.id }}">{{ c.firstname }} {{ c.lastname }}</a>
+    </td>
+    <td>{{ c.street }}</td>
+    <td>{{ c.city }}</td>
+    <td><a routerLink="/contacts/edit/{{ c.id }}" style="margin-left:1em;">Edit</a></td>
+    </tr>
+  </tbody>
+</table>
