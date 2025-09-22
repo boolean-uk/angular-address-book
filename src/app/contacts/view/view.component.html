@@ -1,0 +1,10 @@
+@if (this.contact===null) {
+  <div>
+    <p><strong>Contact not available</strong></p>
+  </div>
+} @else {
+  <div>
+    <h3>Name: {{contact.firstName}} {{contact.lastName}}</h3>
+    <p>City: {{contact.city}}</p>
+  </div>
+}
