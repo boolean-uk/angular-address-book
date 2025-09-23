@@ -1,0 +1,8 @@
+:host {
+  padding: 0.5em;
+  width: 400px;
+}
+
+.contact-container > li {
+  list-style: none;
+}

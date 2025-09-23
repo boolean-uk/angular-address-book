@@ -1,0 +1,13 @@
+<h1>Contacts</h1>
+
+<div *ngIf="this.contacts.length > 0">
+  <div class="contact-container">
+    <li *ngFor="let contact of contacts">
+      <app-contacts-list-item [contact]="contact"></app-contacts-list-item>
+    </li>
+  </div>
+</div>
+
+<div *ngIf="this.contacts.length === 0">
+  <div>No contacts yet</div>
+</div>
