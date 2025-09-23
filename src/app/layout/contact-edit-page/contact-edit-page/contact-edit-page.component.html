@@ -1,0 +1,31 @@
+<div *ngIf="contact">
+  <ng-container>
+    <form [formGroup]="editForm" (ngSubmit)="submit()">
+      <label for="first-name">First name:</label>
+      <input id="first-name" type="text" formControlName="firstName"/>
+
+      <label for="last-name">Last name:</label>
+      <input id="last-name" type="text" formControlName="lastName"/>
+
+      <label for="street">Street:</label>
+      <input id="street" type="text" formControlName="street"/>
+
+      <label for="city">City:</label>
+      <input id="city" type="text" formControlName="city"/>
+
+      <div class="actions">
+        <div class="spacer"></div>
+        <button type="submit">Save</button>
+      </div>
+    </form>
+    <div *ngIf="doShowError">
+      Failed to save contact! Contact might not exist in internal list!
+    </div>
+  </ng-container>
+</div>
+
+<div *ngIf="!contact">
+  <ng-container>
+    <h1>Contact not found</h1>
+  </ng-container>
+</div>

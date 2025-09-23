@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {ContactsPageComponent} from "./layout/contacts-page/contacts-page.component";
 import {ContactViewPageComponent} from "./layout/contact-view-page/contact-view-page/contact-view-page.component";
 import {ContactFormPageComponent} from "./layout/contact-form-page/contact-form-page/contact-form-page.component";
+import {ContactEditPageComponent} from "./layout/contact-edit-page/contact-edit-page/contact-edit-page.component";
 
 const routes: Routes = [
   {
@@ -19,6 +20,11 @@ const routes: Routes = [
     path: 'contacts/add',
     component: ContactFormPageComponent,
     title: 'Add Contact'
+  },
+  {
+    path: 'contacts/edit/:id',
+    component: ContactEditPageComponent,
+    title: 'Edit Contact'
   }
 ];
 

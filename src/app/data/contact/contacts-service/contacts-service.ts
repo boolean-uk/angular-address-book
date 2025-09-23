@@ -43,6 +43,16 @@ export class ContactsService {
     console.log(this._contacts);
   }
 
+  editContact(contact: Contact) : boolean {
+    const index = this._contacts.findIndex((c: Contact) => c.id === contact.id);
+    console.log(`index: ${index} and contact: ${contact.lastName}`);
+    if (index > -1){
+      this._contacts[index] = contact;
+      return true;
+    }
+    else return false;
+  }
+
   removeContact(contact: Contact) {
     const index = this._contacts.indexOf(contact);
     if (index > -1) {
