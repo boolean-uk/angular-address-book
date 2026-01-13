@@ -1,0 +1,36 @@
+<div>
+
+<h2>Update Contact</h2>
+<form [formGroup]="contactForm" (ngSubmit)="updateContact()" class="form-group">
+    <div>
+        <label for="firstname" class="form-control">Firstname:</label>
+        <input 
+          type="text"
+          id="firstname"
+          formControlName="firstname"
+          class="form-control" />
+    </div>
+
+    <div>
+        <label for="lastname" class="form-control">Lastname:</label>
+        <input 
+          type="text"
+          id="lastname"
+          formControlName="lastname"
+          class="form-control" />
+    </div>
+
+    <div>
+        <label for="email" class="form-control">Email:</label>
+        <input 
+          type="text"
+          id="email"
+          formControlName="email"
+          class="form-control" />
+    </div>
+
+    <button type="submit" [disabled]="contactForm.invalid" class="btn btn-success">
+        Update Contact
+    </button>
+</form>
+</div>

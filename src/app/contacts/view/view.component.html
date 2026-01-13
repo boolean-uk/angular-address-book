@@ -1,0 +1,9 @@
+<div>
+
+<p>{{contact?.id}}</p>
+<p>{{contact?.firstname}}</p>
+<p>{{contact?.lastname}}</p>
+<p>{{contact?.email}}</p>
+
+<a [routerLink]="['/contacts', contact?.id, 'update']">Update</a>
+</div>
